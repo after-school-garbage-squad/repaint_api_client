@@ -1,30 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'send_email_request.dart';
+part of 'set_current_image_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SendEmailRequest _$SendEmailRequestFromJson(Map<String, dynamic> json) =>
+SetCurrentImageRequest _$SetCurrentImageRequestFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      'SendEmailRequest',
+      'SetCurrentImageRequest',
       json,
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['eventId', 'email'],
+          requiredKeys: const ['eventId', 'imageId'],
         );
-        final val = SendEmailRequest(
+        final val = SetCurrentImageRequest(
           eventId: $checkedConvert('eventId', (v) => v as String),
-          email: $checkedConvert('email', (v) => v as String),
+          imageId: $checkedConvert('imageId', (v) => v as String),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$SendEmailRequestToJson(SendEmailRequest instance) =>
+Map<String, dynamic> _$SetCurrentImageRequestToJson(
+        SetCurrentImageRequest instance) =>
     <String, dynamic>{
       'eventId': instance.eventId,
-      'email': instance.email,
+      'imageId': instance.imageId,
     };

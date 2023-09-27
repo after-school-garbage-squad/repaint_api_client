@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-part 'join_event_request.g.dart';
+part 'set_current_image_request.g.dart';
 
 
 @JsonSerializable(
@@ -14,13 +14,13 @@ part 'join_event_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class JoinEventRequest {
-  /// Returns a new [JoinEventRequest] instance.
-  JoinEventRequest({
+class SetCurrentImageRequest {
+  /// Returns a new [SetCurrentImageRequest] instance.
+  SetCurrentImageRequest({
 
     required  this.eventId,
 
-    required  this.registrationId,
+    required  this.imageId,
   });
 
       /// イベントのパブリックID(ulid)
@@ -36,32 +36,32 @@ class JoinEventRequest {
 
 
 
-      /// スマホのプッシュ通知用のID
+      /// 参加者が撮影した画像のID(ulid)
   @JsonKey(
     
-    name: r'registrationId',
+    name: r'imageId',
     required: true,
     includeIfNull: false
   )
 
 
-  final String registrationId;
+  final String imageId;
 
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is JoinEventRequest &&
+  bool operator ==(Object other) => identical(this, other) || other is SetCurrentImageRequest &&
      other.eventId == eventId &&
-     other.registrationId == registrationId;
+     other.imageId == imageId;
 
   @override
   int get hashCode =>
     eventId.hashCode +
-    registrationId.hashCode;
+    imageId.hashCode;
 
-  factory JoinEventRequest.fromJson(Map<String, dynamic> json) => _$JoinEventRequestFromJson(json);
+  factory SetCurrentImageRequest.fromJson(Map<String, dynamic> json) => _$SetCurrentImageRequestFromJson(json);
 
-  Map<String, dynamic> toJson() => _$JoinEventRequestToJson(this);
+  Map<String, dynamic> toJson() => _$SetCurrentImageRequestToJson(this);
 
   @override
   String toString() {

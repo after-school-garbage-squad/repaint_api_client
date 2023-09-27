@@ -13,9 +13,10 @@ JoinEventRequest _$JoinEventRequestFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['registrationId'],
+          requiredKeys: const ['eventId', 'registrationId'],
         );
         final val = JoinEventRequest(
+          eventId: $checkedConvert('eventId', (v) => v as String),
           registrationId: $checkedConvert('registrationId', (v) => v as String),
         );
         return val;
@@ -24,5 +25,6 @@ JoinEventRequest _$JoinEventRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$JoinEventRequestToJson(JoinEventRequest instance) =>
     <String, dynamic>{
+      'eventId': instance.eventId,
       'registrationId': instance.registrationId,
     };

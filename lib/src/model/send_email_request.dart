@@ -18,8 +18,23 @@ class SendEmailRequest {
   /// Returns a new [SendEmailRequest] instance.
   SendEmailRequest({
 
+    required  this.eventId,
+
     required  this.email,
   });
+
+      /// イベントのパブリックID(ulid)
+  @JsonKey(
+    
+    name: r'eventId',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String eventId;
+
+
 
       /// 追加する管理者のメールアドレス
   @JsonKey(
@@ -36,10 +51,12 @@ class SendEmailRequest {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SendEmailRequest &&
+     other.eventId == eventId &&
      other.email == email;
 
   @override
   int get hashCode =>
+    eventId.hashCode +
     email.hashCode;
 
   factory SendEmailRequest.fromJson(Map<String, dynamic> json) => _$SendEmailRequestFromJson(json);

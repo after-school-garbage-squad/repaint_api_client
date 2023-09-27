@@ -18,8 +18,23 @@ class DropPaletteRequest {
   /// Returns a new [DropPaletteRequest] instance.
   DropPaletteRequest({
 
+    required  this.eventId,
+
     required  this.spotId,
   });
+
+      /// イベントのパブリックID(ulid)
+  @JsonKey(
+    
+    name: r'eventId',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String eventId;
+
+
 
       /// スポットのパブリックID(ulid)
   @JsonKey(
@@ -36,10 +51,12 @@ class DropPaletteRequest {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is DropPaletteRequest &&
+     other.eventId == eventId &&
      other.spotId == spotId;
 
   @override
   int get hashCode =>
+    eventId.hashCode +
     spotId.hashCode;
 
   factory DropPaletteRequest.fromJson(Map<String, dynamic> json) => _$DropPaletteRequestFromJson(json);

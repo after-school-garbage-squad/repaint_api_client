@@ -1,16 +1,18 @@
 import 'package:repaint_api_client/src/model/add_operation_request.dart';
 import 'package:repaint_api_client/src/model/check_spot_by_beacon_request.dart';
+import 'package:repaint_api_client/src/model/check_spot_by_qr_request.dart';
 import 'package:repaint_api_client/src/model/check_visitor_image200_response.dart';
 import 'package:repaint_api_client/src/model/check_visitor_image_request.dart';
 import 'package:repaint_api_client/src/model/contact.dart';
-import 'package:repaint_api_client/src/model/controll_traffic_request.dart';
+import 'package:repaint_api_client/src/model/control_traffic_request.dart';
 import 'package:repaint_api_client/src/model/create_event.dart';
 import 'package:repaint_api_client/src/model/create_event_request.dart';
+import 'package:repaint_api_client/src/model/delete_visitor_request.dart';
 import 'package:repaint_api_client/src/model/drop_palette_request.dart';
 import 'package:repaint_api_client/src/model/event.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
 import 'package:repaint_api_client/src/model/get_image_url200_response.dart';
-import 'package:repaint_api_client/src/model/get_image_url_request.dart';
+import 'package:repaint_api_client/src/model/get_visitor_images_request.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
@@ -19,6 +21,7 @@ import 'package:repaint_api_client/src/model/register_request.dart';
 import 'package:repaint_api_client/src/model/register_spot_request.dart';
 import 'package:repaint_api_client/src/model/register_visitor.dart';
 import 'package:repaint_api_client/src/model/send_email_request.dart';
+import 'package:repaint_api_client/src/model/set_current_image_request.dart';
 import 'package:repaint_api_client/src/model/spot.dart';
 import 'package:repaint_api_client/src/model/traffic_status.dart';
 import 'package:repaint_api_client/src/model/update_event.dart';
@@ -48,18 +51,22 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AddOperationRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CheckSpotByBeaconRequest':
           return CheckSpotByBeaconRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CheckSpotByQRRequest':
+          return CheckSpotByQRRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CheckVisitorImage200Response':
           return CheckVisitorImage200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CheckVisitorImageRequest':
           return CheckVisitorImageRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Contact':
           return Contact.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'ControllTrafficRequest':
-          return ControllTrafficRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ControlTrafficRequest':
+          return ControlTrafficRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateEvent':
           return CreateEvent.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateEventRequest':
           return CreateEventRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'DeleteVisitorRequest':
+          return DeleteVisitorRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DropPaletteRequest':
           return DropPaletteRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Event':
@@ -68,8 +75,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return GetCurrentImage200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'GetImageURL200Response':
           return GetImageURL200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'GetImageURLRequest':
-          return GetImageURLRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'GetVisitorImagesRequest':
+          return GetVisitorImagesRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'InitializeVisitor200Response':
           return InitializeVisitor200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'JoinEvent200Response':
@@ -86,6 +93,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return RegisterVisitor.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SendEmailRequest':
           return SendEmailRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'SetCurrentImageRequest':
+          return SetCurrentImageRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Spot':
           return Spot.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TrafficStatus':

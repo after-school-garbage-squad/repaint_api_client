@@ -4,8 +4,8 @@
 
 import 'dart:async';
 
-import 'dart:convert';
 // ignore: unused_import
+import 'dart:convert';
 import 'package:repaint_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 

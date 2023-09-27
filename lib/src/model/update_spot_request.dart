@@ -20,9 +20,9 @@ class UpdateSpotRequest {
 
     required  this.spotId,
 
-     this.name,
+    required  this.name,
 
-     this.isPick,
+    required  this.isPick,
   });
 
       /// スポットのパブリックID(ulid)
@@ -42,12 +42,12 @@ class UpdateSpotRequest {
   @JsonKey(
     
     name: r'name',
-    required: false,
+    required: true,
     includeIfNull: false
   )
 
 
-  final String? name;
+  final String name;
 
 
 
@@ -55,12 +55,12 @@ class UpdateSpotRequest {
   @JsonKey(
     
     name: r'isPick',
-    required: false,
+    required: true,
     includeIfNull: false
   )
 
 
-  final bool? isPick;
+  final bool isPick;
 
 
 

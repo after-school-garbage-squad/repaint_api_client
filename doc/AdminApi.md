@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**checkSpotByBeacon**](AdminApi.md#checkspotbybeacon) | **GET** /admin/event/{eventID}/spot/check-by-beacon | check spot status by beacon hwId
 [**checkSpotByQR**](AdminApi.md#checkspotbyqr) | **GET** /admin/event/{eventID}/spot/check-by-qr | check spot status by QR code(spotId)
 [**checkVisitorImage**](AdminApi.md#checkvisitorimage) | **GET** /admin/event/{eventID}/image/check-visitor | check visitor image is exist
-[**controllTraffic**](AdminApi.md#controlltraffic) | **POST** /admin/event/{eventID}/traffic/controll | controll traffic
+[**controlTraffic**](AdminApi.md#controltraffic) | **POST** /admin/event/{eventID}/traffic/control | control traffic
 [**createEvent**](AdminApi.md#createevent) | **POST** /admin/event/create | create event
 [**deleteDefaultImage**](AdminApi.md#deletedefaultimage) | **DELETE** /admin/event/{eventID}/image/delete-default | delete default image
 [**deleteEvent**](AdminApi.md#deleteevent) | **DELETE** /admin/event/{eventID}/delete | delete event
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 [**getTrafficStatus**](AdminApi.md#gettrafficstatus) | **GET** /admin/event/{eventID}/traffic/get-status | get traffic status
 [**registerDefaultImage**](AdminApi.md#registerdefaultimage) | **POST** /admin/event/{eventID}/image/register-default | register default image
 [**registerSpot**](AdminApi.md#registerspot) | **POST** /admin/event/{eventID}/spot/register | register spot
-[**sendEmail**](AdminApi.md#sendemail) | **POST** /admin/event/{eventID}/send-email | send email
+[**sendEmail**](AdminApi.md#sendemail) | **POST** /admin/send-email | send email
 [**updateEvent**](AdminApi.md#updateevent) | **PATCH** /admin/event/{eventID}/update | update event
 [**updateSpot**](AdminApi.md#updatespot) | **PATCH** /admin/event/{eventID}/spot/update | update spot
 [**uploadVisitorImage**](AdminApi.md#uploadvisitorimage) | **POST** /admin/event/{eventID}/image/upload-visitor | upload visitor image
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkSpotByQR**
-> Spot checkSpotByQR(eventID, dropPaletteRequest)
+> Spot checkSpotByQR(eventID, checkSpotByQRRequest)
 
 check spot status by QR code(spotId)
 
@@ -129,10 +129,10 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
 final String eventID = eventID_example; // String | イベントのパブリックID
-final DropPaletteRequest dropPaletteRequest = ; // DropPaletteRequest | 
+final CheckSpotByQRRequest checkSpotByQRRequest = ; // CheckSpotByQRRequest | 
 
 try {
-    final response = api.checkSpotByQR(eventID, dropPaletteRequest);
+    final response = api.checkSpotByQR(eventID, checkSpotByQRRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->checkSpotByQR: $e\n');
@@ -144,7 +144,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventID** | **String**| イベントのパブリックID | 
- **dropPaletteRequest** | [**DropPaletteRequest**](DropPaletteRequest.md)|  | 
+ **checkSpotByQRRequest** | [**CheckSpotByQRRequest**](CheckSpotByQRRequest.md)|  | 
 
 ### Return type
 
@@ -206,10 +206,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **controllTraffic**
-> controllTraffic(eventID, controllTrafficRequest)
+# **controlTraffic**
+> controlTraffic(eventID, controlTrafficRequest)
 
-controll traffic
+control traffic
 
 人流を制御する
 
@@ -219,12 +219,12 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
 final String eventID = eventID_example; // String | イベントのパブリックID
-final ControllTrafficRequest controllTrafficRequest = ; // ControllTrafficRequest | 
+final ControlTrafficRequest controlTrafficRequest = ; // ControlTrafficRequest | 
 
 try {
-    api.controllTraffic(eventID, controllTrafficRequest);
+    api.controlTraffic(eventID, controlTrafficRequest);
 } catch on DioException (e) {
-    print('Exception when calling AdminApi->controllTraffic: $e\n');
+    print('Exception when calling AdminApi->controlTraffic: $e\n');
 }
 ```
 
@@ -233,7 +233,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventID** | **String**| イベントのパブリックID | 
- **controllTrafficRequest** | [**ControllTrafficRequest**](ControllTrafficRequest.md)|  | 
+ **controlTrafficRequest** | [**ControlTrafficRequest**](ControlTrafficRequest.md)|  | 
 
 ### Return type
 
@@ -380,7 +380,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteSpot**
-> deleteSpot(eventID, dropPaletteRequest)
+> deleteSpot(eventID, checkSpotByQRRequest)
 
 delete spot
 
@@ -392,10 +392,10 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
 final String eventID = eventID_example; // String | イベントのパブリックID
-final DropPaletteRequest dropPaletteRequest = ; // DropPaletteRequest | 
+final CheckSpotByQRRequest checkSpotByQRRequest = ; // CheckSpotByQRRequest | 
 
 try {
-    api.deleteSpot(eventID, dropPaletteRequest);
+    api.deleteSpot(eventID, checkSpotByQRRequest);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->deleteSpot: $e\n');
 }
@@ -406,7 +406,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventID** | **String**| イベントのパブリックID | 
- **dropPaletteRequest** | [**DropPaletteRequest**](DropPaletteRequest.md)|  | 
+ **checkSpotByQRRequest** | [**CheckSpotByQRRequest**](CheckSpotByQRRequest.md)|  | 
 
 ### Return type
 
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sendEmail**
-> sendEmail(eventID, sendEmailRequest)
+> sendEmail(sendEmailRequest)
 
 send email
 
@@ -649,11 +649,10 @@ send email
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventID = eventID_example; // String | イベントのパブリックID
 final SendEmailRequest sendEmailRequest = ; // SendEmailRequest | 
 
 try {
-    api.sendEmail(eventID, sendEmailRequest);
+    api.sendEmail(sendEmailRequest);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->sendEmail: $e\n');
 }
@@ -663,7 +662,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventID** | **String**| イベントのパブリックID | 
  **sendEmailRequest** | [**SendEmailRequest**](SendEmailRequest.md)|  | 
 
 ### Return type
