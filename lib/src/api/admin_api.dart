@@ -1167,14 +1167,16 @@ class AdminApi {
         ],
         ...?extra,
       },
+      contentType: 'multipart/form-data',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap(<String, MultipartFile>{
-        "image": image,
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        "file_name": image.filename,
+        "data": image,
       });
     } catch (error, stackTrace) {
       throw DioException(
@@ -1682,13 +1684,14 @@ class AdminApi {
         ],
         ...?extra,
       },
+      contentType: 'multipart/form-data',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap(<String, MultipartFile>{'image': image});
+      _bodyData = FormData.fromMap(<String, dynamic>{"data": image});
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
