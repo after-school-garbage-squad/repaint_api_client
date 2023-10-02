@@ -1167,7 +1167,6 @@ class AdminApi {
         ],
         ...?extra,
       },
-      contentType: 'multipart/form-data',
       validateStatus: validateStatus,
     );
 
@@ -1683,7 +1682,6 @@ class AdminApi {
         ],
         ...?extra,
       },
-      contentType: 'multipart/form-data',
       validateStatus: validateStatus,
     );
 
