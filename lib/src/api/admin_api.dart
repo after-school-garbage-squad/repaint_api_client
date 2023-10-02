@@ -1174,10 +1174,7 @@ class AdminApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap(<String, dynamic>{
-        "file_name": image.filename,
-        "data": image,
-      });
+      _bodyData = FormData.fromMap(<String, dynamic>{"file": image});
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -1691,7 +1688,7 @@ class AdminApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap(<String, dynamic>{"data": image});
+      _bodyData = FormData.fromMap(<String, dynamic>{"file": image});
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
