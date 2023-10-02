@@ -776,8 +776,7 @@ _bodyData=jsonEncode(dropPaletteRequest);
   ///
   /// Parameters:
   /// * [visitorID] - 参加者のパブリックID
-  /// * [eventId] - イベントのパブリックID(ulid)
-  /// * [imageId] - 参加者が撮影した画像のID(ulid)
+  /// * [setCurrentImageRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -789,8 +788,7 @@ _bodyData=jsonEncode(dropPaletteRequest);
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> setCurrentImage({ 
     required String visitorID,
-    required String eventId,
-    required String imageId,
+    required SetCurrentImageRequest setCurrentImageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -808,14 +806,14 @@ _bodyData=jsonEncode(dropPaletteRequest);
         'secure': <Map<String, String>>[],
         ...?extra,
       },
-      contentType: 'multipart/form-data',
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
     dynamic _bodyData;
 
     try {
-
+_bodyData=jsonEncode(setCurrentImageRequest);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

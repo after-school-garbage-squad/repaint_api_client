@@ -29,7 +29,6 @@ import 'package:repaint_api_client/src/model/update_notification_request.dart';
 import 'package:repaint_api_client/src/model/update_spot_request.dart';
 
 class AdminApi {
-
   final Dio _dio;
 
   const AdminApi(this._dio);
@@ -38,7 +37,7 @@ class AdminApi {
   /// イベントの管理者を追加する
   ///
   /// Parameters:
-  /// * [addOperationRequest] 
+  /// * [addOperationRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -48,7 +47,7 @@ class AdminApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> addOperation({ 
+  Future<Response<void>> addOperation({
     required AddOperationRequest addOperationRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -80,10 +79,10 @@ class AdminApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(addOperationRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(addOperationRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -110,7 +109,7 @@ _bodyData=jsonEncode(addOperationRequest);
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [checkSpotByBeaconRequest] 
+  /// * [checkSpotByBeaconRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -120,7 +119,7 @@ _bodyData=jsonEncode(addOperationRequest);
   ///
   /// Returns a [Future] containing a [Response] with a [Spot] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Spot>> checkSpotByBeacon({ 
+  Future<Response<Spot>> checkSpotByBeacon({
     required String eventID,
     required CheckSpotByBeaconRequest checkSpotByBeaconRequest,
     CancelToken? cancelToken,
@@ -130,7 +129,8 @@ _bodyData=jsonEncode(addOperationRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/check-by-beacon'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/spot/check-by-beacon'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -153,10 +153,10 @@ _bodyData=jsonEncode(addOperationRequest);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(checkSpotByBeaconRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(checkSpotByBeaconRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -178,8 +178,10 @@ _bodyData=jsonEncode(checkSpotByBeaconRequest);
     Spot? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Spot, Spot>(rawData, 'Spot', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -207,7 +209,7 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [checkSpotByQRRequest] 
+  /// * [checkSpotByQRRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -217,7 +219,7 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
   ///
   /// Returns a [Future] containing a [Response] with a [Spot] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Spot>> checkSpotByQR({ 
+  Future<Response<Spot>> checkSpotByQR({
     required String eventID,
     required CheckSpotByQRRequest checkSpotByQRRequest,
     CancelToken? cancelToken,
@@ -227,7 +229,8 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/check-by-qr'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/spot/check-by-qr'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -250,10 +253,10 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(checkSpotByQRRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(checkSpotByQRRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -275,8 +278,10 @@ _bodyData=jsonEncode(checkSpotByQRRequest);
     Spot? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Spot, Spot>(rawData, 'Spot', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -304,7 +309,7 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [checkVisitorImageRequest] 
+  /// * [checkVisitorImageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -314,7 +319,7 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
   ///
   /// Returns a [Future] containing a [Response] with a [CheckVisitorImage200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CheckVisitorImage200Response>> checkVisitorImage({ 
+  Future<Response<CheckVisitorImage200Response>> checkVisitorImage({
     required String eventID,
     required CheckVisitorImageRequest checkVisitorImageRequest,
     CancelToken? cancelToken,
@@ -324,7 +329,8 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/check-visitor'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/image/check-visitor'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -347,10 +353,10 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(checkVisitorImageRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(checkVisitorImageRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -372,8 +378,13 @@ _bodyData=jsonEncode(checkVisitorImageRequest);
     CheckVisitorImage200Response? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<CheckVisitorImage200Response, CheckVisitorImage200Response>(rawData, 'CheckVisitorImage200Response', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CheckVisitorImage200Response,
+                  CheckVisitorImage200Response>(
+              rawData, 'CheckVisitorImage200Response',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -401,7 +412,7 @@ _responseData = rawData == null ? null : deserialize<CheckVisitorImage200Respons
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [controlTrafficRequest] 
+  /// * [controlTrafficRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -411,7 +422,7 @@ _responseData = rawData == null ? null : deserialize<CheckVisitorImage200Respons
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> controlTraffic({ 
+  Future<Response<void>> controlTraffic({
     required String eventID,
     required ControlTrafficRequest controlTrafficRequest,
     CancelToken? cancelToken,
@@ -421,7 +432,8 @@ _responseData = rawData == null ? null : deserialize<CheckVisitorImage200Respons
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/traffic/control'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/traffic/control'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -444,10 +456,10 @@ _responseData = rawData == null ? null : deserialize<CheckVisitorImage200Respons
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(controlTrafficRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(controlTrafficRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -473,7 +485,7 @@ _bodyData=jsonEncode(controlTrafficRequest);
   /// イベントを作成する
   ///
   /// Parameters:
-  /// * [createEventRequest] 
+  /// * [createEventRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -483,7 +495,7 @@ _bodyData=jsonEncode(controlTrafficRequest);
   ///
   /// Returns a [Future] containing a [Response] with a [CreateEvent] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CreateEvent>> createEvent({ 
+  Future<Response<CreateEvent>> createEvent({
     required CreateEventRequest createEventRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -515,10 +527,10 @@ _bodyData=jsonEncode(controlTrafficRequest);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createEventRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(createEventRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -540,8 +552,11 @@ _bodyData=jsonEncode(createEventRequest);
     CreateEvent? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<CreateEvent, CreateEvent>(rawData, 'CreateEvent', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CreateEvent, CreateEvent>(rawData, 'CreateEvent',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -569,7 +584,7 @@ _responseData = rawData == null ? null : deserialize<CreateEvent, CreateEvent>(r
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [deleteDefaultImageRequest] 
+  /// * [deleteDefaultImageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -579,7 +594,7 @@ _responseData = rawData == null ? null : deserialize<CreateEvent, CreateEvent>(r
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> deleteDefaultImage({ 
+  Future<Response<void>> deleteDefaultImage({
     required String eventID,
     required DeleteDefaultImageRequest deleteDefaultImageRequest,
     CancelToken? cancelToken,
@@ -589,7 +604,8 @@ _responseData = rawData == null ? null : deserialize<CreateEvent, CreateEvent>(r
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/delete-default'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/image/delete-default'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -612,10 +628,10 @@ _responseData = rawData == null ? null : deserialize<CreateEvent, CreateEvent>(r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(deleteDefaultImageRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(deleteDefaultImageRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -651,7 +667,7 @@ _bodyData=jsonEncode(deleteDefaultImageRequest);
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> deleteEvent({ 
+  Future<Response<void>> deleteEvent({
     required String eventID,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -660,7 +676,8 @@ _bodyData=jsonEncode(deleteDefaultImageRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/delete'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/delete'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -695,7 +712,7 @@ _bodyData=jsonEncode(deleteDefaultImageRequest);
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [checkSpotByQRRequest] 
+  /// * [checkSpotByQRRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -705,7 +722,7 @@ _bodyData=jsonEncode(deleteDefaultImageRequest);
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> deleteSpot({ 
+  Future<Response<void>> deleteSpot({
     required String eventID,
     required CheckSpotByQRRequest checkSpotByQRRequest,
     CancelToken? cancelToken,
@@ -715,7 +732,8 @@ _bodyData=jsonEncode(deleteDefaultImageRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/delete'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/spot/delete'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -738,10 +756,10 @@ _bodyData=jsonEncode(deleteDefaultImageRequest);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(checkSpotByQRRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(checkSpotByQRRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -768,7 +786,7 @@ _bodyData=jsonEncode(checkSpotByQRRequest);
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [deleteDefaultImageRequest] 
+  /// * [deleteDefaultImageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -778,7 +796,7 @@ _bodyData=jsonEncode(checkSpotByQRRequest);
   ///
   /// Returns a [Future] containing a [Response] with a [GetDefaultImageURL200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetDefaultImageURL200Response>> getDefaultImageURL({ 
+  Future<Response<GetDefaultImageURL200Response>> getDefaultImageURL({
     required String eventID,
     required DeleteDefaultImageRequest deleteDefaultImageRequest,
     CancelToken? cancelToken,
@@ -788,7 +806,8 @@ _bodyData=jsonEncode(checkSpotByQRRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/proxy'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/image/proxy'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -811,10 +830,10 @@ _bodyData=jsonEncode(checkSpotByQRRequest);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(deleteDefaultImageRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(deleteDefaultImageRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -836,8 +855,13 @@ _bodyData=jsonEncode(deleteDefaultImageRequest);
     GetDefaultImageURL200Response? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<GetDefaultImageURL200Response, GetDefaultImageURL200Response>(rawData, 'GetDefaultImageURL200Response', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<GetDefaultImageURL200Response,
+                  GetDefaultImageURL200Response>(
+              rawData, 'GetDefaultImageURL200Response',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -873,7 +897,7 @@ _responseData = rawData == null ? null : deserialize<GetDefaultImageURL200Respon
   ///
   /// Returns a [Future] containing a [Response] with a [List<Event>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<Event>>> getEvents({ 
+  Future<Response<List<Event>>> getEvents({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -911,8 +935,11 @@ _responseData = rawData == null ? null : deserialize<GetDefaultImageURL200Respon
     List<Event>? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<Event>, Event>(rawData, 'List<Event>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Event>, Event>(rawData, 'List<Event>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -949,7 +976,7 @@ _responseData = rawData == null ? null : deserialize<List<Event>, Event>(rawData
   ///
   /// Returns a [Future] containing a [Response] with a [List<Spot>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<Spot>>> getSpots({ 
+  Future<Response<List<Spot>>> getSpots({
     required String eventID,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -958,7 +985,8 @@ _responseData = rawData == null ? null : deserialize<List<Event>, Event>(rawData
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/list'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/spot/list'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -988,8 +1016,11 @@ _responseData = rawData == null ? null : deserialize<List<Event>, Event>(rawData
     List<Spot>? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<Spot>, Spot>(rawData, 'List<Spot>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Spot>, Spot>(rawData, 'List<Spot>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1026,7 +1057,7 @@ _responseData = rawData == null ? null : deserialize<List<Spot>, Spot>(rawData, 
   ///
   /// Returns a [Future] containing a [Response] with a [List<TrafficStatus>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<TrafficStatus>>> getTrafficStatus({ 
+  Future<Response<List<TrafficStatus>>> getTrafficStatus({
     required String eventID,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1035,7 +1066,8 @@ _responseData = rawData == null ? null : deserialize<List<Spot>, Spot>(rawData, 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/traffic/get-status'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/traffic/get-status'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1065,8 +1097,12 @@ _responseData = rawData == null ? null : deserialize<List<Spot>, Spot>(rawData, 
     List<TrafficStatus>? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<TrafficStatus>, TrafficStatus>(rawData, 'List<TrafficStatus>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<TrafficStatus>, TrafficStatus>(
+              rawData, 'List<TrafficStatus>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1104,7 +1140,7 @@ _responseData = rawData == null ? null : deserialize<List<TrafficStatus>, Traffi
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> registerDefaultImage({ 
+  Future<Response<void>> registerDefaultImage({
     required String eventID,
     required MultipartFile image,
     CancelToken? cancelToken,
@@ -1114,7 +1150,8 @@ _responseData = rawData == null ? null : deserialize<List<TrafficStatus>, Traffi
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/register-default'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/image/register-default'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1137,10 +1174,12 @@ _responseData = rawData == null ? null : deserialize<List<TrafficStatus>, Traffi
     dynamic _bodyData;
 
     try {
-
-    } catch(error, stackTrace) {
+      _bodyData = FormData.fromMap(<String, MultipartFile>{
+        "image": image,
+      });
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1167,7 +1206,7 @@ _responseData = rawData == null ? null : deserialize<List<TrafficStatus>, Traffi
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [registerSpotRequest] 
+  /// * [registerSpotRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1177,7 +1216,7 @@ _responseData = rawData == null ? null : deserialize<List<TrafficStatus>, Traffi
   ///
   /// Returns a [Future] containing a [Response] with a [Spot] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Spot>> registerSpot({ 
+  Future<Response<Spot>> registerSpot({
     required String eventID,
     required RegisterSpotRequest registerSpotRequest,
     CancelToken? cancelToken,
@@ -1187,7 +1226,8 @@ _responseData = rawData == null ? null : deserialize<List<TrafficStatus>, Traffi
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/register'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/spot/register'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1210,10 +1250,10 @@ _responseData = rawData == null ? null : deserialize<List<TrafficStatus>, Traffi
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(registerSpotRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(registerSpotRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1235,8 +1275,10 @@ _bodyData=jsonEncode(registerSpotRequest);
     Spot? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Spot, Spot>(rawData, 'Spot', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1263,7 +1305,7 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
   /// イベントの管理者を追加するためのメールを送信する
   ///
   /// Parameters:
-  /// * [sendEmailRequest] 
+  /// * [sendEmailRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1273,7 +1315,7 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> sendEmail({ 
+  Future<Response<void>> sendEmail({
     required SendEmailRequest sendEmailRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1305,10 +1347,10 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(sendEmailRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(sendEmailRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1335,7 +1377,7 @@ _bodyData=jsonEncode(sendEmailRequest);
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [createEventRequest] 
+  /// * [createEventRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1345,7 +1387,7 @@ _bodyData=jsonEncode(sendEmailRequest);
   ///
   /// Returns a [Future] containing a [Response] with a [UpdateEvent] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UpdateEvent>> updateEvent({ 
+  Future<Response<UpdateEvent>> updateEvent({
     required String eventID,
     required CreateEventRequest createEventRequest,
     CancelToken? cancelToken,
@@ -1355,7 +1397,8 @@ _bodyData=jsonEncode(sendEmailRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/update'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/update'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -1378,10 +1421,10 @@ _bodyData=jsonEncode(sendEmailRequest);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createEventRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(createEventRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1403,8 +1446,11 @@ _bodyData=jsonEncode(createEventRequest);
     UpdateEvent? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<UpdateEvent, UpdateEvent>(rawData, 'UpdateEvent', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<UpdateEvent, UpdateEvent>(rawData, 'UpdateEvent',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1432,7 +1478,7 @@ _responseData = rawData == null ? null : deserialize<UpdateEvent, UpdateEvent>(r
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [updateNotificationRequest] 
+  /// * [updateNotificationRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1442,7 +1488,7 @@ _responseData = rawData == null ? null : deserialize<UpdateEvent, UpdateEvent>(r
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> updateNotification({ 
+  Future<Response<void>> updateNotification({
     required String eventID,
     required UpdateNotificationRequest updateNotificationRequest,
     CancelToken? cancelToken,
@@ -1452,7 +1498,8 @@ _responseData = rawData == null ? null : deserialize<UpdateEvent, UpdateEvent>(r
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/update-notification'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/image/update-notification'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1469,10 +1516,10 @@ _responseData = rawData == null ? null : deserialize<UpdateEvent, UpdateEvent>(r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(updateNotificationRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(updateNotificationRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1499,7 +1546,7 @@ _bodyData=jsonEncode(updateNotificationRequest);
   ///
   /// Parameters:
   /// * [eventID] - イベントのパブリックID
-  /// * [updateSpotRequest] 
+  /// * [updateSpotRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1509,7 +1556,7 @@ _bodyData=jsonEncode(updateNotificationRequest);
   ///
   /// Returns a [Future] containing a [Response] with a [Spot] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Spot>> updateSpot({ 
+  Future<Response<Spot>> updateSpot({
     required String eventID,
     required UpdateSpotRequest updateSpotRequest,
     CancelToken? cancelToken,
@@ -1519,7 +1566,8 @@ _bodyData=jsonEncode(updateNotificationRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/update'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/spot/update'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -1542,10 +1590,10 @@ _bodyData=jsonEncode(updateNotificationRequest);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(updateSpotRequest);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(updateSpotRequest);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1567,8 +1615,10 @@ _bodyData=jsonEncode(updateSpotRequest);
     Spot? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Spot, Spot>(rawData, 'Spot', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1606,7 +1656,7 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> uploadVisitorImage({ 
+  Future<Response<void>> uploadVisitorImage({
     required String eventID,
     required MultipartFile image,
     CancelToken? cancelToken,
@@ -1616,7 +1666,8 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/upload-visitor'.replaceAll('{' r'eventID' '}', eventID.toString());
+    final _path = r'/admin/event/{eventID}/image/upload-visitor'
+        .replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1639,10 +1690,10 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
     dynamic _bodyData;
 
     try {
-
-    } catch(error, stackTrace) {
+      _bodyData = FormData.fromMap(<String, MultipartFile>{'image': image});
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -1663,5 +1714,4 @@ _responseData = rawData == null ? null : deserialize<Spot, Spot>(rawData, 'Spot'
 
     return _response;
   }
-
 }

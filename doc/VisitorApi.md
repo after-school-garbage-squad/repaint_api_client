@@ -422,7 +422,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **setCurrentImage**
-> setCurrentImage(visitorID, eventId, imageId)
+> setCurrentImage(visitorID, setCurrentImageRequest)
 
 set current image
 
@@ -434,11 +434,10 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
 final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final String eventId = eventId_example; // String | イベントのパブリックID(ulid)
-final String imageId = imageId_example; // String | 参加者が撮影した画像のID(ulid)
+final SetCurrentImageRequest setCurrentImageRequest = ; // SetCurrentImageRequest | 
 
 try {
-    api.setCurrentImage(visitorID, eventId, imageId);
+    api.setCurrentImage(visitorID, setCurrentImageRequest);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->setCurrentImage: $e\n');
 }
@@ -449,8 +448,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **visitorID** | **String**| 参加者のパブリックID | 
- **eventId** | **String**| イベントのパブリックID(ulid) | 
- **imageId** | **String**| 参加者が撮影した画像のID(ulid) | 
+ **setCurrentImageRequest** | [**SetCurrentImageRequest**](SetCurrentImageRequest.md)|  | 
 
 ### Return type
 
@@ -462,7 +460,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
