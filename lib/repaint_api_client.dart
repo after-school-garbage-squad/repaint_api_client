@@ -32,6 +32,7 @@ export 'package:repaint_api_client/src/model/get_visitor_images_request.dart';
 export 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 export 'package:repaint_api_client/src/model/join_event200_response.dart';
 export 'package:repaint_api_client/src/model/join_event_request.dart';
+export 'package:repaint_api_client/src/model/pick_palette_request.dart';
 export 'package:repaint_api_client/src/model/register_request.dart';
 export 'package:repaint_api_client/src/model/register_spot_request.dart';
 export 'package:repaint_api_client/src/model/register_visitor.dart';

@@ -18,6 +18,7 @@ import 'package:repaint_api_client/src/model/get_visitor_images_request.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
+import 'package:repaint_api_client/src/model/pick_palette_request.dart';
 import 'package:repaint_api_client/src/model/register_request.dart';
 import 'package:repaint_api_client/src/model/register_spot_request.dart';
 import 'package:repaint_api_client/src/model/register_visitor.dart';
@@ -89,6 +90,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return JoinEvent200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'JoinEventRequest':
           return JoinEventRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PickPaletteRequest':
+          return PickPaletteRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RegisterRequest':
           return RegisterRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RegisterSpotRequest':

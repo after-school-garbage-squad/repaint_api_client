@@ -18,6 +18,7 @@ import 'package:repaint_api_client/src/model/get_visitor_images_request.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
+import 'package:repaint_api_client/src/model/pick_palette_request.dart';
 import 'package:repaint_api_client/src/model/set_current_image_request.dart';
 
 class VisitorApi {
@@ -709,7 +710,7 @@ _responseData = rawData == null ? null : deserialize<JoinEvent200Response, JoinE
   ///
   /// Parameters:
   /// * [visitorID] - 参加者のパブリックID
-  /// * [dropPaletteRequest] 
+  /// * [pickPaletteRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -721,7 +722,7 @@ _responseData = rawData == null ? null : deserialize<JoinEvent200Response, JoinE
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> pickPalette({ 
     required String visitorID,
-    required DropPaletteRequest dropPaletteRequest,
+    required PickPaletteRequest pickPaletteRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -746,7 +747,7 @@ _responseData = rawData == null ? null : deserialize<JoinEvent200Response, JoinE
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(dropPaletteRequest);
+_bodyData=jsonEncode(pickPaletteRequest);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

@@ -5,7 +5,7 @@
 import 'package:repaint_api_client/api.dart';
 ```
 
-All URIs are relative to *https://api.asgs.dev*
+All URIs are relative to *http://localhost:3003*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -378,7 +378,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pickPalette**
-> pickPalette(visitorID, dropPaletteRequest)
+> pickPalette(visitorID, pickPaletteRequest)
 
 pick palette
 
@@ -390,10 +390,10 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
 final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final DropPaletteRequest dropPaletteRequest = ; // DropPaletteRequest | 
+final PickPaletteRequest pickPaletteRequest = ; // PickPaletteRequest | 
 
 try {
-    api.pickPalette(visitorID, dropPaletteRequest);
+    api.pickPalette(visitorID, pickPaletteRequest);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->pickPalette: $e\n');
 }
@@ -404,7 +404,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **visitorID** | **String**| 参加者のパブリックID | 
- **dropPaletteRequest** | [**DropPaletteRequest**](DropPaletteRequest.md)|  | 
+ **pickPaletteRequest** | [**PickPaletteRequest**](PickPaletteRequest.md)|  | 
 
 ### Return type
 

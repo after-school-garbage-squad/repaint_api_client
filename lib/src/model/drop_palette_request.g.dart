@@ -13,18 +13,27 @@ DropPaletteRequest _$DropPaletteRequestFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['eventId', 'spotId'],
+          requiredKeys: const ['eventId'],
         );
         final val = DropPaletteRequest(
           eventId: $checkedConvert('eventId', (v) => v as String),
-          spotId: $checkedConvert('spotId', (v) => v as String),
+          hwId: $checkedConvert('hwId', (v) => v as String?),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$DropPaletteRequestToJson(DropPaletteRequest instance) =>
-    <String, dynamic>{
-      'eventId': instance.eventId,
-      'spotId': instance.spotId,
-    };
+Map<String, dynamic> _$DropPaletteRequestToJson(DropPaletteRequest instance) {
+  final val = <String, dynamic>{
+    'eventId': instance.eventId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('hwId', instance.hwId);
+  return val;
+}

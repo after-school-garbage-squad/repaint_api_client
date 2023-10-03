@@ -60,7 +60,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.asgs.dev*
+All URIs are relative to *http://localhost:3003*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
  - [InitializeVisitor200Response](doc/InitializeVisitor200Response.md)
  - [JoinEvent200Response](doc/JoinEvent200Response.md)
  - [JoinEventRequest](doc/JoinEventRequest.md)
+ - [PickPaletteRequest](doc/PickPaletteRequest.md)
  - [RegisterRequest](doc/RegisterRequest.md)
  - [RegisterSpotRequest](doc/RegisterSpotRequest.md)
  - [RegisterVisitor](doc/RegisterVisitor.md)

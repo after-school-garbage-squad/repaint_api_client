@@ -24,6 +24,7 @@ doc/GetVisitorImagesRequest.md
 doc/InitializeVisitor200Response.md
 doc/JoinEvent200Response.md
 doc/JoinEventRequest.md
+doc/PickPaletteRequest.md
 doc/RegisterRequest.md
 doc/RegisterSpotRequest.md
 doc/RegisterVisitor.md
@@ -68,6 +69,7 @@ lib/src/model/get_visitor_images_request.dart
 lib/src/model/initialize_visitor200_response.dart
 lib/src/model/join_event200_response.dart
 lib/src/model/join_event_request.dart
+lib/src/model/pick_palette_request.dart
 lib/src/model/register_request.dart
 lib/src/model/register_spot_request.dart
 lib/src/model/register_visitor.dart
