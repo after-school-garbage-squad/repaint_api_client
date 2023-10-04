@@ -18,6 +18,8 @@ doc/DropPaletteRequest.md
 doc/Event.md
 doc/GetCurrentImage200Response.md
 doc/GetDefaultImageURL200Response.md
+doc/GetTrafficStatus200Response.md
+doc/GetVisitorImages200Response.md
 doc/InitializeVisitor200Response.md
 doc/JoinEvent200Response.md
 doc/JoinEventRequest.md
@@ -60,6 +62,8 @@ lib/src/model/drop_palette_request.dart
 lib/src/model/event.dart
 lib/src/model/get_current_image200_response.dart
 lib/src/model/get_default_image_url200_response.dart
+lib/src/model/get_traffic_status200_response.dart
+lib/src/model/get_visitor_images200_response.dart
 lib/src/model/initialize_visitor200_response.dart
 lib/src/model/join_event200_response.dart
 lib/src/model/join_event_request.dart
@@ -77,3 +81,5 @@ lib/src/model/update_spot_request.dart
 lib/src/model/visitor.dart
 lib/src/model/visitor_identification.dart
 pubspec.yaml
+test/get_traffic_status200_response_test.dart
+test/get_visitor_images200_response_test.dart

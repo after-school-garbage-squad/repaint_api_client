@@ -12,6 +12,8 @@ import 'package:repaint_api_client/src/model/drop_palette_request.dart';
 import 'package:repaint_api_client/src/model/event.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
+import 'package:repaint_api_client/src/model/get_traffic_status200_response.dart';
+import 'package:repaint_api_client/src/model/get_visitor_images200_response.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
@@ -75,6 +77,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return GetCurrentImage200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'GetDefaultImageURL200Response':
           return GetDefaultImageURL200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'GetTrafficStatus200Response':
+          return GetTrafficStatus200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'GetVisitorImages200Response':
+          return GetVisitorImages200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'InitializeVisitor200Response':
           return InitializeVisitor200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'JoinEvent200Response':

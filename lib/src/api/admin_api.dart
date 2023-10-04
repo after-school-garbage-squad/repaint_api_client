@@ -18,10 +18,10 @@ import 'package:repaint_api_client/src/model/delete_default_image_request.dart';
 import 'package:repaint_api_client/src/model/delete_spot_request.dart';
 import 'package:repaint_api_client/src/model/event.dart';
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
+import 'package:repaint_api_client/src/model/get_traffic_status200_response.dart';
 import 'package:repaint_api_client/src/model/register_spot_request.dart';
 import 'package:repaint_api_client/src/model/send_email_request.dart';
 import 'package:repaint_api_client/src/model/spot.dart';
-import 'package:repaint_api_client/src/model/traffic_status.dart';
 import 'package:repaint_api_client/src/model/update_event.dart';
 import 'package:repaint_api_client/src/model/update_notification_request.dart';
 import 'package:repaint_api_client/src/model/update_spot_request.dart';
@@ -1001,9 +1001,9 @@ class AdminApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<TrafficStatus>] as data
+  /// Returns a [Future] containing a [Response] with a [GetTrafficStatus200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<TrafficStatus>>> getTrafficStatus({
+  Future<Response<GetTrafficStatus200Response>> getTrafficStatus({
     required String eventId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1040,14 +1040,15 @@ class AdminApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<TrafficStatus>? _responseData;
+    GetTrafficStatus200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<TrafficStatus>, TrafficStatus>(
-              rawData, 'List<TrafficStatus>',
+          : deserialize<GetTrafficStatus200Response,
+                  GetTrafficStatus200Response>(
+              rawData, 'GetTrafficStatus200Response',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -1059,7 +1060,7 @@ class AdminApi {
       );
     }
 
-    return Response<List<TrafficStatus>>(
+    return Response<GetTrafficStatus200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

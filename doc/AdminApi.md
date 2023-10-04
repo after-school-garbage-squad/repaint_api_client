@@ -74,7 +74,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkSpotByBeacon**
-> Spot checkSpotByBeacon(eventId, hwId)
+> Spot checkSpotByBeacon(eventID, hwId)
 
 check spot status by beacon hwId
 
@@ -85,11 +85,11 @@ hwIdを指定してスポットを取得する
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final String hwId = hwId_example; // String | ビーコンのハードウェアID
 
 try {
-    final response = api.checkSpotByBeacon(eventId, hwId);
+    final response = api.checkSpotByBeacon(eventID, hwId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->checkSpotByBeacon: $e\n');
@@ -100,7 +100,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **hwId** | **String**| ビーコンのハードウェアID | 
 
 ### Return type
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkSpotByQR**
-> Spot checkSpotByQR(eventId, spotId)
+> Spot checkSpotByQR(eventID, spotId)
 
 check spot status by QR code(spotId)
 
@@ -130,11 +130,11 @@ QRコード(spotId)を指定してスポットを取得する
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final String spotId = spotId_example; // String | スポットのパブリックID
 
 try {
-    final response = api.checkSpotByQR(eventId, spotId);
+    final response = api.checkSpotByQR(eventID, spotId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->checkSpotByQR: $e\n');
@@ -145,7 +145,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **spotId** | **String**| スポットのパブリックID | 
 
 ### Return type
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkVisitorImage**
-> CheckVisitorImage200Response checkVisitorImage(eventId, visitorId)
+> CheckVisitorImage200Response checkVisitorImage(eventID, visitorId)
 
 check visitor image is exist
 
@@ -175,11 +175,11 @@ check visitor image is exist
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final String visitorId = visitorId_example; // String | 参加者のパブリックID
 
 try {
-    final response = api.checkVisitorImage(eventId, visitorId);
+    final response = api.checkVisitorImage(eventID, visitorId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->checkVisitorImage: $e\n');
@@ -190,7 +190,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **visitorId** | **String**| 参加者のパブリックID | 
 
 ### Return type
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **controlTraffic**
-> controlTraffic(eventId, controlTrafficRequest)
+> controlTraffic(eventID, controlTrafficRequest)
 
 control traffic
 
@@ -220,11 +220,11 @@ control traffic
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final ControlTrafficRequest controlTrafficRequest = ; // ControlTrafficRequest | 
 
 try {
-    api.controlTraffic(eventId, controlTrafficRequest);
+    api.controlTraffic(eventID, controlTrafficRequest);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->controlTraffic: $e\n');
 }
@@ -234,7 +234,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **controlTrafficRequest** | [**ControlTrafficRequest**](ControlTrafficRequest.md)|  | 
 
 ### Return type
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteDefaultImage**
-> deleteDefaultImage(eventId, deleteDefaultImageRequest)
+> deleteDefaultImage(eventID, deleteDefaultImageRequest)
 
 delete default image
 
@@ -307,11 +307,11 @@ delete default image
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final DeleteDefaultImageRequest deleteDefaultImageRequest = ; // DeleteDefaultImageRequest | 
 
 try {
-    api.deleteDefaultImage(eventId, deleteDefaultImageRequest);
+    api.deleteDefaultImage(eventID, deleteDefaultImageRequest);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->deleteDefaultImage: $e\n');
 }
@@ -321,7 +321,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **deleteDefaultImageRequest** | [**DeleteDefaultImageRequest**](DeleteDefaultImageRequest.md)|  | 
 
 ### Return type
@@ -340,7 +340,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteEvent**
-> deleteEvent(eventId)
+> deleteEvent(eventID)
 
 delete event
 
@@ -351,10 +351,10 @@ delete event
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 
 try {
-    api.deleteEvent(eventId);
+    api.deleteEvent(eventID);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->deleteEvent: $e\n');
 }
@@ -364,7 +364,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
 
 ### Return type
 
@@ -382,7 +382,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteSpot**
-> deleteSpot(eventId, deleteSpotRequest)
+> deleteSpot(eventID, deleteSpotRequest)
 
 delete spot
 
@@ -393,11 +393,11 @@ delete spot
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final DeleteSpotRequest deleteSpotRequest = ; // DeleteSpotRequest | 
 
 try {
-    api.deleteSpot(eventId, deleteSpotRequest);
+    api.deleteSpot(eventID, deleteSpotRequest);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->deleteSpot: $e\n');
 }
@@ -407,7 +407,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **deleteSpotRequest** | [**DeleteSpotRequest**](DeleteSpotRequest.md)|  | 
 
 ### Return type
@@ -426,7 +426,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDefaultImageURL**
-> GetDefaultImageURL200Response getDefaultImageURL(eventId, eventImageId)
+> GetDefaultImageURL200Response getDefaultImageURL(eventID, eventImageId)
 
 get image url by image id
 
@@ -437,11 +437,11 @@ get image url by image id
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final String eventImageId = eventImageId_example; // String | イベントのデフォルト画像のID
 
 try {
-    final response = api.getDefaultImageURL(eventId, eventImageId);
+    final response = api.getDefaultImageURL(eventID, eventImageId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->getDefaultImageURL: $e\n');
@@ -452,7 +452,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **eventImageId** | **String**| イベントのデフォルト画像のID | 
 
 ### Return type
@@ -510,7 +510,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSpots**
-> List<Spot> getSpots(eventId)
+> List<Spot> getSpots(eventID)
 
 get spot list
 
@@ -521,10 +521,10 @@ get spot list
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 
 try {
-    final response = api.getSpots(eventId);
+    final response = api.getSpots(eventID);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->getSpots: $e\n');
@@ -535,7 +535,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
 
 ### Return type
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTrafficStatus**
-> List<TrafficStatus> getTrafficStatus(eventId)
+> GetTrafficStatus200Response getTrafficStatus(eventID)
 
 get traffic status
 
@@ -564,10 +564,10 @@ get traffic status
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 
 try {
-    final response = api.getTrafficStatus(eventId);
+    final response = api.getTrafficStatus(eventID);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->getTrafficStatus: $e\n');
@@ -578,11 +578,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
 
 ### Return type
 
-[**List&lt;TrafficStatus&gt;**](TrafficStatus.md)
+[**GetTrafficStatus200Response**](GetTrafficStatus200Response.md)
 
 ### Authorization
 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **registerDefaultImage**
-> registerDefaultImage(eventId, image)
+> registerDefaultImage(eventID, image)
 
 register default image
 
@@ -607,11 +607,11 @@ register default image
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | 画像ファイル
 
 try {
-    api.registerDefaultImage(eventId, image);
+    api.registerDefaultImage(eventID, image);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->registerDefaultImage: $e\n');
 }
@@ -621,7 +621,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **image** | **MultipartFile**| 画像ファイル | 
 
 ### Return type
@@ -640,7 +640,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **registerSpot**
-> Spot registerSpot(eventId, registerSpotRequest)
+> Spot registerSpot(eventID, registerSpotRequest)
 
 register spot
 
@@ -651,11 +651,11 @@ register spot
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final RegisterSpotRequest registerSpotRequest = ; // RegisterSpotRequest | 
 
 try {
-    final response = api.registerSpot(eventId, registerSpotRequest);
+    final response = api.registerSpot(eventID, registerSpotRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->registerSpot: $e\n');
@@ -666,7 +666,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **registerSpotRequest** | [**RegisterSpotRequest**](RegisterSpotRequest.md)|  | 
 
 ### Return type
@@ -727,7 +727,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateEvent**
-> UpdateEvent updateEvent(eventId, createEventRequest)
+> UpdateEvent updateEvent(eventID, createEventRequest)
 
 update event
 
@@ -738,11 +738,11 @@ update event
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final CreateEventRequest createEventRequest = ; // CreateEventRequest | 
 
 try {
-    final response = api.updateEvent(eventId, createEventRequest);
+    final response = api.updateEvent(eventID, createEventRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->updateEvent: $e\n');
@@ -753,7 +753,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **createEventRequest** | [**CreateEventRequest**](CreateEventRequest.md)|  | 
 
 ### Return type
@@ -772,7 +772,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateNotification**
-> updateNotification(eventId, updateNotificationRequest)
+> updateNotification(eventID, updateNotificationRequest)
 
 image update notification
 
@@ -783,11 +783,11 @@ image update notification
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final UpdateNotificationRequest updateNotificationRequest = ; // UpdateNotificationRequest | 
 
 try {
-    api.updateNotification(eventId, updateNotificationRequest);
+    api.updateNotification(eventID, updateNotificationRequest);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->updateNotification: $e\n');
 }
@@ -797,7 +797,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **updateNotificationRequest** | [**UpdateNotificationRequest**](UpdateNotificationRequest.md)|  | 
 
 ### Return type
@@ -816,7 +816,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateSpot**
-> Spot updateSpot(eventId, updateSpotRequest)
+> Spot updateSpot(eventID, updateSpotRequest)
 
 update spot
 
@@ -827,11 +827,11 @@ update spot
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final UpdateSpotRequest updateSpotRequest = ; // UpdateSpotRequest | 
 
 try {
-    final response = api.updateSpot(eventId, updateSpotRequest);
+    final response = api.updateSpot(eventID, updateSpotRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->updateSpot: $e\n');
@@ -842,7 +842,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **updateSpotRequest** | [**UpdateSpotRequest**](UpdateSpotRequest.md)|  | 
 
 ### Return type
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **uploadVisitorImage**
-> uploadVisitorImage(eventId, image)
+> uploadVisitorImage(eventID, image)
 
 upload visitor image
 
@@ -872,11 +872,11 @@ upload visitor image
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String eventID = eventID_example; // String | イベントのパブリックID
 final MultipartFile image = BINARY_DATA_HERE; // MultipartFile | 画像ファイル
 
 try {
-    api.uploadVisitorImage(eventId, image);
+    api.uploadVisitorImage(eventID, image);
 } catch on DioException (e) {
     print('Exception when calling AdminApi->uploadVisitorImage: $e\n');
 }
@@ -886,7 +886,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックID | 
+ **eventID** | **String**| イベントのパブリックID | 
  **image** | **MultipartFile**| 画像ファイル | 
 
 ### Return type

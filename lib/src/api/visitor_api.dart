@@ -14,6 +14,7 @@ import 'package:repaint_api_client/src/model/delete_visitor_request.dart';
 import 'package:repaint_api_client/src/model/drop_palette_request.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
+import 'package:repaint_api_client/src/model/get_visitor_images200_response.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
@@ -427,9 +428,9 @@ class VisitorApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<String>] as data
+  /// Returns a [Future] containing a [Response] with a [GetVisitorImages200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<String>>> getVisitorImages({
+  Future<Response<GetVisitorImages200Response>> getVisitorImages({
     required String visitorId,
     required String eventId,
     CancelToken? cancelToken,
@@ -466,13 +467,15 @@ class VisitorApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<String>? _responseData;
+    GetVisitorImages200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<String>, String>(rawData, 'List<String>',
+          : deserialize<GetVisitorImages200Response,
+                  GetVisitorImages200Response>(
+              rawData, 'GetVisitorImages200Response',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -484,7 +487,7 @@ class VisitorApi {
       );
     }
 
-    return Response<List<String>>(
+    return Response<GetVisitorImages200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
