@@ -50,7 +50,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/check-update'
+    final _path = r'/visitor/{visitorId}/image/check-update'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'GET',
@@ -133,7 +133,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/delete'
+    final _path = r'/visitor/{visitorId}/delete'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'DELETE',
@@ -201,7 +201,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/palette/drop'
+    final _path = r'/visitor/{visitorId}/palette/drop'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'POST',
@@ -269,7 +269,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/get-current'
+    final _path = r'/visitor/{visitorId}/image/get-current'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'GET',
@@ -354,7 +354,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/proxy'
+    final _path = r'/visitor/{visitorId}/image/proxy'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'GET',
@@ -439,7 +439,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/list'
+    final _path = r'/visitor/{visitorId}/image/list'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'GET',
@@ -521,7 +521,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/initialize'
+    final _path = r'/visitor/{visitorId}/initialize'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'PATCH',
@@ -711,7 +711,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/palette/pick'
+    final _path = r'/visitor/{visitorId}/palette/pick'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'POST',
@@ -779,7 +779,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/set-current'
+    final _path = r'/visitor/{visitorId}/image/set-current'
         .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'POST',
