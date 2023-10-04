@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'update_spot_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,66 +16,36 @@ part 'update_spot_request.g.dart';
 class UpdateSpotRequest {
   /// Returns a new [UpdateSpotRequest] instance.
   UpdateSpotRequest({
-
-    required  this.spotId,
-
-    required  this.name,
-
-    required  this.isPick,
+    required this.spotId,
+    required this.name,
+    required this.isPick,
   });
 
-      /// スポットのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'spotId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スポットのパブリックId(ulid)
+  @JsonKey(name: r'spotId', required: true, includeIfNull: false)
   final String spotId;
 
-
-
-      /// スポット名
-  @JsonKey(
-    
-    name: r'name',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スポット名
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-
-
-      /// pickableなスポットかどうか
-  @JsonKey(
-    
-    name: r'isPick',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// pickableなスポットかどうか
+  @JsonKey(name: r'isPick', required: true, includeIfNull: false)
   final bool isPick;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UpdateSpotRequest &&
+          other.spotId == spotId &&
+          other.name == name &&
+          other.isPick == isPick;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UpdateSpotRequest &&
-     other.spotId == spotId &&
-     other.name == name &&
-     other.isPick == isPick;
+  int get hashCode => spotId.hashCode + name.hashCode + isPick.hashCode;
 
-  @override
-  int get hashCode =>
-    spotId.hashCode +
-    name.hashCode +
-    isPick.hashCode;
-
-  factory UpdateSpotRequest.fromJson(Map<String, dynamic> json) => _$UpdateSpotRequestFromJson(json);
+  factory UpdateSpotRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateSpotRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$UpdateSpotRequestToJson(this);
 
@@ -84,6 +53,4 @@ class UpdateSpotRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

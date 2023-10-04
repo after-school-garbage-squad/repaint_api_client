@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'send_email_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,49 +16,30 @@ part 'send_email_request.g.dart';
 class SendEmailRequest {
   /// Returns a new [SendEmailRequest] instance.
   SendEmailRequest({
-
-    required  this.eventId,
-
-    required  this.email,
+    required this.eventId,
+    required this.email,
   });
 
-      /// イベントのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'eventId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// イベントのパブリックId(ulid)
+  @JsonKey(name: r'eventId', required: true, includeIfNull: false)
   final String eventId;
 
-
-
-      /// 追加する管理者のメールアドレス
-  @JsonKey(
-    
-    name: r'email',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// 追加する管理者のメールアドレス
+  @JsonKey(name: r'email', required: true, includeIfNull: false)
   final String email;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SendEmailRequest &&
+          other.eventId == eventId &&
+          other.email == email;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is SendEmailRequest &&
-     other.eventId == eventId &&
-     other.email == email;
+  int get hashCode => eventId.hashCode + email.hashCode;
 
-  @override
-  int get hashCode =>
-    eventId.hashCode +
-    email.hashCode;
-
-  factory SendEmailRequest.fromJson(Map<String, dynamic> json) => _$SendEmailRequestFromJson(json);
+  factory SendEmailRequest.fromJson(Map<String, dynamic> json) =>
+      _$SendEmailRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$SendEmailRequestToJson(this);
 
@@ -67,6 +47,4 @@ class SendEmailRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

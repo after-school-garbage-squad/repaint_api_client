@@ -13,17 +13,16 @@ void main() {
       // TODO
     });
 
-    // ビーコンのハードウェアID
+    // ビーコンのハードウェアId
     // String hwId
     test('to test the property `hwId`', () async {
       // TODO
     });
 
-    // ビーコンのサービスUUID
+    // ビーコンのサービスUUId
     // String serviceUuid
     test('to test the property `serviceUuid`', () async {
       // TODO
     });
-
   });
 }

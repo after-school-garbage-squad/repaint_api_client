@@ -8,7 +8,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'create_event.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -18,82 +17,42 @@ part 'create_event.g.dart';
 class CreateEvent {
   /// Returns a new [CreateEvent] instance.
   CreateEvent({
-
-    required  this.eventId,
-
-    required  this.name,
-
-    required  this.hpUrl,
-
-    required  this.contact,
+    required this.eventId,
+    required this.name,
+    required this.hpUrl,
+    required this.contact,
   });
 
-      /// イベントのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'eventId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// イベントのパブリックId(ulid)
+  @JsonKey(name: r'eventId', required: true, includeIfNull: false)
   final String eventId;
 
-
-
-      /// イベント名
-  @JsonKey(
-    
-    name: r'name',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// イベント名
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-
-
-      /// イベントのホームページのURL
-  @JsonKey(
-    
-    name: r'hpUrl',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// イベントのホームページのURL
+  @JsonKey(name: r'hpUrl', required: true, includeIfNull: false)
   final String hpUrl;
 
-
-
-  @JsonKey(
-    
-    name: r'contact',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  @JsonKey(name: r'contact', required: true, includeIfNull: false)
   final Contact contact;
 
-
-
   @override
-  bool operator ==(Object other) => identical(this, other) || other is CreateEvent &&
-     other.eventId == eventId &&
-     other.name == name &&
-     other.hpUrl == hpUrl &&
-     other.contact == contact;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CreateEvent &&
+          other.eventId == eventId &&
+          other.name == name &&
+          other.hpUrl == hpUrl &&
+          other.contact == contact;
 
   @override
   int get hashCode =>
-    eventId.hashCode +
-    name.hashCode +
-    hpUrl.hashCode +
-    contact.hashCode;
+      eventId.hashCode + name.hashCode + hpUrl.hashCode + contact.hashCode;
 
-  factory CreateEvent.fromJson(Map<String, dynamic> json) => _$CreateEventFromJson(json);
+  factory CreateEvent.fromJson(Map<String, dynamic> json) =>
+      _$CreateEventFromJson(json);
 
   Map<String, dynamic> toJson() => _$CreateEventToJson(this);
 
@@ -101,6 +60,4 @@ class CreateEvent {
   String toString() {
     return toJson().toString();
   }
-
 }
-

@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'control_traffic_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,49 +16,28 @@ part 'control_traffic_request.g.dart';
 class ControlTrafficRequest {
   /// Returns a new [ControlTrafficRequest] instance.
   ControlTrafficRequest({
-
-     this.from,
-
-    required  this.to,
+    this.from,
+    required this.to,
   });
 
-      /// スポットのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'from',
-    required: false,
-    includeIfNull: false
-  )
-
-
+  /// スポットのパブリックId(ulid)
+  @JsonKey(name: r'from', required: false, includeIfNull: false)
   final String? from;
 
-
-
-      /// スポットのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'to',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スポットのパブリックId(ulid)
+  @JsonKey(name: r'to', required: true, includeIfNull: false)
   final String to;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ControlTrafficRequest && other.from == from && other.to == to;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ControlTrafficRequest &&
-     other.from == from &&
-     other.to == to;
+  int get hashCode => from.hashCode + to.hashCode;
 
-  @override
-  int get hashCode =>
-    from.hashCode +
-    to.hashCode;
-
-  factory ControlTrafficRequest.fromJson(Map<String, dynamic> json) => _$ControlTrafficRequestFromJson(json);
+  factory ControlTrafficRequest.fromJson(Map<String, dynamic> json) =>
+      _$ControlTrafficRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$ControlTrafficRequestToJson(this);
 
@@ -67,6 +45,4 @@ class ControlTrafficRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

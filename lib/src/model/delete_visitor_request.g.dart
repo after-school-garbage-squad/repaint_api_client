@@ -14,10 +14,10 @@ DeleteVisitorRequest _$DeleteVisitorRequestFromJson(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['eventID'],
+          requiredKeys: const ['eventId'],
         );
         final val = DeleteVisitorRequest(
-          eventID: $checkedConvert('eventID', (v) => v as String),
+          eventId: $checkedConvert('eventId', (v) => v as String),
         );
         return val;
       },
@@ -26,5 +26,5 @@ DeleteVisitorRequest _$DeleteVisitorRequestFromJson(
 Map<String, dynamic> _$DeleteVisitorRequestToJson(
         DeleteVisitorRequest instance) =>
     <String, dynamic>{
-      'eventID': instance.eventID,
+      'eventId': instance.eventId,
     };

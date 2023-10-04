@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'join_event_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,49 +16,30 @@ part 'join_event_request.g.dart';
 class JoinEventRequest {
   /// Returns a new [JoinEventRequest] instance.
   JoinEventRequest({
-
-    required  this.eventId,
-
-    required  this.registrationId,
+    required this.eventId,
+    required this.registrationId,
   });
 
-      /// イベントのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'eventId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// イベントのパブリックId(ulid)
+  @JsonKey(name: r'eventId', required: true, includeIfNull: false)
   final String eventId;
 
-
-
-      /// スマホのプッシュ通知用のID
-  @JsonKey(
-    
-    name: r'registrationId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スマホのプッシュ通知用のId
+  @JsonKey(name: r'registrationId', required: true, includeIfNull: false)
   final String registrationId;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is JoinEventRequest &&
+          other.eventId == eventId &&
+          other.registrationId == registrationId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is JoinEventRequest &&
-     other.eventId == eventId &&
-     other.registrationId == registrationId;
+  int get hashCode => eventId.hashCode + registrationId.hashCode;
 
-  @override
-  int get hashCode =>
-    eventId.hashCode +
-    registrationId.hashCode;
-
-  factory JoinEventRequest.fromJson(Map<String, dynamic> json) => _$JoinEventRequestFromJson(json);
+  factory JoinEventRequest.fromJson(Map<String, dynamic> json) =>
+      _$JoinEventRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$JoinEventRequestToJson(this);
 
@@ -67,6 +47,4 @@ class JoinEventRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

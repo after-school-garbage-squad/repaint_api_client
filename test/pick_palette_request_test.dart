@@ -7,17 +7,16 @@ void main() {
   // TODO add properties to the entity
 
   group(PickPaletteRequest, () {
-    // イベントのパブリックID(ulid)
+    // イベントのパブリックId(ulid)
     // String eventId
     test('to test the property `eventId`', () async {
       // TODO
     });
 
-    // スポットのパブリックID(ulid)
+    // スポットのパブリックId(ulid)
     // String spotId
     test('to test the property `spotId`', () async {
       // TODO
     });
-
   });
 }

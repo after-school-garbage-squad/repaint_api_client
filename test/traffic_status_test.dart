@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(TrafficStatus, () {
-    // スポットのパブリックID(ulid)
+    // スポットのパブリックId(ulid)
     // String spotId
     test('to test the property `spotId`', () async {
       // TODO
@@ -18,6 +18,5 @@ void main() {
     test('to test the property `headCount`', () async {
       // TODO
     });
-
   });
 }

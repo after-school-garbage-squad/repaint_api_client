@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // スマホのプッシュ通知用のID
+    // スマホのプッシュ通知用のId
     // String registrationId
     test('to test the property `registrationId`', () async {
       // TODO
@@ -23,17 +23,16 @@ void main() {
       // TODO
     });
 
-    // 参加者が撮影した画像のID(ulid)
+    // 参加者が撮影した画像のId(ulid)
     // String imageId
     test('to test the property `imageId`', () async {
       // TODO
     });
 
-    // 参加者が現在設定している画像のID(ulid)
+    // 参加者が現在設定している画像のId(ulid)
     // String currentImageId
     test('to test the property `currentImageId`', () async {
       // TODO
     });
-
   });
 }

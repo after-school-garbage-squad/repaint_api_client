@@ -7,17 +7,16 @@ void main() {
   // TODO add properties to the entity
 
   group(ControlTrafficRequest, () {
-    // スポットのパブリックID(ulid)
+    // スポットのパブリックId(ulid)
     // String from
     test('to test the property `from`', () async {
       // TODO
     });
 
-    // スポットのパブリックID(ulid)
+    // スポットのパブリックId(ulid)
     // String to
     test('to test the property `to`', () async {
       // TODO
     });
-
   });
 }

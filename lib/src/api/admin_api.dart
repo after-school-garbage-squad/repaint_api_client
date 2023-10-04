@@ -106,8 +106,8 @@ class AdminApi {
   /// hwIdを指定してスポットを取得する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
-  /// * [hwId] - ビーコンのハードウェアID
+  /// * [eventId] - イベントのパブリックId
+  /// * [hwId] - ビーコンのハードウェアId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -193,8 +193,8 @@ class AdminApi {
   /// QRコード(spotId)を指定してスポットを取得する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
-  /// * [spotId] - スポットのパブリックID
+  /// * [eventId] - イベントのパブリックId
+  /// * [spotId] - スポットのパブリックId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -280,8 +280,8 @@ class AdminApi {
   /// 参加者を撮影した画像を取得する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
-  /// * [visitorId] - 参加者のパブリックID
+  /// * [eventId] - イベントのパブリックId
+  /// * [visitorId] - 参加者のパブリックId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -370,7 +370,7 @@ class AdminApi {
   /// 人流を制御する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [controlTrafficRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -542,7 +542,7 @@ class AdminApi {
   /// デフォルトで登録されている画像を削除する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [deleteDefaultImageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -616,7 +616,7 @@ class AdminApi {
   /// イベントを削除する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -670,7 +670,7 @@ class AdminApi {
   /// スポットを削除する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [deleteSpotRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -744,8 +744,8 @@ class AdminApi {
   /// 管理者がimage idから写真のURLを取得する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
-  /// * [eventImageId] - イベントのデフォルト画像のID
+  /// * [eventId] - イベントのパブリックId
+  /// * [eventImageId] - イベントのデフォルト画像のId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -912,7 +912,7 @@ class AdminApi {
   /// スポットの一覧を取得する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -993,7 +993,7 @@ class AdminApi {
   /// イベントの人流を取得する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1076,7 +1076,7 @@ class AdminApi {
   /// デフォルトで登録される画像を設定する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [image] - 画像ファイル
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1150,7 +1150,7 @@ class AdminApi {
   /// スポットを登録する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [registerSpotRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1321,7 +1321,7 @@ class AdminApi {
   /// イベントを更新する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [createEventRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1422,7 +1422,7 @@ class AdminApi {
   /// 画像処理が完了したことを通知する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [updateNotificationRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1490,7 +1490,7 @@ class AdminApi {
   /// スポットを更新する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [updateSpotRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1590,7 +1590,7 @@ class AdminApi {
   /// 参加者を撮影した画像を登録する
   ///
   /// Parameters:
-  /// * [eventId] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックId
   /// * [image] - 画像ファイル
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request

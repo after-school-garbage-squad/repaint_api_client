@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'delete_spot_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,32 +16,23 @@ part 'delete_spot_request.g.dart';
 class DeleteSpotRequest {
   /// Returns a new [DeleteSpotRequest] instance.
   DeleteSpotRequest({
-
-    required  this.spotId,
+    required this.spotId,
   });
 
-      /// スポットのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'spotId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スポットのパブリックId(ulid)
+  @JsonKey(name: r'spotId', required: true, includeIfNull: false)
   final String spotId;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DeleteSpotRequest && other.spotId == spotId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is DeleteSpotRequest &&
-     other.spotId == spotId;
+  int get hashCode => spotId.hashCode;
 
-  @override
-  int get hashCode =>
-    spotId.hashCode;
-
-  factory DeleteSpotRequest.fromJson(Map<String, dynamic> json) => _$DeleteSpotRequestFromJson(json);
+  factory DeleteSpotRequest.fromJson(Map<String, dynamic> json) =>
+      _$DeleteSpotRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$DeleteSpotRequestToJson(this);
 
@@ -50,6 +40,4 @@ class DeleteSpotRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

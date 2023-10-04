@@ -7,17 +7,16 @@ void main() {
   // TODO add properties to the entity
 
   group(JoinEventRequest, () {
-    // イベントのパブリックID(ulid)
+    // イベントのパブリックId(ulid)
     // String eventId
     test('to test the property `eventId`', () async {
       // TODO
     });
 
-    // スマホのプッシュ通知用のID
+    // スマホのプッシュ通知用のId
     // String registrationId
     test('to test the property `registrationId`', () async {
       // TODO
     });
-
   });
 }

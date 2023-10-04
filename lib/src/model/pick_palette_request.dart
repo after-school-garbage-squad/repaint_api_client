@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'pick_palette_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,49 +16,30 @@ part 'pick_palette_request.g.dart';
 class PickPaletteRequest {
   /// Returns a new [PickPaletteRequest] instance.
   PickPaletteRequest({
-
-    required  this.eventId,
-
-    required  this.spotId,
+    required this.eventId,
+    required this.spotId,
   });
 
-      /// イベントのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'eventId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// イベントのパブリックId(ulid)
+  @JsonKey(name: r'eventId', required: true, includeIfNull: false)
   final String eventId;
 
-
-
-      /// スポットのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'spotId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スポットのパブリックId(ulid)
+  @JsonKey(name: r'spotId', required: true, includeIfNull: false)
   final String spotId;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PickPaletteRequest &&
+          other.eventId == eventId &&
+          other.spotId == spotId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is PickPaletteRequest &&
-     other.eventId == eventId &&
-     other.spotId == spotId;
+  int get hashCode => eventId.hashCode + spotId.hashCode;
 
-  @override
-  int get hashCode =>
-    eventId.hashCode +
-    spotId.hashCode;
-
-  factory PickPaletteRequest.fromJson(Map<String, dynamic> json) => _$PickPaletteRequestFromJson(json);
+  factory PickPaletteRequest.fromJson(Map<String, dynamic> json) =>
+      _$PickPaletteRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$PickPaletteRequestToJson(this);
 
@@ -67,6 +47,4 @@ class PickPaletteRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

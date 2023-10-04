@@ -1,7 +1,6 @@
 import 'package:test/test.dart';
 import 'package:repaint_api_client/repaint_api_client.dart';
 
-
 /// tests for VisitorApi
 void main() {
   final instance = RepaintApiClient().getVisitorApi();
@@ -11,7 +10,7 @@ void main() {
     //
     // 画像に更新があるか確認する
     //
-    //Future<CheckUpdate200Response> checkUpdate(String visitorID, String eventID) async
+    //Future<CheckUpdate200Response> checkUpdate(String visitorId, String eventId) async
     test('test checkUpdate', () async {
       // TODO
     });
@@ -20,7 +19,7 @@ void main() {
     //
     // 参加者を削除する
     //
-    //Future deleteVisitor(String visitorID, DeleteVisitorRequest deleteVisitorRequest) async
+    //Future deleteVisitor(String visitorId, DeleteVisitorRequest deleteVisitorRequest) async
     test('test deleteVisitor', () async {
       // TODO
     });
@@ -29,7 +28,7 @@ void main() {
     //
     // paletteをdropする
     //
-    //Future dropPalette(String visitorID, DropPaletteRequest dropPaletteRequest) async
+    //Future dropPalette(String visitorId, DropPaletteRequest dropPaletteRequest) async
     test('test dropPalette', () async {
       // TODO
     });
@@ -38,7 +37,7 @@ void main() {
     //
     // 参加者が現在設定している写真を取得する
     //
-    //Future<GetCurrentImage200Response> getCurrentImage(String visitorID, String eventID) async
+    //Future<GetCurrentImage200Response> getCurrentImage(String visitorId, String eventId) async
     test('test getCurrentImage', () async {
       // TODO
     });
@@ -47,7 +46,7 @@ void main() {
     //
     // 参加者がimage idから写真のURLを取得する
     //
-    //Future<GetDefaultImageURL200Response> getCurrentImageURL(String visitorID, String eventID, String visitorImageID) async
+    //Future<GetDefaultImageURL200Response> getCurrentImageURL(String visitorId, String eventId, String visitorImageId) async
     test('test getCurrentImageURL', () async {
       // TODO
     });
@@ -56,7 +55,7 @@ void main() {
     //
     // 参加者に紐づく写真の一覧を取得する
     //
-    //Future<List<String>> getVisitorImages(String visitorID, String eventID) async
+    //Future<List<String>> getVisitorImages(String visitorId, String eventId) async
     test('test getVisitorImages', () async {
       // TODO
     });
@@ -65,7 +64,7 @@ void main() {
     //
     // 参加者を初期化する(二回目以降の起動時)
     //
-    //Future<InitializeVisitor200Response> initializeVisitor(String visitorID, JoinEventRequest joinEventRequest) async
+    //Future<InitializeVisitor200Response> initializeVisitor(String visitorId, JoinEventRequest joinEventRequest) async
     test('test initializeVisitor', () async {
       // TODO
     });
@@ -83,7 +82,7 @@ void main() {
     //
     // paletteをpickする
     //
-    //Future pickPalette(String visitorID, PickPaletteRequest pickPaletteRequest) async
+    //Future pickPalette(String visitorId, PickPaletteRequest pickPaletteRequest) async
     test('test pickPalette', () async {
       // TODO
     });
@@ -92,10 +91,9 @@ void main() {
     //
     // 参加者の画像を設定する
     //
-    //Future setCurrentImage(String visitorID, SetCurrentImageRequest setCurrentImageRequest) async
+    //Future setCurrentImage(String visitorId, SetCurrentImageRequest setCurrentImageRequest) async
     test('test setCurrentImage', () async {
       // TODO
     });
-
   });
 }

@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'delete_default_image_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,32 +16,23 @@ part 'delete_default_image_request.g.dart';
 class DeleteDefaultImageRequest {
   /// Returns a new [DeleteDefaultImageRequest] instance.
   DeleteDefaultImageRequest({
-
-    required  this.imageId,
+    required this.imageId,
   });
 
-      /// イベントのデフォルト画像のID(ulid)
-  @JsonKey(
-    
-    name: r'imageId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// イベントのデフォルト画像のId(ulid)
+  @JsonKey(name: r'imageId', required: true, includeIfNull: false)
   final String imageId;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DeleteDefaultImageRequest && other.imageId == imageId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is DeleteDefaultImageRequest &&
-     other.imageId == imageId;
+  int get hashCode => imageId.hashCode;
 
-  @override
-  int get hashCode =>
-    imageId.hashCode;
-
-  factory DeleteDefaultImageRequest.fromJson(Map<String, dynamic> json) => _$DeleteDefaultImageRequestFromJson(json);
+  factory DeleteDefaultImageRequest.fromJson(Map<String, dynamic> json) =>
+      _$DeleteDefaultImageRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$DeleteDefaultImageRequestToJson(this);
 
@@ -50,6 +40,4 @@ class DeleteDefaultImageRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

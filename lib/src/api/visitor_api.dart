@@ -30,8 +30,8 @@ class VisitorApi {
   /// 画像に更新があるか確認する
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
-  /// * [eventId] - イベントのパブリックID
+  /// * [visitorId] - 参加者のパブリックId
+  /// * [eventId] - イベントのパブリックId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -113,7 +113,7 @@ class VisitorApi {
   /// 参加者を削除する
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックId
   /// * [deleteVisitorRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -181,7 +181,7 @@ class VisitorApi {
   /// paletteをdropする
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックId
   /// * [dropPaletteRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -249,8 +249,8 @@ class VisitorApi {
   /// 参加者が現在設定している写真を取得する
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
-  /// * [eventId] - イベントのパブリックID
+  /// * [visitorId] - 参加者のパブリックId
+  /// * [eventId] - イベントのパブリックId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -332,9 +332,9 @@ class VisitorApi {
   /// 参加者がimage idから写真のURLを取得する
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
-  /// * [eventId] - イベントのパブリックID
-  /// * [visitorImageId] - 参加者が撮影した画像のID
+  /// * [visitorId] - 参加者のパブリックId
+  /// * [eventId] - イベントのパブリックId
+  /// * [visitorImageId] - 参加者が撮影した画像のId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -419,8 +419,8 @@ class VisitorApi {
   /// 参加者に紐づく写真の一覧を取得する
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
-  /// * [eventId] - イベントのパブリックID
+  /// * [visitorId] - 参加者のパブリックId
+  /// * [eventId] - イベントのパブリックId
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -503,7 +503,7 @@ class VisitorApi {
   /// 参加者を初期化する(二回目以降の起動時)
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックId
   /// * [joinEventRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -693,7 +693,7 @@ class VisitorApi {
   /// paletteをpickする
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックId
   /// * [pickPaletteRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -761,7 +761,7 @@ class VisitorApi {
   /// 参加者の画像を設定する
   ///
   /// Parameters:
-  /// * [visitorId] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックId
   /// * [setCurrentImageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request

@@ -8,7 +8,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'register_visitor.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -18,64 +17,37 @@ part 'register_visitor.g.dart';
 class RegisterVisitor {
   /// Returns a new [RegisterVisitor] instance.
   RegisterVisitor({
-
-    required  this.visitorIdentification,
-
-    required  this.registrationId,
-
-    required  this.palettes,
+    required this.visitorIdentification,
+    required this.registrationId,
+    required this.palettes,
   });
 
-  @JsonKey(
-    
-    name: r'visitorIdentification',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  @JsonKey(name: r'visitorIdentification', required: true, includeIfNull: false)
   final VisitorIdentification visitorIdentification;
 
-
-
-      /// スマホのプッシュ通知用のID
-  @JsonKey(
-    
-    name: r'registrationId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スマホのプッシュ通知用のId
+  @JsonKey(name: r'registrationId', required: true, includeIfNull: false)
   final String registrationId;
 
-
-
-  @JsonKey(
-    
-    name: r'palettes',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  @JsonKey(name: r'palettes', required: true, includeIfNull: false)
   final List<int> palettes;
 
-
-
   @override
-  bool operator ==(Object other) => identical(this, other) || other is RegisterVisitor &&
-     other.visitorIdentification == visitorIdentification &&
-     other.registrationId == registrationId &&
-     other.palettes == palettes;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RegisterVisitor &&
+          other.visitorIdentification == visitorIdentification &&
+          other.registrationId == registrationId &&
+          other.palettes == palettes;
 
   @override
   int get hashCode =>
-    visitorIdentification.hashCode +
-    registrationId.hashCode +
-    palettes.hashCode;
+      visitorIdentification.hashCode +
+      registrationId.hashCode +
+      palettes.hashCode;
 
-  factory RegisterVisitor.fromJson(Map<String, dynamic> json) => _$RegisterVisitorFromJson(json);
+  factory RegisterVisitor.fromJson(Map<String, dynamic> json) =>
+      _$RegisterVisitorFromJson(json);
 
   Map<String, dynamic> toJson() => _$RegisterVisitorToJson(this);
 
@@ -83,6 +55,4 @@ class RegisterVisitor {
   String toString() {
     return toJson().toString();
   }
-
 }
-

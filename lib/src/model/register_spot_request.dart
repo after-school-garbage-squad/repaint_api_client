@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'register_spot_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,66 +16,36 @@ part 'register_spot_request.g.dart';
 class RegisterSpotRequest {
   /// Returns a new [RegisterSpotRequest] instance.
   RegisterSpotRequest({
-
-    required  this.name,
-
-    required  this.hwId,
-
-    required  this.serviceUuid,
+    required this.name,
+    required this.hwId,
+    required this.serviceUuid,
   });
 
-      /// スポット名
-  @JsonKey(
-    
-    name: r'name',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スポット名
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-
-
-      /// ビーコンのハードウェアID
-  @JsonKey(
-    
-    name: r'hwId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// ビーコンのハードウェアId
+  @JsonKey(name: r'hwId', required: true, includeIfNull: false)
   final String hwId;
 
-
-
-      /// ビーコンのサービスUUID
-  @JsonKey(
-    
-    name: r'serviceUuid',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// ビーコンのサービスUUId
+  @JsonKey(name: r'serviceUuid', required: true, includeIfNull: false)
   final String serviceUuid;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RegisterSpotRequest &&
+          other.name == name &&
+          other.hwId == hwId &&
+          other.serviceUuid == serviceUuid;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is RegisterSpotRequest &&
-     other.name == name &&
-     other.hwId == hwId &&
-     other.serviceUuid == serviceUuid;
+  int get hashCode => name.hashCode + hwId.hashCode + serviceUuid.hashCode;
 
-  @override
-  int get hashCode =>
-    name.hashCode +
-    hwId.hashCode +
-    serviceUuid.hashCode;
-
-  factory RegisterSpotRequest.fromJson(Map<String, dynamic> json) => _$RegisterSpotRequestFromJson(json);
+  factory RegisterSpotRequest.fromJson(Map<String, dynamic> json) =>
+      _$RegisterSpotRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$RegisterSpotRequestToJson(this);
 
@@ -84,6 +53,4 @@ class RegisterSpotRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

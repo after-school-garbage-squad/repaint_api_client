@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(Event, () {
-    // イベントのパブリックID(ulid)
+    // イベントのパブリックId(ulid)
     // String eventId
     test('to test the property `eventId`', () async {
       // TODO
@@ -39,6 +39,5 @@ void main() {
     test('to test the property `images`', () async {
       // TODO
     });
-
   });
 }

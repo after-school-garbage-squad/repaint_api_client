@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'check_visitor_image200_response.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,32 +16,23 @@ part 'check_visitor_image200_response.g.dart';
 class CheckVisitorImage200Response {
   /// Returns a new [CheckVisitorImage200Response] instance.
   CheckVisitorImage200Response({
-
-     this.imageId,
+    this.imageId,
   });
 
-      /// 参加者が撮影した画像のID(ulid)
-  @JsonKey(
-    
-    name: r'imageId',
-    required: false,
-    includeIfNull: false
-  )
-
-
+  /// 参加者が撮影した画像のId(ulid)
+  @JsonKey(name: r'imageId', required: false, includeIfNull: false)
   final String? imageId;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CheckVisitorImage200Response && other.imageId == imageId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is CheckVisitorImage200Response &&
-     other.imageId == imageId;
+  int get hashCode => imageId.hashCode;
 
-  @override
-  int get hashCode =>
-    imageId.hashCode;
-
-  factory CheckVisitorImage200Response.fromJson(Map<String, dynamic> json) => _$CheckVisitorImage200ResponseFromJson(json);
+  factory CheckVisitorImage200Response.fromJson(Map<String, dynamic> json) =>
+      _$CheckVisitorImage200ResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$CheckVisitorImage200ResponseToJson(this);
 
@@ -50,6 +40,4 @@ class CheckVisitorImage200Response {
   String toString() {
     return toJson().toString();
   }
-
 }
-

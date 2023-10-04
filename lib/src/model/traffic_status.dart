@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'traffic_status.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,49 +16,30 @@ part 'traffic_status.g.dart';
 class TrafficStatus {
   /// Returns a new [TrafficStatus] instance.
   TrafficStatus({
-
-    required  this.spotId,
-
-    required  this.headCount,
+    required this.spotId,
+    required this.headCount,
   });
 
-      /// スポットのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'spotId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スポットのパブリックId(ulid)
+  @JsonKey(name: r'spotId', required: true, includeIfNull: false)
   final String spotId;
 
-
-
-      /// そのspotにいた人数
-  @JsonKey(
-    
-    name: r'headCount',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// そのspotにいた人数
+  @JsonKey(name: r'headCount', required: true, includeIfNull: false)
   final int headCount;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TrafficStatus &&
+          other.spotId == spotId &&
+          other.headCount == headCount;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is TrafficStatus &&
-     other.spotId == spotId &&
-     other.headCount == headCount;
+  int get hashCode => spotId.hashCode + headCount.hashCode;
 
-  @override
-  int get hashCode =>
-    spotId.hashCode +
-    headCount.hashCode;
-
-  factory TrafficStatus.fromJson(Map<String, dynamic> json) => _$TrafficStatusFromJson(json);
+  factory TrafficStatus.fromJson(Map<String, dynamic> json) =>
+      _$TrafficStatusFromJson(json);
 
   Map<String, dynamic> toJson() => _$TrafficStatusToJson(this);
 
@@ -67,6 +47,4 @@ class TrafficStatus {
   String toString() {
     return toJson().toString();
   }
-
 }
-

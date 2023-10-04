@@ -8,7 +8,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'visitor.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -18,98 +17,51 @@ part 'visitor.g.dart';
 class Visitor {
   /// Returns a new [Visitor] instance.
   Visitor({
-
-    required  this.visitorIdentification,
-
-    required  this.registrationId,
-
-    required  this.palettes,
-
-     this.imageId,
-
-    required  this.currentImageId,
+    required this.visitorIdentification,
+    required this.registrationId,
+    required this.palettes,
+    this.imageId,
+    required this.currentImageId,
   });
 
-  @JsonKey(
-    
-    name: r'visitorIdentification',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  @JsonKey(name: r'visitorIdentification', required: true, includeIfNull: false)
   final VisitorIdentification visitorIdentification;
 
-
-
-      /// スマホのプッシュ通知用のID
-  @JsonKey(
-    
-    name: r'registrationId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// スマホのプッシュ通知用のId
+  @JsonKey(name: r'registrationId', required: true, includeIfNull: false)
   final String registrationId;
 
-
-
-  @JsonKey(
-    
-    name: r'palettes',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  @JsonKey(name: r'palettes', required: true, includeIfNull: false)
   final List<int> palettes;
 
-
-
-      /// 参加者が撮影した画像のID(ulid)
-  @JsonKey(
-    
-    name: r'imageId',
-    required: false,
-    includeIfNull: false
-  )
-
-
+  /// 参加者が撮影した画像のId(ulid)
+  @JsonKey(name: r'imageId', required: false, includeIfNull: false)
   final String? imageId;
 
-
-
-      /// 参加者が現在設定している画像のID(ulid)
-  @JsonKey(
-    
-    name: r'currentImageId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// 参加者が現在設定している画像のId(ulid)
+  @JsonKey(name: r'currentImageId', required: true, includeIfNull: false)
   final String currentImageId;
 
-
-
   @override
-  bool operator ==(Object other) => identical(this, other) || other is Visitor &&
-     other.visitorIdentification == visitorIdentification &&
-     other.registrationId == registrationId &&
-     other.palettes == palettes &&
-     other.imageId == imageId &&
-     other.currentImageId == currentImageId;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Visitor &&
+          other.visitorIdentification == visitorIdentification &&
+          other.registrationId == registrationId &&
+          other.palettes == palettes &&
+          other.imageId == imageId &&
+          other.currentImageId == currentImageId;
 
   @override
   int get hashCode =>
-    visitorIdentification.hashCode +
-    registrationId.hashCode +
-    palettes.hashCode +
-    imageId.hashCode +
-    currentImageId.hashCode;
+      visitorIdentification.hashCode +
+      registrationId.hashCode +
+      palettes.hashCode +
+      imageId.hashCode +
+      currentImageId.hashCode;
 
-  factory Visitor.fromJson(Map<String, dynamic> json) => _$VisitorFromJson(json);
+  factory Visitor.fromJson(Map<String, dynamic> json) =>
+      _$VisitorFromJson(json);
 
   Map<String, dynamic> toJson() => _$VisitorToJson(this);
 
@@ -117,6 +69,4 @@ class Visitor {
   String toString() {
     return toJson().toString();
   }
-
 }
-

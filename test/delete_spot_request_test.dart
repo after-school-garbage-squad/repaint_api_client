@@ -7,11 +7,10 @@ void main() {
   // TODO add properties to the entity
 
   group(DeleteSpotRequest, () {
-    // スポットのパブリックID(ulid)
+    // スポットのパブリックId(ulid)
     // String spotId
     test('to test the property `spotId`', () async {
       // TODO
     });
-
   });
 }

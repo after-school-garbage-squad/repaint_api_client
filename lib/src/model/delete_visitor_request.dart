@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'delete_visitor_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,32 +16,23 @@ part 'delete_visitor_request.g.dart';
 class DeleteVisitorRequest {
   /// Returns a new [DeleteVisitorRequest] instance.
   DeleteVisitorRequest({
-
-    required  this.eventID,
+    required this.eventId,
   });
 
-      /// イベントのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'eventID',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  final String eventID;
-
-
+  /// イベントのパブリックId(ulid)
+  @JsonKey(name: r'eventId', required: true, includeIfNull: false)
+  final String eventId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is DeleteVisitorRequest &&
-     other.eventID == eventID;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DeleteVisitorRequest && other.eventId == eventId;
 
   @override
-  int get hashCode =>
-    eventID.hashCode;
+  int get hashCode => eventId.hashCode;
 
-  factory DeleteVisitorRequest.fromJson(Map<String, dynamic> json) => _$DeleteVisitorRequestFromJson(json);
+  factory DeleteVisitorRequest.fromJson(Map<String, dynamic> json) =>
+      _$DeleteVisitorRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$DeleteVisitorRequestToJson(this);
 
@@ -50,6 +40,4 @@ class DeleteVisitorRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

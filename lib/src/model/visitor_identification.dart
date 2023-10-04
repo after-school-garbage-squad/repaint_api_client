@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'visitor_identification.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,49 +16,30 @@ part 'visitor_identification.g.dart';
 class VisitorIdentification {
   /// Returns a new [VisitorIdentification] instance.
   VisitorIdentification({
-
-    required  this.eventId,
-
-    required  this.visitorId,
+    required this.eventId,
+    required this.visitorId,
   });
 
-      /// イベントのパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'eventId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// イベントのパブリックId(ulid)
+  @JsonKey(name: r'eventId', required: true, includeIfNull: false)
   final String eventId;
 
-
-
-      /// 参加者のパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'visitorId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// 参加者のパブリックId(ulid)
+  @JsonKey(name: r'visitorId', required: true, includeIfNull: false)
   final String visitorId;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is VisitorIdentification &&
+          other.eventId == eventId &&
+          other.visitorId == visitorId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is VisitorIdentification &&
-     other.eventId == eventId &&
-     other.visitorId == visitorId;
+  int get hashCode => eventId.hashCode + visitorId.hashCode;
 
-  @override
-  int get hashCode =>
-    eventId.hashCode +
-    visitorId.hashCode;
-
-  factory VisitorIdentification.fromJson(Map<String, dynamic> json) => _$VisitorIdentificationFromJson(json);
+  factory VisitorIdentification.fromJson(Map<String, dynamic> json) =>
+      _$VisitorIdentificationFromJson(json);
 
   Map<String, dynamic> toJson() => _$VisitorIdentificationToJson(this);
 
@@ -67,6 +47,4 @@ class VisitorIdentification {
   String toString() {
     return toJson().toString();
   }
-
 }
-

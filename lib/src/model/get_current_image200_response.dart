@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'get_current_image200_response.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,32 +16,23 @@ part 'get_current_image200_response.g.dart';
 class GetCurrentImage200Response {
   /// Returns a new [GetCurrentImage200Response] instance.
   GetCurrentImage200Response({
-
-    required  this.imageId,
+    required this.imageId,
   });
 
-      /// 参加者が現在設定している画像のID(ulid)
-  @JsonKey(
-    
-    name: r'imageId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// 参加者が現在設定している画像のId(ulid)
+  @JsonKey(name: r'imageId', required: true, includeIfNull: false)
   final String imageId;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is GetCurrentImage200Response && other.imageId == imageId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is GetCurrentImage200Response &&
-     other.imageId == imageId;
+  int get hashCode => imageId.hashCode;
 
-  @override
-  int get hashCode =>
-    imageId.hashCode;
-
-  factory GetCurrentImage200Response.fromJson(Map<String, dynamic> json) => _$GetCurrentImage200ResponseFromJson(json);
+  factory GetCurrentImage200Response.fromJson(Map<String, dynamic> json) =>
+      _$GetCurrentImage200ResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$GetCurrentImage200ResponseToJson(this);
 
@@ -50,6 +40,4 @@ class GetCurrentImage200Response {
   String toString() {
     return toJson().toString();
   }
-
 }
-

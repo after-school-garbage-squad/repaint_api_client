@@ -7,9 +7,9 @@ void main() {
   // TODO add properties to the entity
 
   group(Spot, () {
-    // スポットのパブリックID(ulid)
-    // String spotID
-    test('to test the property `spotID`', () async {
+    // スポットのパブリックId(ulid)
+    // String spotId
+    test('to test the property `spotId`', () async {
       // TODO
     });
 
@@ -31,17 +31,16 @@ void main() {
       // TODO
     });
 
-    // ビーコンのハードウェアID
+    // ビーコンのハードウェアId
     // String hwId
     test('to test the property `hwId`', () async {
       // TODO
     });
 
-    // ビーコンのサービスUUID
+    // ビーコンのサービスUUId
     // String serviceUuid
     test('to test the property `serviceUuid`', () async {
       // TODO
     });
-
   });
 }

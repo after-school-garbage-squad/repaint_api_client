@@ -21,7 +21,7 @@ Spot _$SpotFromJson(Map<String, dynamic> json) => $checkedCreate(
           ],
         );
         final val = Spot(
-          spotID: $checkedConvert('spotID', (v) => v as String?),
+          spotId: $checkedConvert('spotId', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String),
           isPick: $checkedConvert('isPick', (v) => v as bool),
           bonus: $checkedConvert('bonus', (v) => v as bool),
@@ -41,7 +41,7 @@ Map<String, dynamic> _$SpotToJson(Spot instance) {
     }
   }
 
-  writeNotNull('spotID', instance.spotID);
+  writeNotNull('spotId', instance.spotId);
   val['name'] = instance.name;
   val['isPick'] = instance.isPick;
   val['bonus'] = instance.bonus;

@@ -7,7 +7,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'update_notification_request.g.dart';
 
-
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,32 +16,23 @@ part 'update_notification_request.g.dart';
 class UpdateNotificationRequest {
   /// Returns a new [UpdateNotificationRequest] instance.
   UpdateNotificationRequest({
-
-    required  this.visitorId,
+    required this.visitorId,
   });
 
-      /// 参加者のパブリックID(ulid)
-  @JsonKey(
-    
-    name: r'visitorId',
-    required: true,
-    includeIfNull: false
-  )
-
-
+  /// 参加者のパブリックId(ulid)
+  @JsonKey(name: r'visitorId', required: true, includeIfNull: false)
   final String visitorId;
 
-
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UpdateNotificationRequest && other.visitorId == visitorId;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UpdateNotificationRequest &&
-     other.visitorId == visitorId;
+  int get hashCode => visitorId.hashCode;
 
-  @override
-  int get hashCode =>
-    visitorId.hashCode;
-
-  factory UpdateNotificationRequest.fromJson(Map<String, dynamic> json) => _$UpdateNotificationRequestFromJson(json);
+  factory UpdateNotificationRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateNotificationRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$UpdateNotificationRequestToJson(this);
 
@@ -50,6 +40,4 @@ class UpdateNotificationRequest {
   String toString() {
     return toJson().toString();
   }
-
 }
-

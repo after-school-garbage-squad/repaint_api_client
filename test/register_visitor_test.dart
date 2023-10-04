@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // スマホのプッシュ通知用のID
+    // スマホのプッシュ通知用のId
     // String registrationId
     test('to test the property `registrationId`', () async {
       // TODO
@@ -22,6 +22,5 @@ void main() {
     test('to test the property `palettes`', () async {
       // TODO
     });
-
   });
 }
