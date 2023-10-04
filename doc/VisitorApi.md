@@ -5,7 +5,7 @@
 import 'package:repaint_api_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3003*
+All URIs are relative to *https://api.asgs.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **checkUpdate**
-> CheckUpdate200Response checkUpdate(visitorID, getVisitorImagesRequest)
+> CheckUpdate200Response checkUpdate(visitorID, eventID)
 
 Check for updates to an image
 
@@ -34,10 +34,10 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
 final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final GetVisitorImagesRequest getVisitorImagesRequest = ; // GetVisitorImagesRequest | 
+final String eventID = eventID_example; // String | イベントのパブリックID
 
 try {
-    final response = api.checkUpdate(visitorID, getVisitorImagesRequest);
+    final response = api.checkUpdate(visitorID, eventID);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->checkUpdate: $e\n');
@@ -49,7 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **visitorID** | **String**| 参加者のパブリックID | 
- **getVisitorImagesRequest** | [**GetVisitorImagesRequest**](GetVisitorImagesRequest.md)|  | 
+ **eventID** | **String**| イベントのパブリックID | 
 
 ### Return type
 
@@ -61,7 +61,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -155,7 +155,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCurrentImage**
-> GetCurrentImage200Response getCurrentImage(visitorID, getVisitorImagesRequest)
+> GetCurrentImage200Response getCurrentImage(visitorID, eventID)
 
 get current image
 
@@ -167,10 +167,10 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
 final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final GetVisitorImagesRequest getVisitorImagesRequest = ; // GetVisitorImagesRequest | 
+final String eventID = eventID_example; // String | イベントのパブリックID
 
 try {
-    final response = api.getCurrentImage(visitorID, getVisitorImagesRequest);
+    final response = api.getCurrentImage(visitorID, eventID);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->getCurrentImage: $e\n');
@@ -182,7 +182,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **visitorID** | **String**| 参加者のパブリックID | 
- **getVisitorImagesRequest** | [**GetVisitorImagesRequest**](GetVisitorImagesRequest.md)|  | 
+ **eventID** | **String**| イベントのパブリックID | 
 
 ### Return type
 
@@ -194,13 +194,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCurrentImageURL**
-> GetDefaultImageURL200Response getCurrentImageURL(visitorID, setCurrentImageRequest)
+> GetDefaultImageURL200Response getCurrentImageURL(visitorID, eventID, visitorImageID)
 
 get image url by image id
 
@@ -212,10 +212,11 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
 final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final SetCurrentImageRequest setCurrentImageRequest = ; // SetCurrentImageRequest | 
+final String eventID = eventID_example; // String | イベントのパブリックID
+final String visitorImageID = visitorImageID_example; // String | 参加者が撮影した画像のID
 
 try {
-    final response = api.getCurrentImageURL(visitorID, setCurrentImageRequest);
+    final response = api.getCurrentImageURL(visitorID, eventID, visitorImageID);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->getCurrentImageURL: $e\n');
@@ -227,7 +228,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **visitorID** | **String**| 参加者のパブリックID | 
- **setCurrentImageRequest** | [**SetCurrentImageRequest**](SetCurrentImageRequest.md)|  | 
+ **eventID** | **String**| イベントのパブリックID | 
+ **visitorImageID** | **String**| 参加者が撮影した画像のID | 
 
 ### Return type
 
@@ -239,13 +241,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getVisitorImages**
-> List<String> getVisitorImages(visitorID, getVisitorImagesRequest)
+> List<String> getVisitorImages(visitorID, eventID)
 
 get visitor image list
 
@@ -257,10 +259,10 @@ import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
 final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final GetVisitorImagesRequest getVisitorImagesRequest = ; // GetVisitorImagesRequest | 
+final String eventID = eventID_example; // String | イベントのパブリックID
 
 try {
-    final response = api.getVisitorImages(visitorID, getVisitorImagesRequest);
+    final response = api.getVisitorImages(visitorID, eventID);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->getVisitorImages: $e\n');
@@ -272,7 +274,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **visitorID** | **String**| 参加者のパブリックID | 
- **getVisitorImagesRequest** | [**GetVisitorImagesRequest**](GetVisitorImagesRequest.md)|  | 
+ **eventID** | **String**| イベントのパブリックID | 
 
 ### Return type
 
@@ -284,7 +286,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

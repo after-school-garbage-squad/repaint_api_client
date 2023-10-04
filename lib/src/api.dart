@@ -12,7 +12,7 @@ import 'package:repaint_api_client/src/api/auth_api.dart';
 import 'package:repaint_api_client/src/api/visitor_api.dart';
 
 class RepaintApiClient {
-  static const String basePath = r'http://localhost:3003';
+  static const String basePath = r'https://api.asgs.dev';
 
   final Dio dio;
   RepaintApiClient({

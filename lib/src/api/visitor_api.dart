@@ -14,7 +14,6 @@ import 'package:repaint_api_client/src/model/delete_visitor_request.dart';
 import 'package:repaint_api_client/src/model/drop_palette_request.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
-import 'package:repaint_api_client/src/model/get_visitor_images_request.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
@@ -32,7 +31,7 @@ class VisitorApi {
   ///
   /// Parameters:
   /// * [visitorID] - 参加者のパブリックID
-  /// * [getVisitorImagesRequest] 
+  /// * [eventID] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -44,7 +43,7 @@ class VisitorApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CheckUpdate200Response>> checkUpdate({ 
     required String visitorID,
-    required GetVisitorImagesRequest getVisitorImagesRequest,
+    required String eventID,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -52,7 +51,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/check-update'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/image/check-update'.replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -62,30 +61,17 @@ class VisitorApi {
         'secure': <Map<String, String>>[],
         ...?extra,
       },
-      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(getVisitorImagesRequest);
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+    };
 
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -143,7 +129,7 @@ _responseData = rawData == null ? null : deserialize<CheckUpdate200Response, Che
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/delete'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/delete';
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -157,6 +143,10 @@ _responseData = rawData == null ? null : deserialize<CheckUpdate200Response, Che
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+    };
+
     dynamic _bodyData;
 
     try {
@@ -166,6 +156,7 @@ _bodyData=jsonEncode(deleteVisitorRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
+          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -177,6 +168,7 @@ _bodyData=jsonEncode(deleteVisitorRequest);
       _path,
       data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -210,7 +202,7 @@ _bodyData=jsonEncode(deleteVisitorRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/palette/drop'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/palette/drop';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -224,6 +216,10 @@ _bodyData=jsonEncode(deleteVisitorRequest);
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+    };
+
     dynamic _bodyData;
 
     try {
@@ -233,6 +229,7 @@ _bodyData=jsonEncode(dropPaletteRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
+          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -244,6 +241,7 @@ _bodyData=jsonEncode(dropPaletteRequest);
       _path,
       data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -257,7 +255,7 @@ _bodyData=jsonEncode(dropPaletteRequest);
   ///
   /// Parameters:
   /// * [visitorID] - 参加者のパブリックID
-  /// * [getVisitorImagesRequest] 
+  /// * [eventID] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -269,7 +267,7 @@ _bodyData=jsonEncode(dropPaletteRequest);
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GetCurrentImage200Response>> getCurrentImage({ 
     required String visitorID,
-    required GetVisitorImagesRequest getVisitorImagesRequest,
+    required String eventID,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -277,7 +275,7 @@ _bodyData=jsonEncode(dropPaletteRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/get-current'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/image/get-current'.replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -287,30 +285,17 @@ _bodyData=jsonEncode(dropPaletteRequest);
         'secure': <Map<String, String>>[],
         ...?extra,
       },
-      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(getVisitorImagesRequest);
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+    };
 
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -348,7 +333,8 @@ _responseData = rawData == null ? null : deserialize<GetCurrentImage200Response,
   ///
   /// Parameters:
   /// * [visitorID] - 参加者のパブリックID
-  /// * [setCurrentImageRequest] 
+  /// * [eventID] - イベントのパブリックID
+  /// * [visitorImageID] - 参加者が撮影した画像のID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -360,7 +346,8 @@ _responseData = rawData == null ? null : deserialize<GetCurrentImage200Response,
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GetDefaultImageURL200Response>> getCurrentImageURL({ 
     required String visitorID,
-    required SetCurrentImageRequest setCurrentImageRequest,
+    required String eventID,
+    required String visitorImageID,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -368,7 +355,7 @@ _responseData = rawData == null ? null : deserialize<GetCurrentImage200Response,
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/proxy'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/image/proxy'.replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -378,30 +365,18 @@ _responseData = rawData == null ? null : deserialize<GetCurrentImage200Response,
         'secure': <Map<String, String>>[],
         ...?extra,
       },
-      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(setCurrentImageRequest);
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+      r'visitorImageID': visitorImageID,
+    };
 
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -439,7 +414,7 @@ _responseData = rawData == null ? null : deserialize<GetDefaultImageURL200Respon
   ///
   /// Parameters:
   /// * [visitorID] - 参加者のパブリックID
-  /// * [getVisitorImagesRequest] 
+  /// * [eventID] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -451,7 +426,7 @@ _responseData = rawData == null ? null : deserialize<GetDefaultImageURL200Respon
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<String>>> getVisitorImages({ 
     required String visitorID,
-    required GetVisitorImagesRequest getVisitorImagesRequest,
+    required String eventID,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -459,7 +434,7 @@ _responseData = rawData == null ? null : deserialize<GetDefaultImageURL200Respon
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/list'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/image/list'.replaceAll('{' r'eventID' '}', eventID.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -469,30 +444,17 @@ _responseData = rawData == null ? null : deserialize<GetDefaultImageURL200Respon
         'secure': <Map<String, String>>[],
         ...?extra,
       },
-      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(getVisitorImagesRequest);
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+    };
 
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -550,7 +512,7 @@ _responseData = rawData == null ? null : deserialize<List<String>, String>(rawDa
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/initialize'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/initialize';
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -564,6 +526,10 @@ _responseData = rawData == null ? null : deserialize<List<String>, String>(rawDa
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+    };
+
     dynamic _bodyData;
 
     try {
@@ -573,6 +539,7 @@ _bodyData=jsonEncode(joinEventRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
+          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -584,6 +551,7 @@ _bodyData=jsonEncode(joinEventRequest);
       _path,
       data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -730,7 +698,7 @@ _responseData = rawData == null ? null : deserialize<JoinEvent200Response, JoinE
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/palette/pick'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/palette/pick';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -744,6 +712,10 @@ _responseData = rawData == null ? null : deserialize<JoinEvent200Response, JoinE
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+    };
+
     dynamic _bodyData;
 
     try {
@@ -753,6 +725,7 @@ _bodyData=jsonEncode(pickPaletteRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
+          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -764,6 +737,7 @@ _bodyData=jsonEncode(pickPaletteRequest);
       _path,
       data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -797,7 +771,7 @@ _bodyData=jsonEncode(pickPaletteRequest);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/set-current'.replaceAll('{' r'visitorID' '}', visitorID.toString());
+    final _path = r'/visitor/{visitorID}/image/set-current';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -811,6 +785,10 @@ _bodyData=jsonEncode(pickPaletteRequest);
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'visitorID': visitorID,
+    };
+
     dynamic _bodyData;
 
     try {
@@ -820,6 +798,7 @@ _bodyData=jsonEncode(setCurrentImageRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
+          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -831,6 +810,7 @@ _bodyData=jsonEncode(setCurrentImageRequest);
       _path,
       data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

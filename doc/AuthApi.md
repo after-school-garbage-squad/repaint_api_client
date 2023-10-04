@@ -5,7 +5,7 @@
 import 'package:repaint_api_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3003*
+All URIs are relative to *https://api.asgs.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

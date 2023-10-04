@@ -60,7 +60,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:3003*
+All URIs are relative to *https://api.asgs.dev*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -100,22 +100,19 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AddOperationRequest](doc/AddOperationRequest.md)
- - [CheckSpotByBeaconRequest](doc/CheckSpotByBeaconRequest.md)
- - [CheckSpotByQRRequest](doc/CheckSpotByQRRequest.md)
  - [CheckUpdate200Response](doc/CheckUpdate200Response.md)
  - [CheckVisitorImage200Response](doc/CheckVisitorImage200Response.md)
- - [CheckVisitorImageRequest](doc/CheckVisitorImageRequest.md)
  - [Contact](doc/Contact.md)
  - [ControlTrafficRequest](doc/ControlTrafficRequest.md)
  - [CreateEvent](doc/CreateEvent.md)
  - [CreateEventRequest](doc/CreateEventRequest.md)
  - [DeleteDefaultImageRequest](doc/DeleteDefaultImageRequest.md)
+ - [DeleteSpotRequest](doc/DeleteSpotRequest.md)
  - [DeleteVisitorRequest](doc/DeleteVisitorRequest.md)
  - [DropPaletteRequest](doc/DropPaletteRequest.md)
  - [Event](doc/Event.md)
  - [GetCurrentImage200Response](doc/GetCurrentImage200Response.md)
  - [GetDefaultImageURL200Response](doc/GetDefaultImageURL200Response.md)
- - [GetVisitorImagesRequest](doc/GetVisitorImagesRequest.md)
  - [InitializeVisitor200Response](doc/InitializeVisitor200Response.md)
  - [JoinEvent200Response](doc/JoinEvent200Response.md)
  - [JoinEventRequest](doc/JoinEventRequest.md)

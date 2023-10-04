@@ -1,20 +1,17 @@
 import 'package:repaint_api_client/src/model/add_operation_request.dart';
-import 'package:repaint_api_client/src/model/check_spot_by_beacon_request.dart';
-import 'package:repaint_api_client/src/model/check_spot_by_qr_request.dart';
 import 'package:repaint_api_client/src/model/check_update200_response.dart';
 import 'package:repaint_api_client/src/model/check_visitor_image200_response.dart';
-import 'package:repaint_api_client/src/model/check_visitor_image_request.dart';
 import 'package:repaint_api_client/src/model/contact.dart';
 import 'package:repaint_api_client/src/model/control_traffic_request.dart';
 import 'package:repaint_api_client/src/model/create_event.dart';
 import 'package:repaint_api_client/src/model/create_event_request.dart';
 import 'package:repaint_api_client/src/model/delete_default_image_request.dart';
+import 'package:repaint_api_client/src/model/delete_spot_request.dart';
 import 'package:repaint_api_client/src/model/delete_visitor_request.dart';
 import 'package:repaint_api_client/src/model/drop_palette_request.dart';
 import 'package:repaint_api_client/src/model/event.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
-import 'package:repaint_api_client/src/model/get_visitor_images_request.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
@@ -52,16 +49,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return (value is double ? value : double.parse('$value')) as ReturnType;
         case 'AddOperationRequest':
           return AddOperationRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'CheckSpotByBeaconRequest':
-          return CheckSpotByBeaconRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'CheckSpotByQRRequest':
-          return CheckSpotByQRRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CheckUpdate200Response':
           return CheckUpdate200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CheckVisitorImage200Response':
           return CheckVisitorImage200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'CheckVisitorImageRequest':
-          return CheckVisitorImageRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Contact':
           return Contact.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ControlTrafficRequest':
@@ -72,6 +63,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateEventRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DeleteDefaultImageRequest':
           return DeleteDefaultImageRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'DeleteSpotRequest':
+          return DeleteSpotRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DeleteVisitorRequest':
           return DeleteVisitorRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DropPaletteRequest':
@@ -82,8 +75,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return GetCurrentImage200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'GetDefaultImageURL200Response':
           return GetDefaultImageURL200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'GetVisitorImagesRequest':
-          return GetVisitorImagesRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'InitializeVisitor200Response':
           return InitializeVisitor200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'JoinEvent200Response':
