@@ -20,7 +20,7 @@ void main() {
     //
     // hwIdを指定してスポットを取得する
     //
-    //Future<Spot> checkSpotByBeacon(String eventID, CheckSpotByBeaconRequest checkSpotByBeaconRequest) async
+    //Future<Spot> checkSpotByBeacon(String eventID, String hwID) async
     test('test checkSpotByBeacon', () async {
       // TODO
     });
@@ -29,7 +29,7 @@ void main() {
     //
     // QRコード(spotId)を指定してスポットを取得する
     //
-    //Future<Spot> checkSpotByQR(String eventID, CheckSpotByQRRequest checkSpotByQRRequest) async
+    //Future<Spot> checkSpotByQR(String eventID, String spotID) async
     test('test checkSpotByQR', () async {
       // TODO
     });
@@ -38,7 +38,7 @@ void main() {
     //
     // 参加者を撮影した画像を取得する
     //
-    //Future<CheckVisitorImage200Response> checkVisitorImage(String eventID, CheckVisitorImageRequest checkVisitorImageRequest) async
+    //Future<CheckVisitorImage200Response> checkVisitorImage(String eventID, String visitorID) async
     test('test checkVisitorImage', () async {
       // TODO
     });
@@ -83,7 +83,7 @@ void main() {
     //
     // スポットを削除する
     //
-    //Future deleteSpot(String eventID, CheckSpotByQRRequest checkSpotByQRRequest) async
+    //Future deleteSpot(String eventID, DeleteSpotRequest deleteSpotRequest) async
     test('test deleteSpot', () async {
       // TODO
     });
@@ -92,7 +92,7 @@ void main() {
     //
     // 管理者がimage idから写真のURLを取得する
     //
-    //Future<GetDefaultImageURL200Response> getDefaultImageURL(String eventID, DeleteDefaultImageRequest deleteDefaultImageRequest) async
+    //Future<GetDefaultImageURL200Response> getDefaultImageURL(String eventID, String eventImageID) async
     test('test getDefaultImageURL', () async {
       // TODO
     });

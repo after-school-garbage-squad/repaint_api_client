@@ -13,9 +13,9 @@ void main() {
       // TODO
     });
 
-    // スポットのパブリックID(ulid)
-    // String spotId
-    test('to test the property `spotId`', () async {
+    // ビーコンのハードウェアID
+    // String hwId
+    test('to test the property `hwId`', () async {
       // TODO
     });
 

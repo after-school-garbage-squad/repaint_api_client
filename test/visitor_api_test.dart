@@ -11,7 +11,7 @@ void main() {
     //
     // 画像に更新があるか確認する
     //
-    //Future<CheckUpdate200Response> checkUpdate(String visitorID, GetVisitorImagesRequest getVisitorImagesRequest) async
+    //Future<CheckUpdate200Response> checkUpdate(String visitorID, String eventID) async
     test('test checkUpdate', () async {
       // TODO
     });
@@ -38,7 +38,7 @@ void main() {
     //
     // 参加者が現在設定している写真を取得する
     //
-    //Future<GetCurrentImage200Response> getCurrentImage(String visitorID, GetVisitorImagesRequest getVisitorImagesRequest) async
+    //Future<GetCurrentImage200Response> getCurrentImage(String visitorID, String eventID) async
     test('test getCurrentImage', () async {
       // TODO
     });
@@ -47,7 +47,7 @@ void main() {
     //
     // 参加者がimage idから写真のURLを取得する
     //
-    //Future<GetDefaultImageURL200Response> getCurrentImageURL(String visitorID, SetCurrentImageRequest setCurrentImageRequest) async
+    //Future<GetDefaultImageURL200Response> getCurrentImageURL(String visitorID, String eventID, String visitorImageID) async
     test('test getCurrentImageURL', () async {
       // TODO
     });
@@ -56,7 +56,7 @@ void main() {
     //
     // 参加者に紐づく写真の一覧を取得する
     //
-    //Future<List<String>> getVisitorImages(String visitorID, GetVisitorImagesRequest getVisitorImagesRequest) async
+    //Future<List<String>> getVisitorImages(String visitorID, String eventID) async
     test('test getVisitorImages', () async {
       // TODO
     });
@@ -83,7 +83,7 @@ void main() {
     //
     // paletteをpickする
     //
-    //Future pickPalette(String visitorID, DropPaletteRequest dropPaletteRequest) async
+    //Future pickPalette(String visitorID, PickPaletteRequest pickPaletteRequest) async
     test('test pickPalette', () async {
       // TODO
     });
@@ -92,7 +92,7 @@ void main() {
     //
     // 参加者の画像を設定する
     //
-    //Future setCurrentImage(String visitorID, String eventId, String imageId) async
+    //Future setCurrentImage(String visitorID, SetCurrentImageRequest setCurrentImageRequest) async
     test('test setCurrentImage', () async {
       // TODO
     });
