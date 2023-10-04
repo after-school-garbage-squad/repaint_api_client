@@ -106,8 +106,8 @@ class AdminApi {
   /// hwIdを指定してスポットを取得する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
-  /// * [hwID] - ビーコンのハードウェアID
+  /// * [eventId] - イベントのパブリックID
+  /// * [hwId] - ビーコンのハードウェアID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -118,8 +118,8 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [Spot] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Spot>> checkSpotByBeacon({
-    required String eventID,
-    required String hwID,
+    required String eventId,
+    required String hwId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -128,7 +128,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/spot/check-by-beacon'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -148,7 +148,7 @@ class AdminApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'hwID': hwID,
+      r'hwId': hwId,
     };
 
     final _response = await _dio.request<Object>(
@@ -193,8 +193,8 @@ class AdminApi {
   /// QRコード(spotId)を指定してスポットを取得する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
-  /// * [spotID] - スポットのパブリックID
+  /// * [eventId] - イベントのパブリックID
+  /// * [spotId] - スポットのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -205,8 +205,8 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [Spot] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Spot>> checkSpotByQR({
-    required String eventID,
-    required String spotID,
+    required String eventId,
+    required String spotId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -215,7 +215,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/spot/check-by-qr'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -235,7 +235,7 @@ class AdminApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'spotID': spotID,
+      r'spotId': spotId,
     };
 
     final _response = await _dio.request<Object>(
@@ -280,8 +280,8 @@ class AdminApi {
   /// 参加者を撮影した画像を取得する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
-  /// * [visitorID] - 参加者のパブリックID
+  /// * [eventId] - イベントのパブリックID
+  /// * [visitorId] - 参加者のパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -292,8 +292,8 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [CheckVisitorImage200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CheckVisitorImage200Response>> checkVisitorImage({
-    required String eventID,
-    required String visitorID,
+    required String eventId,
+    required String visitorId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -302,7 +302,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/image/check-visitor'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -322,7 +322,7 @@ class AdminApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
+      r'visitorId': visitorId,
     };
 
     final _response = await _dio.request<Object>(
@@ -370,7 +370,7 @@ class AdminApi {
   /// 人流を制御する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [controlTrafficRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -382,7 +382,7 @@ class AdminApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> controlTraffic({
-    required String eventID,
+    required String eventId,
     required ControlTrafficRequest controlTrafficRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -392,7 +392,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/traffic/control'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -542,7 +542,7 @@ class AdminApi {
   /// デフォルトで登録されている画像を削除する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [deleteDefaultImageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -554,7 +554,7 @@ class AdminApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> deleteDefaultImage({
-    required String eventID,
+    required String eventId,
     required DeleteDefaultImageRequest deleteDefaultImageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -564,7 +564,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/image/delete-default'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -616,7 +616,7 @@ class AdminApi {
   /// イベントを削除する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -627,7 +627,7 @@ class AdminApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> deleteEvent({
-    required String eventID,
+    required String eventId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -636,7 +636,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/delete'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -670,7 +670,7 @@ class AdminApi {
   /// スポットを削除する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [deleteSpotRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -682,7 +682,7 @@ class AdminApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> deleteSpot({
-    required String eventID,
+    required String eventId,
     required DeleteSpotRequest deleteSpotRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -692,7 +692,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/spot/delete'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -744,8 +744,8 @@ class AdminApi {
   /// 管理者がimage idから写真のURLを取得する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
-  /// * [eventImageID] - イベントのデフォルト画像のID
+  /// * [eventId] - イベントのパブリックID
+  /// * [eventImageId] - イベントのデフォルト画像のID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -756,8 +756,8 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [GetDefaultImageURL200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GetDefaultImageURL200Response>> getDefaultImageURL({
-    required String eventID,
-    required String eventImageID,
+    required String eventId,
+    required String eventImageId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -766,7 +766,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/image/proxy'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -786,7 +786,7 @@ class AdminApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'eventImageID': eventImageID,
+      r'eventImageId': eventImageId,
     };
 
     final _response = await _dio.request<Object>(
@@ -912,7 +912,7 @@ class AdminApi {
   /// スポットの一覧を取得する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -923,7 +923,7 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [List<Spot>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Spot>>> getSpots({
-    required String eventID,
+    required String eventId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -932,7 +932,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/spot/list'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -993,7 +993,7 @@ class AdminApi {
   /// イベントの人流を取得する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1004,7 +1004,7 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [List<TrafficStatus>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<TrafficStatus>>> getTrafficStatus({
-    required String eventID,
+    required String eventId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1013,7 +1013,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/traffic/get-status'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1075,7 +1075,7 @@ class AdminApi {
   /// デフォルトで登録される画像を設定する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [image] - 画像ファイル
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1087,7 +1087,7 @@ class AdminApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> registerDefaultImage({
-    required String eventID,
+    required String eventId,
     required MultipartFile image,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1097,7 +1097,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/image/register-default'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1120,7 +1120,7 @@ class AdminApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap(<String, dynamic>{r'file': image});
+      _bodyData = FormData.fromMap(<String, MultipartFile>{'file': image});
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -1149,7 +1149,7 @@ class AdminApi {
   /// スポットを登録する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [registerSpotRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1161,7 +1161,7 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [Spot] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Spot>> registerSpot({
-    required String eventID,
+    required String eventId,
     required RegisterSpotRequest registerSpotRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1171,7 +1171,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/spot/register'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1320,7 +1320,7 @@ class AdminApi {
   /// イベントを更新する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [createEventRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1332,7 +1332,7 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [UpdateEvent] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UpdateEvent>> updateEvent({
-    required String eventID,
+    required String eventId,
     required CreateEventRequest createEventRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1342,7 +1342,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/update'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -1421,7 +1421,7 @@ class AdminApi {
   /// 画像処理が完了したことを通知する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [updateNotificationRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1433,7 +1433,7 @@ class AdminApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateNotification({
-    required String eventID,
+    required String eventId,
     required UpdateNotificationRequest updateNotificationRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1443,7 +1443,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/image/update-notification'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1489,7 +1489,7 @@ class AdminApi {
   /// スポットを更新する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [updateSpotRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1501,7 +1501,7 @@ class AdminApi {
   /// Returns a [Future] containing a [Response] with a [Spot] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Spot>> updateSpot({
-    required String eventID,
+    required String eventId,
     required UpdateSpotRequest updateSpotRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1511,7 +1511,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/spot/update'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -1589,7 +1589,7 @@ class AdminApi {
   /// 参加者を撮影した画像を登録する
   ///
   /// Parameters:
-  /// * [eventID] - イベントのパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [image] - 画像ファイル
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1601,7 +1601,7 @@ class AdminApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> uploadVisitorImage({
-    required String eventID,
+    required String eventId,
     required MultipartFile image,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1611,7 +1611,7 @@ class AdminApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/admin/event/{eventID}/image/upload-visitor'
-        .replaceAll('{' r'eventID' '}', eventID.toString());
+        .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1634,7 +1634,7 @@ class AdminApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap(<String, dynamic>{r'file': image});
+      _bodyData = FormData.fromMap(<String, MultipartFile>{'file': image});
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

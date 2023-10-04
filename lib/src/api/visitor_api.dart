@@ -29,8 +29,8 @@ class VisitorApi {
   /// 画像に更新があるか確認する
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
-  /// * [eventID] - イベントのパブリックID
+  /// * [visitorId] - 参加者のパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -41,8 +41,8 @@ class VisitorApi {
   /// Returns a [Future] containing a [Response] with a [CheckUpdate200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CheckUpdate200Response>> checkUpdate({
-    required String visitorID,
-    required String eventID,
+    required String visitorId,
+    required String eventId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -51,7 +51,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/image/check-update'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -65,7 +65,7 @@ class VisitorApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'eventID': eventID,
+      r'eventId': eventId,
     };
 
     final _response = await _dio.request<Object>(
@@ -112,7 +112,7 @@ class VisitorApi {
   /// 参加者を削除する
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックID
   /// * [deleteVisitorRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -124,7 +124,7 @@ class VisitorApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> deleteVisitor({
-    required String visitorID,
+    required String visitorId,
     required DeleteVisitorRequest deleteVisitorRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -134,7 +134,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/delete'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -180,7 +180,7 @@ class VisitorApi {
   /// paletteをdropする
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックID
   /// * [dropPaletteRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -192,7 +192,7 @@ class VisitorApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> dropPalette({
-    required String visitorID,
+    required String visitorId,
     required DropPaletteRequest dropPaletteRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -202,7 +202,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/palette/drop'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -248,8 +248,8 @@ class VisitorApi {
   /// 参加者が現在設定している写真を取得する
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
-  /// * [eventID] - イベントのパブリックID
+  /// * [visitorId] - 参加者のパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -260,8 +260,8 @@ class VisitorApi {
   /// Returns a [Future] containing a [Response] with a [GetCurrentImage200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GetCurrentImage200Response>> getCurrentImage({
-    required String visitorID,
-    required String eventID,
+    required String visitorId,
+    required String eventId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -270,7 +270,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/image/get-current'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -284,7 +284,7 @@ class VisitorApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'eventID': eventID,
+      r'eventId': eventId,
     };
 
     final _response = await _dio.request<Object>(
@@ -331,9 +331,9 @@ class VisitorApi {
   /// 参加者がimage idから写真のURLを取得する
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
-  /// * [eventID] - イベントのパブリックID
-  /// * [visitorImageID] - 参加者が撮影した画像のID
+  /// * [visitorId] - 参加者のパブリックID
+  /// * [eventId] - イベントのパブリックID
+  /// * [visitorImageId] - 参加者が撮影した画像のID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -344,9 +344,9 @@ class VisitorApi {
   /// Returns a [Future] containing a [Response] with a [GetDefaultImageURL200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<GetDefaultImageURL200Response>> getCurrentImageURL({
-    required String visitorID,
-    required String eventID,
-    required String visitorImageID,
+    required String visitorId,
+    required String eventId,
+    required String visitorImageId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -355,7 +355,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/image/proxy'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -369,8 +369,8 @@ class VisitorApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'eventID': eventID,
-      r'visitorImageID': visitorImageID,
+      r'eventId': eventId,
+      r'visitorImageId': visitorImageId,
     };
 
     final _response = await _dio.request<Object>(
@@ -418,8 +418,8 @@ class VisitorApi {
   /// 参加者に紐づく写真の一覧を取得する
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
-  /// * [eventID] - イベントのパブリックID
+  /// * [visitorId] - 参加者のパブリックID
+  /// * [eventId] - イベントのパブリックID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -430,8 +430,8 @@ class VisitorApi {
   /// Returns a [Future] containing a [Response] with a [List<String>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<String>>> getVisitorImages({
-    required String visitorID,
-    required String eventID,
+    required String visitorId,
+    required String eventId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -440,7 +440,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/image/list'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -454,7 +454,7 @@ class VisitorApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'eventID': eventID,
+      r'eventId': eventId,
     };
 
     final _response = await _dio.request<Object>(
@@ -500,7 +500,7 @@ class VisitorApi {
   /// 参加者を初期化する(二回目以降の起動時)
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックID
   /// * [joinEventRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -512,7 +512,7 @@ class VisitorApi {
   /// Returns a [Future] containing a [Response] with a [InitializeVisitor200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<InitializeVisitor200Response>> initializeVisitor({
-    required String visitorID,
+    required String visitorId,
     required JoinEventRequest joinEventRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -522,7 +522,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/initialize'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -690,7 +690,7 @@ class VisitorApi {
   /// paletteをpickする
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックID
   /// * [pickPaletteRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -702,7 +702,7 @@ class VisitorApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> pickPalette({
-    required String visitorID,
+    required String visitorId,
     required PickPaletteRequest pickPaletteRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -712,7 +712,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/palette/pick'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -758,7 +758,7 @@ class VisitorApi {
   /// 参加者の画像を設定する
   ///
   /// Parameters:
-  /// * [visitorID] - 参加者のパブリックID
+  /// * [visitorId] - 参加者のパブリックID
   /// * [setCurrentImageRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -770,7 +770,7 @@ class VisitorApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> setCurrentImage({
-    required String visitorID,
+    required String visitorId,
     required SetCurrentImageRequest setCurrentImageRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -780,7 +780,7 @@ class VisitorApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/visitor/{visitorID}/image/set-current'
-        .replaceAll('{' r'visitorID' '}', visitorID.toString());
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
