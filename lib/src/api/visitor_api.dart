@@ -50,7 +50,7 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{eventID}/image/check-update'
+    final _path = r'/visitor/{visitorID}/image/check-update'
         .replaceAll('{' r'visitorID' '}', visitorID.toString());
     final _options = Options(
       method: r'GET',
@@ -65,7 +65,7 @@ class VisitorApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
+      r'eventID': eventID,
     };
 
     final _response = await _dio.request<Object>(
@@ -133,7 +133,8 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/delete';
+    final _path = r'/visitor/{visitorID}/delete'
+        .replaceAll('{' r'visitorID' '}', visitorID.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -147,10 +148,6 @@ class VisitorApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -160,7 +157,6 @@ class VisitorApi {
         requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -172,7 +168,6 @@ class VisitorApi {
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -206,7 +201,8 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/palette/drop';
+    final _path = r'/visitor/{visitorID}/palette/drop'
+        .replaceAll('{' r'visitorID' '}', visitorID.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -220,10 +216,6 @@ class VisitorApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -233,7 +225,6 @@ class VisitorApi {
         requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -245,7 +236,6 @@ class VisitorApi {
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -294,7 +284,7 @@ class VisitorApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
+      r'eventID': eventID,
     };
 
     final _response = await _dio.request<Object>(
@@ -379,7 +369,7 @@ class VisitorApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
+      r'eventID': eventID,
       r'visitorImageID': visitorImageID,
     };
 
@@ -464,7 +454,7 @@ class VisitorApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
+      r'eventID': eventID,
     };
 
     final _response = await _dio.request<Object>(
@@ -531,7 +521,8 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/initialize';
+    final _path = r'/visitor/{visitorID}/initialize'
+        .replaceAll('{' r'visitorID' '}', visitorID.toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -545,10 +536,6 @@ class VisitorApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -558,7 +545,6 @@ class VisitorApi {
         requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -570,7 +556,6 @@ class VisitorApi {
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -726,7 +711,8 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/palette/pick';
+    final _path = r'/visitor/{visitorID}/palette/pick'
+        .replaceAll('{' r'visitorID' '}', visitorID.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -740,10 +726,6 @@ class VisitorApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -753,7 +735,6 @@ class VisitorApi {
         requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -765,7 +746,6 @@ class VisitorApi {
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -799,7 +779,8 @@ class VisitorApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/visitor/{visitorID}/image/set-current';
+    final _path = r'/visitor/{visitorID}/image/set-current'
+        .replaceAll('{' r'visitorID' '}', visitorID.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -813,10 +794,6 @@ class VisitorApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'visitorID': visitorID,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -826,7 +803,6 @@ class VisitorApi {
         requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -838,7 +814,6 @@ class VisitorApi {
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
