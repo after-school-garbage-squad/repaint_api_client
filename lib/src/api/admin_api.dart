@@ -127,7 +127,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/check-by-beacon'
+    final _path = r'/admin/event/{eventId}/spot/check-by-beacon'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
@@ -214,7 +214,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/check-by-qr'
+    final _path = r'/admin/event/{eventId}/spot/check-by-qr'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
@@ -301,7 +301,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/check-visitor'
+    final _path = r'/admin/event/{eventId}/image/check-visitor'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
@@ -391,7 +391,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/traffic/control'
+    final _path = r'/admin/event/{eventId}/traffic/control'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
@@ -563,7 +563,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/delete-default'
+    final _path = r'/admin/event/{eventId}/image/delete-default'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'DELETE',
@@ -635,7 +635,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/delete'
+    final _path = r'/admin/event/{eventId}/delete'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'DELETE',
@@ -691,7 +691,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/delete'
+    final _path = r'/admin/event/{eventId}/spot/delete'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'DELETE',
@@ -765,7 +765,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/proxy'
+    final _path = r'/admin/event/{eventId}/image/proxy'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
@@ -931,7 +931,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/list'
+    final _path = r'/admin/event/{eventId}/spot/list'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
@@ -1012,7 +1012,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/traffic/get-status'
+    final _path = r'/admin/event/{eventId}/traffic/get-status'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
@@ -1096,7 +1096,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/register-default'
+    final _path = r'/admin/event/{eventId}/image/register-default'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
@@ -1170,7 +1170,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/register'
+    final _path = r'/admin/event/{eventId}/spot/register'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
@@ -1341,7 +1341,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/update'
+    final _path = r'/admin/event/{eventId}/update'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'PATCH',
@@ -1442,7 +1442,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/update-notification'
+    final _path = r'/admin/event/{eventId}/image/update-notification'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
@@ -1510,7 +1510,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/spot/update'
+    final _path = r'/admin/event/{eventId}/spot/update'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'PATCH',
@@ -1610,7 +1610,7 @@ class AdminApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/admin/event/{eventID}/image/upload-visitor'
+    final _path = r'/admin/event/{eventId}/image/upload-visitor'
         .replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
