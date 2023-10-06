@@ -9,20 +9,66 @@ All URIs are relative to *https://api.asgs.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkUpdate**](VisitorApi.md#checkupdate) | **GET** /visitor/{visitorID}/image/check-update | Check for updates to an image
-[**deleteVisitor**](VisitorApi.md#deletevisitor) | **DELETE** /visitor/{visitorID}/delete | delete visitor
-[**dropPalette**](VisitorApi.md#droppalette) | **POST** /visitor/{visitorID}/palette/drop | drop palette
-[**getCurrentImage**](VisitorApi.md#getcurrentimage) | **GET** /visitor/{visitorID}/image/get-current | get current image
-[**getCurrentImageURL**](VisitorApi.md#getcurrentimageurl) | **GET** /visitor/{visitorID}/image/proxy | get image url by image id
-[**getVisitorImages**](VisitorApi.md#getvisitorimages) | **GET** /visitor/{visitorID}/image/list | get visitor image list
-[**initializeVisitor**](VisitorApi.md#initializevisitor) | **PATCH** /visitor/{visitorID}/initialize | initialize visitor(Second and subsequent startups)
+[**checkDownload**](VisitorApi.md#checkdownload) | **GET** /visitor/{visitorId}/image/check-download | Check for downloads to an image
+[**checkUpdate**](VisitorApi.md#checkupdate) | **GET** /visitor/{visitorId}/image/check-update | Check for updates to an image
+[**deleteVisitor**](VisitorApi.md#deletevisitor) | **DELETE** /visitor/{visitorId}/delete | delete visitor
+[**dropPalette**](VisitorApi.md#droppalette) | **POST** /visitor/{visitorId}/palette/drop | drop palette
+[**getCurrentImage**](VisitorApi.md#getcurrentimage) | **GET** /visitor/{visitorId}/image/get-current | get current image
+[**getCurrentImageURL**](VisitorApi.md#getcurrentimageurl) | **GET** /visitor/{visitorId}/image/proxy | get image url by image id
+[**getVisitorImages**](VisitorApi.md#getvisitorimages) | **GET** /visitor/{visitorId}/image/list | get visitor image list
+[**initializeVisitor**](VisitorApi.md#initializevisitor) | **PATCH** /visitor/{visitorId}/initialize | initialize visitor(Second and subsequent startups)
 [**joinEvent**](VisitorApi.md#joinevent) | **POST** /visitor/join | join event
-[**pickPalette**](VisitorApi.md#pickpalette) | **POST** /visitor/{visitorID}/palette/pick | pick palette
-[**setCurrentImage**](VisitorApi.md#setcurrentimage) | **POST** /visitor/{visitorID}/image/set-current | set current image
+[**pickPalette**](VisitorApi.md#pickpalette) | **POST** /visitor/{visitorId}/palette/pick | pick palette
+[**setCurrentImage**](VisitorApi.md#setcurrentimage) | **POST** /visitor/{visitorId}/image/set-current | set current image
 
+
+# **checkDownload**
+> CheckDownload200Response checkDownload(visitorId, eventId)
+
+Check for downloads to an image
+
+画像をダウンロードできるか確認する
+
+### Example
+```dart
+import 'package:repaint_api_client/api.dart';
+
+final api = RepaintApiClient().getVisitorApi();
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
+final String eventId = eventId_example; // String | イベントのパブリックId
+
+try {
+    final response = api.checkDownload(visitorId, eventId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling VisitorApi->checkDownload: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **visitorId** | **String**| 参加者のパブリックId | 
+ **eventId** | **String**| イベントのパブリックId | 
+
+### Return type
+
+[**CheckDownload200Response**](CheckDownload200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkUpdate**
-> CheckUpdate200Response checkUpdate(visitorID, eventId)
+> CheckUpdate200Response checkUpdate(visitorId, eventId)
 
 Check for updates to an image
 
@@ -33,11 +79,11 @@ Check for updates to an image
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
+final String eventId = eventId_example; // String | イベントのパブリックId
 
 try {
-    final response = api.checkUpdate(visitorID, eventId);
+    final response = api.checkUpdate(visitorId, eventId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->checkUpdate: $e\n');
@@ -48,8 +94,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
- **eventId** | **String**| イベントのパブリックID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
+ **eventId** | **String**| イベントのパブリックId | 
 
 ### Return type
 
@@ -67,7 +113,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteVisitor**
-> deleteVisitor(visitorID, deleteVisitorRequest)
+> deleteVisitor(visitorId, deleteVisitorRequest)
 
 delete visitor
 
@@ -78,11 +124,11 @@ delete visitor
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
 final DeleteVisitorRequest deleteVisitorRequest = ; // DeleteVisitorRequest | 
 
 try {
-    api.deleteVisitor(visitorID, deleteVisitorRequest);
+    api.deleteVisitor(visitorId, deleteVisitorRequest);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->deleteVisitor: $e\n');
 }
@@ -92,7 +138,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
  **deleteVisitorRequest** | [**DeleteVisitorRequest**](DeleteVisitorRequest.md)|  | 
 
 ### Return type
@@ -111,7 +157,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dropPalette**
-> dropPalette(visitorID, dropPaletteRequest)
+> dropPalette(visitorId, dropPaletteRequest)
 
 drop palette
 
@@ -122,11 +168,11 @@ paletteをdropする
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
 final DropPaletteRequest dropPaletteRequest = ; // DropPaletteRequest | 
 
 try {
-    api.dropPalette(visitorID, dropPaletteRequest);
+    api.dropPalette(visitorId, dropPaletteRequest);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->dropPalette: $e\n');
 }
@@ -136,7 +182,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
  **dropPaletteRequest** | [**DropPaletteRequest**](DropPaletteRequest.md)|  | 
 
 ### Return type
@@ -155,7 +201,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCurrentImage**
-> GetCurrentImage200Response getCurrentImage(visitorID, eventId)
+> GetCurrentImage200Response getCurrentImage(visitorId, eventId)
 
 get current image
 
@@ -166,11 +212,11 @@ get current image
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
+final String eventId = eventId_example; // String | イベントのパブリックId
 
 try {
-    final response = api.getCurrentImage(visitorID, eventId);
+    final response = api.getCurrentImage(visitorId, eventId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->getCurrentImage: $e\n');
@@ -181,8 +227,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
- **eventId** | **String**| イベントのパブリックID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
+ **eventId** | **String**| イベントのパブリックId | 
 
 ### Return type
 
@@ -200,7 +246,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCurrentImageURL**
-> GetDefaultImageURL200Response getCurrentImageURL(visitorID, eventId, visitorImageId)
+> GetDefaultImageURL200Response getCurrentImageURL(visitorId, eventId, visitorImageId)
 
 get image url by image id
 
@@ -211,12 +257,12 @@ get image url by image id
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final String eventId = eventId_example; // String | イベントのパブリックID
-final String visitorImageId = visitorImageId_example; // String | 参加者が撮影した画像のID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
+final String eventId = eventId_example; // String | イベントのパブリックId
+final String visitorImageId = visitorImageId_example; // String | 参加者が撮影した画像のId
 
 try {
-    final response = api.getCurrentImageURL(visitorID, eventId, visitorImageId);
+    final response = api.getCurrentImageURL(visitorId, eventId, visitorImageId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->getCurrentImageURL: $e\n');
@@ -227,9 +273,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
- **eventId** | **String**| イベントのパブリックID | 
- **visitorImageId** | **String**| 参加者が撮影した画像のID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
+ **eventId** | **String**| イベントのパブリックId | 
+ **visitorImageId** | **String**| 参加者が撮影した画像のId | 
 
 ### Return type
 
@@ -247,7 +293,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getVisitorImages**
-> GetVisitorImages200Response getVisitorImages(visitorID, eventId)
+> GetVisitorImages200Response getVisitorImages(visitorId, eventId)
 
 get visitor image list
 
@@ -258,11 +304,11 @@ get visitor image list
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
-final String eventId = eventId_example; // String | イベントのパブリックID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
+final String eventId = eventId_example; // String | イベントのパブリックId
 
 try {
-    final response = api.getVisitorImages(visitorID, eventId);
+    final response = api.getVisitorImages(visitorId, eventId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->getVisitorImages: $e\n');
@@ -273,8 +319,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
- **eventId** | **String**| イベントのパブリックID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
+ **eventId** | **String**| イベントのパブリックId | 
 
 ### Return type
 
@@ -292,7 +338,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **initializeVisitor**
-> InitializeVisitor200Response initializeVisitor(visitorID, joinEventRequest)
+> InitializeVisitor200Response initializeVisitor(visitorId, joinEventRequest)
 
 initialize visitor(Second and subsequent startups)
 
@@ -303,11 +349,11 @@ initialize visitor(Second and subsequent startups)
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
 final JoinEventRequest joinEventRequest = ; // JoinEventRequest | 
 
 try {
-    final response = api.initializeVisitor(visitorID, joinEventRequest);
+    final response = api.initializeVisitor(visitorId, joinEventRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->initializeVisitor: $e\n');
@@ -318,7 +364,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
  **joinEventRequest** | [**JoinEventRequest**](JoinEventRequest.md)|  | 
 
 ### Return type
@@ -380,7 +426,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pickPalette**
-> pickPalette(visitorID, pickPaletteRequest)
+> pickPalette(visitorId, pickPaletteRequest)
 
 pick palette
 
@@ -391,11 +437,11 @@ paletteをpickする
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
 final PickPaletteRequest pickPaletteRequest = ; // PickPaletteRequest | 
 
 try {
-    api.pickPalette(visitorID, pickPaletteRequest);
+    api.pickPalette(visitorId, pickPaletteRequest);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->pickPalette: $e\n');
 }
@@ -405,7 +451,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
  **pickPaletteRequest** | [**PickPaletteRequest**](PickPaletteRequest.md)|  | 
 
 ### Return type
@@ -424,7 +470,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **setCurrentImage**
-> setCurrentImage(visitorID, setCurrentImageRequest)
+> setCurrentImage(visitorId, setCurrentImageRequest)
 
 set current image
 
@@ -435,11 +481,11 @@ set current image
 import 'package:repaint_api_client/api.dart';
 
 final api = RepaintApiClient().getVisitorApi();
-final String visitorID = visitorID_example; // String | 参加者のパブリックID
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
 final SetCurrentImageRequest setCurrentImageRequest = ; // SetCurrentImageRequest | 
 
 try {
-    api.setCurrentImage(visitorID, setCurrentImageRequest);
+    api.setCurrentImage(visitorId, setCurrentImageRequest);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->setCurrentImage: $e\n');
 }
@@ -449,7 +495,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visitorID** | **String**| 参加者のパブリックID | 
+ **visitorId** | **String**| 参加者のパブリックId | 
  **setCurrentImageRequest** | [**SetCurrentImageRequest**](SetCurrentImageRequest.md)|  | 
 
 ### Return type

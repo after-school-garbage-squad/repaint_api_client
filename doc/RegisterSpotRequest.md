@@ -9,8 +9,8 @@ import 'package:repaint_api_client/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | スポット名 | 
-**hwId** | **String** | ビーコンのハードウェアID | 
-**serviceUuid** | **String** | ビーコンのサービスUUID | 
+**hwId** | **String** | ビーコンのハードウェアId | 
+**serviceUuid** | **String** | ビーコンのサービスUUId | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

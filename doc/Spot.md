@@ -8,12 +8,12 @@ import 'package:repaint_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spotID** | **String** | スポットのパブリックID(ulid) | [optional] 
+**spotId** | **String** | スポットのパブリックId(ulid) | [optional] 
 **name** | **String** | スポット名 | 
 **isPick** | **bool** | pickableなスポットかどうか | 
 **bonus** | **bool** | スポットのステータスがボーナスかどうか | 
-**hwId** | **String** | ビーコンのハードウェアID | 
-**serviceUuid** | **String** | ビーコンのサービスUUID | 
+**hwId** | **String** | ビーコンのハードウェアId | 
+**serviceUuid** | **String** | ビーコンのサービスUUId | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,8 +8,8 @@ import 'package:repaint_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**eventId** | **String** | イベントのパブリックID(ulid) | 
-**registrationId** | **String** | スマホのプッシュ通知用のID | 
+**eventId** | **String** | イベントのパブリックId(ulid) | 
+**registrationId** | **String** | スマホのプッシュ通知用のId | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

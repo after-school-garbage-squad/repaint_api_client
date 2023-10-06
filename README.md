@@ -27,7 +27,7 @@ If this Dart package is published to Github, please include the following in pub
 dependencies:
   repaint_api_client:
     git:
-      url: https://github.com/GIT_USER_ID/GIT_REPO_ID.git
+      url: https://github.com/GIT_USER_Id/GIT_REPO_Id.git
       #ref: main
 ```
 
@@ -65,41 +65,44 @@ All URIs are relative to *https://api.asgs.dev*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AdminApi*](doc/AdminApi.md) | [**addOperation**](doc/AdminApi.md#addoperation) | **POST** /admin/add-operator | add operator
-[*AdminApi*](doc/AdminApi.md) | [**checkSpotByBeacon**](doc/AdminApi.md#checkspotbybeacon) | **GET** /admin/event/{eventID}/spot/check-by-beacon | check spot status by beacon hwId
-[*AdminApi*](doc/AdminApi.md) | [**checkSpotByQR**](doc/AdminApi.md#checkspotbyqr) | **GET** /admin/event/{eventID}/spot/check-by-qr | check spot status by QR code(spotId)
-[*AdminApi*](doc/AdminApi.md) | [**checkVisitorImage**](doc/AdminApi.md#checkvisitorimage) | **GET** /admin/event/{eventID}/image/check-visitor | check visitor image is exist
-[*AdminApi*](doc/AdminApi.md) | [**controlTraffic**](doc/AdminApi.md#controltraffic) | **POST** /admin/event/{eventID}/traffic/control | control traffic
+[*AdminApi*](doc/AdminApi.md) | [**checkSpotByBeacon**](doc/AdminApi.md#checkspotbybeacon) | **GET** /admin/event/{eventId}/spot/check-by-beacon | check spot status by beacon hwId
+[*AdminApi*](doc/AdminApi.md) | [**checkSpotByQR**](doc/AdminApi.md#checkspotbyqr) | **GET** /admin/event/{eventId}/spot/check-by-qr | check spot status by QR code(spotId)
+[*AdminApi*](doc/AdminApi.md) | [**checkVisitorImage**](doc/AdminApi.md#checkvisitorimage) | **GET** /admin/event/{eventId}/image/check-visitor | check visitor image is exist
+[*AdminApi*](doc/AdminApi.md) | [**controlTraffic**](doc/AdminApi.md#controltraffic) | **POST** /admin/event/{eventId}/traffic/control | control traffic
 [*AdminApi*](doc/AdminApi.md) | [**createEvent**](doc/AdminApi.md#createevent) | **POST** /admin/event/create | create event
-[*AdminApi*](doc/AdminApi.md) | [**deleteDefaultImage**](doc/AdminApi.md#deletedefaultimage) | **DELETE** /admin/event/{eventID}/image/delete-default | delete default image
-[*AdminApi*](doc/AdminApi.md) | [**deleteEvent**](doc/AdminApi.md#deleteevent) | **DELETE** /admin/event/{eventID}/delete | delete event
-[*AdminApi*](doc/AdminApi.md) | [**deleteSpot**](doc/AdminApi.md#deletespot) | **DELETE** /admin/event/{eventID}/spot/delete | delete spot
-[*AdminApi*](doc/AdminApi.md) | [**getDefaultImageURL**](doc/AdminApi.md#getdefaultimageurl) | **GET** /admin/event/{eventID}/image/proxy | get image url by image id
+[*AdminApi*](doc/AdminApi.md) | [**deleteDefaultImage**](doc/AdminApi.md#deletedefaultimage) | **DELETE** /admin/event/{eventId}/image/delete-default | delete default image
+[*AdminApi*](doc/AdminApi.md) | [**deleteEvent**](doc/AdminApi.md#deleteevent) | **DELETE** /admin/event/{eventId}/delete | delete event
+[*AdminApi*](doc/AdminApi.md) | [**deleteSpot**](doc/AdminApi.md#deletespot) | **DELETE** /admin/event/{eventId}/spot/delete | delete spot
+[*AdminApi*](doc/AdminApi.md) | [**finishEvent**](doc/AdminApi.md#finishevent) | **POST** /admin/event/{eventId}/finish | finish event
+[*AdminApi*](doc/AdminApi.md) | [**getDefaultImageURL**](doc/AdminApi.md#getdefaultimageurl) | **GET** /admin/event/{eventId}/image/proxy | get image url by image id
 [*AdminApi*](doc/AdminApi.md) | [**getEvents**](doc/AdminApi.md#getevents) | **GET** /admin/event/list | get event list
-[*AdminApi*](doc/AdminApi.md) | [**getSpots**](doc/AdminApi.md#getspots) | **GET** /admin/event/{eventID}/spot/list | get spot list
-[*AdminApi*](doc/AdminApi.md) | [**getTrafficStatus**](doc/AdminApi.md#gettrafficstatus) | **GET** /admin/event/{eventID}/traffic/get-status | get traffic status
-[*AdminApi*](doc/AdminApi.md) | [**registerDefaultImage**](doc/AdminApi.md#registerdefaultimage) | **POST** /admin/event/{eventID}/image/register-default | register default image
-[*AdminApi*](doc/AdminApi.md) | [**registerSpot**](doc/AdminApi.md#registerspot) | **POST** /admin/event/{eventID}/spot/register | register spot
+[*AdminApi*](doc/AdminApi.md) | [**getSpots**](doc/AdminApi.md#getspots) | **GET** /admin/event/{eventId}/spot/list | get spot list
+[*AdminApi*](doc/AdminApi.md) | [**getTrafficStatus**](doc/AdminApi.md#gettrafficstatus) | **GET** /admin/event/{eventId}/traffic/get-status | get traffic status
+[*AdminApi*](doc/AdminApi.md) | [**registerDefaultImage**](doc/AdminApi.md#registerdefaultimage) | **POST** /admin/event/{eventId}/image/register-default | register default image
+[*AdminApi*](doc/AdminApi.md) | [**registerSpot**](doc/AdminApi.md#registerspot) | **POST** /admin/event/{eventId}/spot/register | register spot
 [*AdminApi*](doc/AdminApi.md) | [**sendEmail**](doc/AdminApi.md#sendemail) | **POST** /admin/send-email | send email
-[*AdminApi*](doc/AdminApi.md) | [**updateEvent**](doc/AdminApi.md#updateevent) | **PATCH** /admin/event/{eventID}/update | update event
-[*AdminApi*](doc/AdminApi.md) | [**updateNotification**](doc/AdminApi.md#updatenotification) | **POST** /admin/event/{eventID}/image/update-notification | image update notification
-[*AdminApi*](doc/AdminApi.md) | [**updateSpot**](doc/AdminApi.md#updatespot) | **PATCH** /admin/event/{eventID}/spot/update | update spot
-[*AdminApi*](doc/AdminApi.md) | [**uploadVisitorImage**](doc/AdminApi.md#uploadvisitorimage) | **POST** /admin/event/{eventID}/image/upload-visitor | upload visitor image
+[*AdminApi*](doc/AdminApi.md) | [**updateEvent**](doc/AdminApi.md#updateevent) | **PATCH** /admin/event/{eventId}/update | update event
+[*AdminApi*](doc/AdminApi.md) | [**updateNotification**](doc/AdminApi.md#updatenotification) | **POST** /admin/event/{eventId}/image/update-notification | image update notification
+[*AdminApi*](doc/AdminApi.md) | [**updateSpot**](doc/AdminApi.md#updatespot) | **PATCH** /admin/event/{eventId}/spot/update | update spot
+[*AdminApi*](doc/AdminApi.md) | [**uploadVisitorImage**](doc/AdminApi.md#uploadvisitorimage) | **POST** /admin/event/{eventId}/image/upload-visitor | upload visitor image
 [*AuthApi*](doc/AuthApi.md) | [**register**](doc/AuthApi.md#register) | **POST** /admin/register | register admin
-[*VisitorApi*](doc/VisitorApi.md) | [**checkUpdate**](doc/VisitorApi.md#checkupdate) | **GET** /visitor/{visitorID}/image/check-update | Check for updates to an image
-[*VisitorApi*](doc/VisitorApi.md) | [**deleteVisitor**](doc/VisitorApi.md#deletevisitor) | **DELETE** /visitor/{visitorID}/delete | delete visitor
-[*VisitorApi*](doc/VisitorApi.md) | [**dropPalette**](doc/VisitorApi.md#droppalette) | **POST** /visitor/{visitorID}/palette/drop | drop palette
-[*VisitorApi*](doc/VisitorApi.md) | [**getCurrentImage**](doc/VisitorApi.md#getcurrentimage) | **GET** /visitor/{visitorID}/image/get-current | get current image
-[*VisitorApi*](doc/VisitorApi.md) | [**getCurrentImageURL**](doc/VisitorApi.md#getcurrentimageurl) | **GET** /visitor/{visitorID}/image/proxy | get image url by image id
-[*VisitorApi*](doc/VisitorApi.md) | [**getVisitorImages**](doc/VisitorApi.md#getvisitorimages) | **GET** /visitor/{visitorID}/image/list | get visitor image list
-[*VisitorApi*](doc/VisitorApi.md) | [**initializeVisitor**](doc/VisitorApi.md#initializevisitor) | **PATCH** /visitor/{visitorID}/initialize | initialize visitor(Second and subsequent startups)
+[*VisitorApi*](doc/VisitorApi.md) | [**checkDownload**](doc/VisitorApi.md#checkdownload) | **GET** /visitor/{visitorId}/image/check-download | Check for downloads to an image
+[*VisitorApi*](doc/VisitorApi.md) | [**checkUpdate**](doc/VisitorApi.md#checkupdate) | **GET** /visitor/{visitorId}/image/check-update | Check for updates to an image
+[*VisitorApi*](doc/VisitorApi.md) | [**deleteVisitor**](doc/VisitorApi.md#deletevisitor) | **DELETE** /visitor/{visitorId}/delete | delete visitor
+[*VisitorApi*](doc/VisitorApi.md) | [**dropPalette**](doc/VisitorApi.md#droppalette) | **POST** /visitor/{visitorId}/palette/drop | drop palette
+[*VisitorApi*](doc/VisitorApi.md) | [**getCurrentImage**](doc/VisitorApi.md#getcurrentimage) | **GET** /visitor/{visitorId}/image/get-current | get current image
+[*VisitorApi*](doc/VisitorApi.md) | [**getCurrentImageURL**](doc/VisitorApi.md#getcurrentimageurl) | **GET** /visitor/{visitorId}/image/proxy | get image url by image id
+[*VisitorApi*](doc/VisitorApi.md) | [**getVisitorImages**](doc/VisitorApi.md#getvisitorimages) | **GET** /visitor/{visitorId}/image/list | get visitor image list
+[*VisitorApi*](doc/VisitorApi.md) | [**initializeVisitor**](doc/VisitorApi.md#initializevisitor) | **PATCH** /visitor/{visitorId}/initialize | initialize visitor(Second and subsequent startups)
 [*VisitorApi*](doc/VisitorApi.md) | [**joinEvent**](doc/VisitorApi.md#joinevent) | **POST** /visitor/join | join event
-[*VisitorApi*](doc/VisitorApi.md) | [**pickPalette**](doc/VisitorApi.md#pickpalette) | **POST** /visitor/{visitorID}/palette/pick | pick palette
-[*VisitorApi*](doc/VisitorApi.md) | [**setCurrentImage**](doc/VisitorApi.md#setcurrentimage) | **POST** /visitor/{visitorID}/image/set-current | set current image
+[*VisitorApi*](doc/VisitorApi.md) | [**pickPalette**](doc/VisitorApi.md#pickpalette) | **POST** /visitor/{visitorId}/palette/pick | pick palette
+[*VisitorApi*](doc/VisitorApi.md) | [**setCurrentImage**](doc/VisitorApi.md#setcurrentimage) | **POST** /visitor/{visitorId}/image/set-current | set current image
 
 
 ## Documentation For Models
 
  - [AddOperationRequest](doc/AddOperationRequest.md)
+ - [CheckDownload200Response](doc/CheckDownload200Response.md)
  - [CheckUpdate200Response](doc/CheckUpdate200Response.md)
  - [CheckVisitorImage200Response](doc/CheckVisitorImage200Response.md)
  - [Contact](doc/Contact.md)

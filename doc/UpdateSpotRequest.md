@@ -8,7 +8,7 @@ import 'package:repaint_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spotId** | **String** | スポットのパブリックID(ulid) | 
+**spotId** | **String** | スポットのパブリックId(ulid) | 
 **name** | **String** | スポット名 | 
 **isPick** | **bool** | pickableなスポットかどうか | 
 

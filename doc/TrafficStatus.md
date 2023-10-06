@@ -8,7 +8,7 @@ import 'package:repaint_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spotId** | **String** | スポットのパブリックID(ulid) | 
+**spotId** | **String** | スポットのパブリックId(ulid) | 
 **headCount** | **int** | そのspotにいた人数 | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

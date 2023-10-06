@@ -8,7 +8,7 @@ import 'package:repaint_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**eventId** | **String** | イベントのパブリックID(ulid) | 
+**eventId** | **String** | イベントのパブリックId(ulid) | 
 **name** | **String** | イベント名 | 
 **hpUrl** | **String** | イベントのホームページのURL | 
 **contact** | [**Contact**](Contact.md) |  | 
