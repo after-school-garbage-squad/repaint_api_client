@@ -68,11 +68,12 @@ Class | Method | HTTP request | Description
 [*AdminApi*](doc/AdminApi.md) | [**checkSpotByBeacon**](doc/AdminApi.md#checkspotbybeacon) | **GET** /admin/event/{eventId}/spot/check-by-beacon | check spot status by beacon hwId
 [*AdminApi*](doc/AdminApi.md) | [**checkSpotByQR**](doc/AdminApi.md#checkspotbyqr) | **GET** /admin/event/{eventId}/spot/check-by-qr | check spot status by QR code(spotId)
 [*AdminApi*](doc/AdminApi.md) | [**checkVisitorImage**](doc/AdminApi.md#checkvisitorimage) | **GET** /admin/event/{eventId}/image/check-visitor | check visitor image is exist
-[*AdminApi*](doc/AdminApi.md) | [**controlTraffic**](doc/AdminApi.md#controltraffic) | **POST** /admin/event/{eventId}/traffic/control | control traffic
 [*AdminApi*](doc/AdminApi.md) | [**createEvent**](doc/AdminApi.md#createevent) | **POST** /admin/event/create | create event
 [*AdminApi*](doc/AdminApi.md) | [**deleteDefaultImage**](doc/AdminApi.md#deletedefaultimage) | **DELETE** /admin/event/{eventId}/image/delete-default | delete default image
 [*AdminApi*](doc/AdminApi.md) | [**deleteEvent**](doc/AdminApi.md#deleteevent) | **DELETE** /admin/event/{eventId}/delete | delete event
 [*AdminApi*](doc/AdminApi.md) | [**deleteSpot**](doc/AdminApi.md#deletespot) | **DELETE** /admin/event/{eventId}/spot/delete | delete spot
+[*AdminApi*](doc/AdminApi.md) | [**disableBonus**](doc/AdminApi.md#disablebonus) | **POST** /admin/event/{eventId}/traffic/disable-bonus | disable bonus
+[*AdminApi*](doc/AdminApi.md) | [**enableBonus**](doc/AdminApi.md#enablebonus) | **POST** /admin/event/{eventId}/traffic/enable-bonus | enable bonus
 [*AdminApi*](doc/AdminApi.md) | [**finishEvent**](doc/AdminApi.md#finishevent) | **POST** /admin/event/{eventId}/finish | finish event
 [*AdminApi*](doc/AdminApi.md) | [**getDefaultImageURL**](doc/AdminApi.md#getdefaultimageurl) | **GET** /admin/event/{eventId}/image/proxy | get image url by image id
 [*AdminApi*](doc/AdminApi.md) | [**getEvents**](doc/AdminApi.md#getevents) | **GET** /admin/event/list | get event list
@@ -106,13 +107,13 @@ Class | Method | HTTP request | Description
  - [CheckUpdate200Response](doc/CheckUpdate200Response.md)
  - [CheckVisitorImage200Response](doc/CheckVisitorImage200Response.md)
  - [Contact](doc/Contact.md)
- - [ControlTrafficRequest](doc/ControlTrafficRequest.md)
  - [CreateEvent](doc/CreateEvent.md)
  - [CreateEventRequest](doc/CreateEventRequest.md)
  - [DeleteDefaultImageRequest](doc/DeleteDefaultImageRequest.md)
  - [DeleteSpotRequest](doc/DeleteSpotRequest.md)
  - [DeleteVisitorRequest](doc/DeleteVisitorRequest.md)
  - [DropPaletteRequest](doc/DropPaletteRequest.md)
+ - [EnableBonusRequest](doc/EnableBonusRequest.md)
  - [Event](doc/Event.md)
  - [GetCurrentImage200Response](doc/GetCurrentImage200Response.md)
  - [GetDefaultImageURL200Response](doc/GetDefaultImageURL200Response.md)

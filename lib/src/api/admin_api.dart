@@ -11,11 +11,11 @@ import 'package:dio/dio.dart';
 
 import 'package:repaint_api_client/src/model/add_operation_request.dart';
 import 'package:repaint_api_client/src/model/check_visitor_image200_response.dart';
-import 'package:repaint_api_client/src/model/control_traffic_request.dart';
 import 'package:repaint_api_client/src/model/create_event.dart';
 import 'package:repaint_api_client/src/model/create_event_request.dart';
 import 'package:repaint_api_client/src/model/delete_default_image_request.dart';
 import 'package:repaint_api_client/src/model/delete_spot_request.dart';
+import 'package:repaint_api_client/src/model/enable_bonus_request.dart';
 import 'package:repaint_api_client/src/model/event.dart';
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
 import 'package:repaint_api_client/src/model/get_traffic_status200_response.dart';
@@ -366,80 +366,6 @@ class AdminApi {
     );
   }
 
-  /// control traffic
-  /// 人流を制御する
-  ///
-  /// Parameters:
-  /// * [eventId] - イベントのパブリックId
-  /// * [controlTrafficRequest]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> controlTraffic({
-    required String eventId,
-    required ControlTrafficRequest controlTrafficRequest,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/admin/event/{eventId}/traffic/control'
-        .replaceAll('{' r'eventId' '}', eventId.toString());
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-      _bodyData = jsonEncode(controlTrafficRequest);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
   /// create event
   /// イベントを作成する
   ///
@@ -716,6 +642,154 @@ class AdminApi {
 
     try {
       _bodyData = jsonEncode(deleteSpotRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// disable bonus
+  /// 人流制御を無効にする(ボーナスを無効にする)
+  ///
+  /// Parameters:
+  /// * [eventId] - イベントのパブリックId
+  /// * [deleteSpotRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> disableBonus({
+    required String eventId,
+    required DeleteSpotRequest deleteSpotRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/admin/event/{eventId}/traffic/disable-bonus'
+        .replaceAll('{' r'eventId' '}', eventId.toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(deleteSpotRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// enable bonus
+  /// 人流制御を有効にする(ボーナスを有効にする)
+  ///
+  /// Parameters:
+  /// * [eventId] - イベントのパブリックId
+  /// * [enableBonusRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> enableBonus({
+    required String eventId,
+    required EnableBonusRequest enableBonusRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/admin/event/{eventId}/traffic/enable-bonus'
+        .replaceAll('{' r'eventId' '}', eventId.toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'bearerAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(enableBonusRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

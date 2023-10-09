@@ -13,11 +13,12 @@ Method | HTTP request | Description
 [**checkSpotByBeacon**](AdminApi.md#checkspotbybeacon) | **GET** /admin/event/{eventId}/spot/check-by-beacon | check spot status by beacon hwId
 [**checkSpotByQR**](AdminApi.md#checkspotbyqr) | **GET** /admin/event/{eventId}/spot/check-by-qr | check spot status by QR code(spotId)
 [**checkVisitorImage**](AdminApi.md#checkvisitorimage) | **GET** /admin/event/{eventId}/image/check-visitor | check visitor image is exist
-[**controlTraffic**](AdminApi.md#controltraffic) | **POST** /admin/event/{eventId}/traffic/control | control traffic
 [**createEvent**](AdminApi.md#createevent) | **POST** /admin/event/create | create event
 [**deleteDefaultImage**](AdminApi.md#deletedefaultimage) | **DELETE** /admin/event/{eventId}/image/delete-default | delete default image
 [**deleteEvent**](AdminApi.md#deleteevent) | **DELETE** /admin/event/{eventId}/delete | delete event
 [**deleteSpot**](AdminApi.md#deletespot) | **DELETE** /admin/event/{eventId}/spot/delete | delete spot
+[**disableBonus**](AdminApi.md#disablebonus) | **POST** /admin/event/{eventId}/traffic/disable-bonus | disable bonus
+[**enableBonus**](AdminApi.md#enablebonus) | **POST** /admin/event/{eventId}/traffic/enable-bonus | enable bonus
 [**finishEvent**](AdminApi.md#finishevent) | **POST** /admin/event/{eventId}/finish | finish event
 [**getDefaultImageURL**](AdminApi.md#getdefaultimageurl) | **GET** /admin/event/{eventId}/image/proxy | get image url by image id
 [**getEvents**](AdminApi.md#getevents) | **GET** /admin/event/list | get event list
@@ -209,50 +210,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **controlTraffic**
-> controlTraffic(eventId, controlTrafficRequest)
-
-control traffic
-
-人流を制御する
-
-### Example
-```dart
-import 'package:repaint_api_client/api.dart';
-
-final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックId
-final ControlTrafficRequest controlTrafficRequest = ; // ControlTrafficRequest | 
-
-try {
-    api.controlTraffic(eventId, controlTrafficRequest);
-} catch on DioException (e) {
-    print('Exception when calling AdminApi->controlTraffic: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックId | 
- **controlTrafficRequest** | [**ControlTrafficRequest**](ControlTrafficRequest.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **createEvent**
 > CreateEvent createEvent(createEventRequest)
 
@@ -410,6 +367,94 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **String**| イベントのパブリックId | 
  **deleteSpotRequest** | [**DeleteSpotRequest**](DeleteSpotRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **disableBonus**
+> disableBonus(eventId, deleteSpotRequest)
+
+disable bonus
+
+人流制御を無効にする(ボーナスを無効にする)
+
+### Example
+```dart
+import 'package:repaint_api_client/api.dart';
+
+final api = RepaintApiClient().getAdminApi();
+final String eventId = eventId_example; // String | イベントのパブリックId
+final DeleteSpotRequest deleteSpotRequest = ; // DeleteSpotRequest | 
+
+try {
+    api.disableBonus(eventId, deleteSpotRequest);
+} catch on DioException (e) {
+    print('Exception when calling AdminApi->disableBonus: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventId** | **String**| イベントのパブリックId | 
+ **deleteSpotRequest** | [**DeleteSpotRequest**](DeleteSpotRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **enableBonus**
+> enableBonus(eventId, enableBonusRequest)
+
+enable bonus
+
+人流制御を有効にする(ボーナスを有効にする)
+
+### Example
+```dart
+import 'package:repaint_api_client/api.dart';
+
+final api = RepaintApiClient().getAdminApi();
+final String eventId = eventId_example; // String | イベントのパブリックId
+final EnableBonusRequest enableBonusRequest = ; // EnableBonusRequest | 
+
+try {
+    api.enableBonus(eventId, enableBonusRequest);
+} catch on DioException (e) {
+    print('Exception when calling AdminApi->enableBonus: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventId** | **String**| イベントのパブリックId | 
+ **enableBonusRequest** | [**EnableBonusRequest**](EnableBonusRequest.md)|  | 
 
 ### Return type
 

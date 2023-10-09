@@ -3,13 +3,13 @@ import 'package:repaint_api_client/src/model/check_download200_response.dart';
 import 'package:repaint_api_client/src/model/check_update200_response.dart';
 import 'package:repaint_api_client/src/model/check_visitor_image200_response.dart';
 import 'package:repaint_api_client/src/model/contact.dart';
-import 'package:repaint_api_client/src/model/control_traffic_request.dart';
 import 'package:repaint_api_client/src/model/create_event.dart';
 import 'package:repaint_api_client/src/model/create_event_request.dart';
 import 'package:repaint_api_client/src/model/delete_default_image_request.dart';
 import 'package:repaint_api_client/src/model/delete_spot_request.dart';
 import 'package:repaint_api_client/src/model/delete_visitor_request.dart';
 import 'package:repaint_api_client/src/model/drop_palette_request.dart';
+import 'package:repaint_api_client/src/model/enable_bonus_request.dart';
 import 'package:repaint_api_client/src/model/event.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
@@ -60,8 +60,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CheckVisitorImage200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Contact':
           return Contact.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'ControlTrafficRequest':
-          return ControlTrafficRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateEvent':
           return CreateEvent.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateEventRequest':
@@ -74,6 +72,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return DeleteVisitorRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DropPaletteRequest':
           return DropPaletteRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'EnableBonusRequest':
+          return EnableBonusRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Event':
           return Event.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'GetCurrentImage200Response':

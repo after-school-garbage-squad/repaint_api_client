@@ -500,7 +500,7 @@ class VisitorApi {
   }
 
   /// get visitor image list
-  /// 参加者に紐づく写真の一覧を取得する
+  /// 参加者に紐づくグレースケールの写真の一覧を取得する
   ///
   /// Parameters:
   /// * [visitorId] - 参加者のパブリックId
