@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:repaint_api_client/src/model/get_visitor_images200_response_images_inner.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_visitor_images200_response.g.dart';
@@ -29,7 +30,7 @@ class GetVisitorImages200Response {
   )
 
 
-  final List<String> images;
+  final List<GetVisitorImages200ResponseImagesInner> images;
 
 
 

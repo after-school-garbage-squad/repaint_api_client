@@ -17,8 +17,12 @@ GetVisitorImages200Response _$GetVisitorImages200ResponseFromJson(
           requiredKeys: const ['images'],
         );
         final val = GetVisitorImages200Response(
-          images: $checkedConvert('images',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          images: $checkedConvert(
+              'images',
+              (v) => (v as List<dynamic>)
+                  .map((e) => GetVisitorImages200ResponseImagesInner.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList()),
         );
         return val;
       },
@@ -27,5 +31,5 @@ GetVisitorImages200Response _$GetVisitorImages200ResponseFromJson(
 Map<String, dynamic> _$GetVisitorImages200ResponseToJson(
         GetVisitorImages200Response instance) =>
     <String, dynamic>{
-      'images': instance.images,
+      'images': instance.images.map((e) => e.toJson()).toList(),
     };

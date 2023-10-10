@@ -21,6 +21,7 @@ doc/GetCurrentImage200Response.md
 doc/GetDefaultImageURL200Response.md
 doc/GetTrafficStatus200Response.md
 doc/GetVisitorImages200Response.md
+doc/GetVisitorImages200ResponseImagesInner.md
 doc/InitializeVisitor200Response.md
 doc/JoinEvent200Response.md
 doc/JoinEventRequest.md
@@ -66,6 +67,7 @@ lib/src/model/get_current_image200_response.dart
 lib/src/model/get_default_image_url200_response.dart
 lib/src/model/get_traffic_status200_response.dart
 lib/src/model/get_visitor_images200_response.dart
+lib/src/model/get_visitor_images200_response_images_inner.dart
 lib/src/model/initialize_visitor200_response.dart
 lib/src/model/join_event200_response.dart
 lib/src/model/join_event_request.dart
@@ -83,4 +85,4 @@ lib/src/model/update_spot_request.dart
 lib/src/model/visitor.dart
 lib/src/model/visitor_identification.dart
 pubspec.yaml
-test/enable_bonus_request_test.dart
+test/get_visitor_images200_response_images_inner_test.dart

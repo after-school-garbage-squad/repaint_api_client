@@ -29,6 +29,7 @@ export 'package:repaint_api_client/src/model/get_current_image200_response.dart'
 export 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
 export 'package:repaint_api_client/src/model/get_traffic_status200_response.dart';
 export 'package:repaint_api_client/src/model/get_visitor_images200_response.dart';
+export 'package:repaint_api_client/src/model/get_visitor_images200_response_images_inner.dart';
 export 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
 export 'package:repaint_api_client/src/model/join_event200_response.dart';
 export 'package:repaint_api_client/src/model/join_event_request.dart';

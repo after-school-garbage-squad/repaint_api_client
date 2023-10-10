@@ -17,7 +17,7 @@ class DropPaletteRequest {
   /// Returns a new [DropPaletteRequest] instance.
   DropPaletteRequest({
     required this.eventId,
-    this.hwId,
+    required this.hwId,
   });
 
   /// イベントのパブリックId(ulid)
@@ -25,8 +25,8 @@ class DropPaletteRequest {
   final String eventId;
 
   /// ビーコンのハードウェアId
-  @JsonKey(name: r'hwId', required: false, includeIfNull: false)
-  final String? hwId;
+  @JsonKey(name: r'hwId', required: true, includeIfNull: false)
+  final String hwId;
 
   @override
   bool operator ==(Object other) =>

@@ -9,7 +9,7 @@ import 'package:repaint_api_client/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **eventId** | **String** | イベントのパブリックId(ulid) | 
-**hwId** | **String** | ビーコンのハードウェアId | [optional] 
+**hwId** | **String** | ビーコンのハードウェアId | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

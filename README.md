@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
  - [GetDefaultImageURL200Response](doc/GetDefaultImageURL200Response.md)
  - [GetTrafficStatus200Response](doc/GetTrafficStatus200Response.md)
  - [GetVisitorImages200Response](doc/GetVisitorImages200Response.md)
+ - [GetVisitorImages200ResponseImagesInner](doc/GetVisitorImages200ResponseImagesInner.md)
  - [InitializeVisitor200Response](doc/InitializeVisitor200Response.md)
  - [JoinEvent200Response](doc/JoinEvent200Response.md)
  - [JoinEventRequest](doc/JoinEventRequest.md)
