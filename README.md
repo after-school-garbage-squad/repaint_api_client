@@ -90,13 +90,13 @@ Class | Method | HTTP request | Description
 [*VisitorApi*](doc/VisitorApi.md) | [**checkDownload**](doc/VisitorApi.md#checkdownload) | **GET** /visitor/{visitorId}/image/check-download | Check for downloads to an image
 [*VisitorApi*](doc/VisitorApi.md) | [**checkUpdate**](doc/VisitorApi.md#checkupdate) | **GET** /visitor/{visitorId}/image/check-update | Check for updates to an image
 [*VisitorApi*](doc/VisitorApi.md) | [**deleteVisitor**](doc/VisitorApi.md#deletevisitor) | **DELETE** /visitor/{visitorId}/delete | delete visitor
-[*VisitorApi*](doc/VisitorApi.md) | [**dropPalette**](doc/VisitorApi.md#droppalette) | **POST** /visitor/{visitorId}/palette/drop | drop palette
 [*VisitorApi*](doc/VisitorApi.md) | [**getCurrentImage**](doc/VisitorApi.md#getcurrentimage) | **GET** /visitor/{visitorId}/image/get-current | get current image
 [*VisitorApi*](doc/VisitorApi.md) | [**getCurrentImageURL**](doc/VisitorApi.md#getcurrentimageurl) | **GET** /visitor/{visitorId}/image/proxy | get image url by image id
 [*VisitorApi*](doc/VisitorApi.md) | [**getVisitorImages**](doc/VisitorApi.md#getvisitorimages) | **GET** /visitor/{visitorId}/image/list | get visitor image list
 [*VisitorApi*](doc/VisitorApi.md) | [**initializeVisitor**](doc/VisitorApi.md#initializevisitor) | **PATCH** /visitor/{visitorId}/initialize | initialize visitor(Second and subsequent startups)
 [*VisitorApi*](doc/VisitorApi.md) | [**joinEvent**](doc/VisitorApi.md#joinevent) | **POST** /visitor/join | join event
 [*VisitorApi*](doc/VisitorApi.md) | [**pickPalette**](doc/VisitorApi.md#pickpalette) | **POST** /visitor/{visitorId}/palette/pick | pick palette
+[*VisitorApi*](doc/VisitorApi.md) | [**scannedSpot**](doc/VisitorApi.md#scannedspot) | **POST** /visitor/{visitorId}/spot/scanned | scanned spot
 [*VisitorApi*](doc/VisitorApi.md) | [**setCurrentImage**](doc/VisitorApi.md#setcurrentimage) | **POST** /visitor/{visitorId}/image/set-current | set current image
 
 
@@ -113,7 +113,6 @@ Class | Method | HTTP request | Description
  - [DeleteDefaultImageRequest](doc/DeleteDefaultImageRequest.md)
  - [DeleteSpotRequest](doc/DeleteSpotRequest.md)
  - [DeleteVisitorRequest](doc/DeleteVisitorRequest.md)
- - [DropPaletteRequest](doc/DropPaletteRequest.md)
  - [EnableBonusRequest](doc/EnableBonusRequest.md)
  - [Event](doc/Event.md)
  - [GetCurrentImage200Response](doc/GetCurrentImage200Response.md)
@@ -128,6 +127,7 @@ Class | Method | HTTP request | Description
  - [RegisterRequest](doc/RegisterRequest.md)
  - [RegisterSpotRequest](doc/RegisterSpotRequest.md)
  - [RegisterVisitor](doc/RegisterVisitor.md)
+ - [ScannedSpotRequest](doc/ScannedSpotRequest.md)
  - [SendEmailRequest](doc/SendEmailRequest.md)
  - [SetCurrentImageRequest](doc/SetCurrentImageRequest.md)
  - [Spot](doc/Spot.md)

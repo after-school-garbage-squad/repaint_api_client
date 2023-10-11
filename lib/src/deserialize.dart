@@ -9,7 +9,6 @@ import 'package:repaint_api_client/src/model/create_event_request.dart';
 import 'package:repaint_api_client/src/model/delete_default_image_request.dart';
 import 'package:repaint_api_client/src/model/delete_spot_request.dart';
 import 'package:repaint_api_client/src/model/delete_visitor_request.dart';
-import 'package:repaint_api_client/src/model/drop_palette_request.dart';
 import 'package:repaint_api_client/src/model/enable_bonus_request.dart';
 import 'package:repaint_api_client/src/model/event.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
@@ -24,6 +23,7 @@ import 'package:repaint_api_client/src/model/pick_palette_request.dart';
 import 'package:repaint_api_client/src/model/register_request.dart';
 import 'package:repaint_api_client/src/model/register_spot_request.dart';
 import 'package:repaint_api_client/src/model/register_visitor.dart';
+import 'package:repaint_api_client/src/model/scanned_spot_request.dart';
 import 'package:repaint_api_client/src/model/send_email_request.dart';
 import 'package:repaint_api_client/src/model/set_current_image_request.dart';
 import 'package:repaint_api_client/src/model/spot.dart';
@@ -84,9 +84,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'DeleteVisitorRequest':
       return DeleteVisitorRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'DropPaletteRequest':
-      return DropPaletteRequest.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
+
     case 'EnableBonusRequest':
       return EnableBonusRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -127,6 +125,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'RegisterVisitor':
       return RegisterVisitor.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'ScannedSpotRequest':
+      return ScannedSpotRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'SendEmailRequest':
       return SendEmailRequest.fromJson(value as Map<String, dynamic>)

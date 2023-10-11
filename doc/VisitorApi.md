@@ -12,13 +12,13 @@ Method | HTTP request | Description
 [**checkDownload**](VisitorApi.md#checkdownload) | **GET** /visitor/{visitorId}/image/check-download | Check for downloads to an image
 [**checkUpdate**](VisitorApi.md#checkupdate) | **GET** /visitor/{visitorId}/image/check-update | Check for updates to an image
 [**deleteVisitor**](VisitorApi.md#deletevisitor) | **DELETE** /visitor/{visitorId}/delete | delete visitor
-[**dropPalette**](VisitorApi.md#droppalette) | **POST** /visitor/{visitorId}/palette/drop | drop palette
 [**getCurrentImage**](VisitorApi.md#getcurrentimage) | **GET** /visitor/{visitorId}/image/get-current | get current image
 [**getCurrentImageURL**](VisitorApi.md#getcurrentimageurl) | **GET** /visitor/{visitorId}/image/proxy | get image url by image id
 [**getVisitorImages**](VisitorApi.md#getvisitorimages) | **GET** /visitor/{visitorId}/image/list | get visitor image list
 [**initializeVisitor**](VisitorApi.md#initializevisitor) | **PATCH** /visitor/{visitorId}/initialize | initialize visitor(Second and subsequent startups)
 [**joinEvent**](VisitorApi.md#joinevent) | **POST** /visitor/join | join event
 [**pickPalette**](VisitorApi.md#pickpalette) | **POST** /visitor/{visitorId}/palette/pick | pick palette
+[**scannedSpot**](VisitorApi.md#scannedspot) | **POST** /visitor/{visitorId}/spot/scanned | scanned spot
 [**setCurrentImage**](VisitorApi.md#setcurrentimage) | **POST** /visitor/{visitorId}/image/set-current | set current image
 
 
@@ -140,50 +140,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **visitorId** | **String**| 参加者のパブリックId | 
  **deleteVisitorRequest** | [**DeleteVisitorRequest**](DeleteVisitorRequest.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **dropPalette**
-> dropPalette(visitorId, dropPaletteRequest)
-
-drop palette
-
-paletteをdropする
-
-### Example
-```dart
-import 'package:repaint_api_client/api.dart';
-
-final api = RepaintApiClient().getVisitorApi();
-final String visitorId = visitorId_example; // String | 参加者のパブリックId
-final DropPaletteRequest dropPaletteRequest = ; // DropPaletteRequest | 
-
-try {
-    api.dropPalette(visitorId, dropPaletteRequest);
-} catch on DioException (e) {
-    print('Exception when calling VisitorApi->dropPalette: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **visitorId** | **String**| 参加者のパブリックId | 
- **dropPaletteRequest** | [**DropPaletteRequest**](DropPaletteRequest.md)|  | 
 
 ### Return type
 
@@ -453,6 +409,50 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **visitorId** | **String**| 参加者のパブリックId | 
  **pickPaletteRequest** | [**PickPaletteRequest**](PickPaletteRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **scannedSpot**
+> scannedSpot(visitorId, scannedSpotRequest)
+
+scanned spot
+
+spotをスキャンしたことを記録する
+
+### Example
+```dart
+import 'package:repaint_api_client/api.dart';
+
+final api = RepaintApiClient().getVisitorApi();
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
+final ScannedSpotRequest scannedSpotRequest = ; // ScannedSpotRequest | 
+
+try {
+    api.scannedSpot(visitorId, scannedSpotRequest);
+} catch on DioException (e) {
+    print('Exception when calling VisitorApi->scannedSpot: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **visitorId** | **String**| 参加者のパブリックId | 
+ **scannedSpotRequest** | [**ScannedSpotRequest**](ScannedSpotRequest.md)|  | 
 
 ### Return type
 

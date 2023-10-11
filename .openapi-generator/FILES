@@ -15,7 +15,6 @@ doc/CreateEventRequest.md
 doc/DeleteDefaultImageRequest.md
 doc/DeleteSpotRequest.md
 doc/DeleteVisitorRequest.md
-doc/DropPaletteRequest.md
 doc/EnableBonusRequest.md
 doc/Event.md
 doc/GetCurrentImage200Response.md
@@ -30,6 +29,7 @@ doc/PickPaletteRequest.md
 doc/RegisterRequest.md
 doc/RegisterSpotRequest.md
 doc/RegisterVisitor.md
+doc/ScannedSpotRequest.md
 doc/SendEmailRequest.md
 doc/SetCurrentImageRequest.md
 doc/Spot.md
@@ -63,7 +63,6 @@ lib/src/model/create_event_request.dart
 lib/src/model/delete_default_image_request.dart
 lib/src/model/delete_spot_request.dart
 lib/src/model/delete_visitor_request.dart
-lib/src/model/drop_palette_request.dart
 lib/src/model/enable_bonus_request.dart
 lib/src/model/event.dart
 lib/src/model/get_current_image200_response.dart
@@ -78,6 +77,7 @@ lib/src/model/pick_palette_request.dart
 lib/src/model/register_request.dart
 lib/src/model/register_spot_request.dart
 lib/src/model/register_visitor.dart
+lib/src/model/scanned_spot_request.dart
 lib/src/model/send_email_request.dart
 lib/src/model/set_current_image_request.dart
 lib/src/model/spot.dart
@@ -89,4 +89,4 @@ lib/src/model/update_spot_request.dart
 lib/src/model/visitor.dart
 lib/src/model/visitor_identification.dart
 pubspec.yaml
-test/spot_model_test.dart
+test/scanned_spot_request_test.dart

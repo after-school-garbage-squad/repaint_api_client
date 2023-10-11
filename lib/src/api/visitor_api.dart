@@ -12,7 +12,6 @@ import 'package:dio/dio.dart';
 import 'package:repaint_api_client/src/model/check_download200_response.dart';
 import 'package:repaint_api_client/src/model/check_update200_response.dart';
 import 'package:repaint_api_client/src/model/delete_visitor_request.dart';
-import 'package:repaint_api_client/src/model/drop_palette_request.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
 import 'package:repaint_api_client/src/model/get_visitor_images200_response.dart';
@@ -20,6 +19,7 @@ import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
 import 'package:repaint_api_client/src/model/pick_palette_request.dart';
+import 'package:repaint_api_client/src/model/scanned_spot_request.dart';
 import 'package:repaint_api_client/src/model/set_current_image_request.dart';
 
 class VisitorApi {
@@ -237,74 +237,6 @@ class VisitorApi {
 
     try {
       _bodyData = jsonEncode(deleteVisitorRequest);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// drop palette
-  /// paletteをdropする
-  ///
-  /// Parameters:
-  /// * [visitorId] - 参加者のパブリックId
-  /// * [dropPaletteRequest]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> dropPalette({
-    required String visitorId,
-    required DropPaletteRequest dropPaletteRequest,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/visitor/{visitorId}/palette/drop'
-        .replaceAll('{' r'visitorId' '}', visitorId.toString());
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-      _bodyData = jsonEncode(dropPaletteRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -817,6 +749,74 @@ class VisitorApi {
 
     try {
       _bodyData = jsonEncode(pickPaletteRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// scanned spot
+  /// spotをスキャンしたことを記録する
+  ///
+  /// Parameters:
+  /// * [visitorId] - 参加者のパブリックId
+  /// * [scannedSpotRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> scannedSpot({
+    required String visitorId,
+    required ScannedSpotRequest scannedSpotRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/visitor/{visitorId}/spot/scanned'
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(scannedSpotRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
