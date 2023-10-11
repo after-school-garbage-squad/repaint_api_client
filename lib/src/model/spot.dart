@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:repaint_api_client/src/model/beacon.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'spot.g.dart';
@@ -18,10 +19,9 @@ class Spot {
   Spot({
     this.spotId,
     required this.name,
+    required this.beacon,
     required this.isPick,
     required this.bonus,
-    required this.hwId,
-    required this.serviceUuid,
   });
 
   /// スポットのパブリックId(ulid)
@@ -32,6 +32,9 @@ class Spot {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
+  @JsonKey(name: r'beacon', required: true, includeIfNull: false)
+  final Beacon beacon;
+
   /// pickableなスポットかどうか
   @JsonKey(name: r'isPick', required: true, includeIfNull: false)
   final bool isPick;
@@ -40,33 +43,23 @@ class Spot {
   @JsonKey(name: r'bonus', required: true, includeIfNull: false)
   final bool bonus;
 
-  /// ビーコンのハードウェアId
-  @JsonKey(name: r'hwId', required: true, includeIfNull: false)
-  final String hwId;
-
-  /// ビーコンのサービスUUId
-  @JsonKey(name: r'serviceUuid', required: true, includeIfNull: false)
-  final String serviceUuid;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Spot &&
           other.spotId == spotId &&
           other.name == name &&
+          other.beacon == beacon &&
           other.isPick == isPick &&
-          other.bonus == bonus &&
-          other.hwId == hwId &&
-          other.serviceUuid == serviceUuid;
+          other.bonus == bonus;
 
   @override
   int get hashCode =>
       spotId.hashCode +
       name.hashCode +
+      beacon.hashCode +
       isPick.hashCode +
-      bonus.hashCode +
-      hwId.hashCode +
-      serviceUuid.hashCode;
+      bonus.hashCode;
 
   factory Spot.fromJson(Map<String, dynamic> json) => _$SpotFromJson(json);
 
