@@ -1,4 +1,5 @@
 import 'package:repaint_api_client/src/model/add_operation_request.dart';
+import 'package:repaint_api_client/src/model/beacon.dart';
 import 'package:repaint_api_client/src/model/check_download200_response.dart';
 import 'package:repaint_api_client/src/model/check_update200_response.dart';
 import 'package:repaint_api_client/src/model/check_visitor_image200_response.dart';
@@ -26,6 +27,7 @@ import 'package:repaint_api_client/src/model/register_visitor.dart';
 import 'package:repaint_api_client/src/model/send_email_request.dart';
 import 'package:repaint_api_client/src/model/set_current_image_request.dart';
 import 'package:repaint_api_client/src/model/spot.dart';
+import 'package:repaint_api_client/src/model/spot_model.dart';
 import 'package:repaint_api_client/src/model/traffic_status.dart';
 import 'package:repaint_api_client/src/model/update_event.dart';
 import 'package:repaint_api_client/src/model/update_notification_request.dart';
@@ -55,6 +57,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'AddOperationRequest':
       return AddOperationRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'Beacon':
+      return Beacon.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CheckDownload200Response':
       return CheckDownload200Response.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -132,6 +136,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'Spot':
       return Spot.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'SpotModel':
+      return SpotModel.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'TrafficStatus':
       return TrafficStatus.fromJson(value as Map<String, dynamic>)
           as ReturnType;

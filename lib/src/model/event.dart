@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:repaint_api_client/src/model/spot_model.dart';
 import 'package:repaint_api_client/src/model/contact.dart';
-import 'package:repaint_api_client/src/model/spot.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'event.g.dart';
@@ -42,7 +42,7 @@ class Event {
   final Contact contact;
 
   @JsonKey(name: r'spots', required: true, includeIfNull: false)
-  final List<Spot> spots;
+  final List<SpotModel> spots;
 
   @JsonKey(name: r'images', required: true, includeIfNull: false)
   final List<String> images;

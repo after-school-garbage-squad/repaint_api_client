@@ -103,6 +103,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AddOperationRequest](doc/AddOperationRequest.md)
+ - [Beacon](doc/Beacon.md)
  - [CheckDownload200Response](doc/CheckDownload200Response.md)
  - [CheckUpdate200Response](doc/CheckUpdate200Response.md)
  - [CheckVisitorImage200Response](doc/CheckVisitorImage200Response.md)
@@ -130,6 +131,7 @@ Class | Method | HTTP request | Description
  - [SendEmailRequest](doc/SendEmailRequest.md)
  - [SetCurrentImageRequest](doc/SetCurrentImageRequest.md)
  - [Spot](doc/Spot.md)
+ - [SpotModel](doc/SpotModel.md)
  - [TrafficStatus](doc/TrafficStatus.md)
  - [UpdateEvent](doc/UpdateEvent.md)
  - [UpdateNotificationRequest](doc/UpdateNotificationRequest.md)

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:repaint_api_client/src/model/beacon.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'spot.g.dart';
@@ -18,8 +19,7 @@ class Spot {
   Spot({
     this.spotId,
     required this.name,
-    required this.hwId,
-    required this.serviceUuid,
+    required this.beacon,
     required this.isPick,
     required this.bonus,
   });
@@ -32,13 +32,8 @@ class Spot {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  /// ビーコンのハードウェアId
-  @JsonKey(name: r'hwId', required: true, includeIfNull: false)
-  final String hwId;
-
-  /// ビーコンのサービスUUId
-  @JsonKey(name: r'serviceUuid', required: true, includeIfNull: false)
-  final String serviceUuid;
+  @JsonKey(name: r'beacon', required: true, includeIfNull: false)
+  final Beacon beacon;
 
   /// pickableなスポットかどうか
   @JsonKey(name: r'isPick', required: true, includeIfNull: false)
@@ -54,8 +49,7 @@ class Spot {
       other is Spot &&
           other.spotId == spotId &&
           other.name == name &&
-          other.hwId == hwId &&
-          other.serviceUuid == serviceUuid &&
+          other.beacon == beacon &&
           other.isPick == isPick &&
           other.bonus == bonus;
 
@@ -63,8 +57,7 @@ class Spot {
   int get hashCode =>
       spotId.hashCode +
       name.hashCode +
-      hwId.hashCode +
-      serviceUuid.hashCode +
+      beacon.hashCode +
       isPick.hashCode +
       bonus.hashCode;
 

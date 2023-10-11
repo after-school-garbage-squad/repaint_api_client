@@ -30,7 +30,7 @@ Event _$EventFromJson(Map<String, dynamic> json) => $checkedCreate(
           spots: $checkedConvert(
               'spots',
               (v) => (v as List<dynamic>)
-                  .map((e) => Spot.fromJson(e as Map<String, dynamic>))
+                  .map((e) => SpotModel.fromJson(e as Map<String, dynamic>))
                   .toList()),
           images: $checkedConvert('images',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),

@@ -13,6 +13,7 @@ export 'package:repaint_api_client/src/api/auth_api.dart';
 export 'package:repaint_api_client/src/api/visitor_api.dart';
 
 export 'package:repaint_api_client/src/model/add_operation_request.dart';
+export 'package:repaint_api_client/src/model/beacon.dart';
 export 'package:repaint_api_client/src/model/check_download200_response.dart';
 export 'package:repaint_api_client/src/model/check_update200_response.dart';
 export 'package:repaint_api_client/src/model/check_visitor_image200_response.dart';
@@ -40,6 +41,7 @@ export 'package:repaint_api_client/src/model/register_visitor.dart';
 export 'package:repaint_api_client/src/model/send_email_request.dart';
 export 'package:repaint_api_client/src/model/set_current_image_request.dart';
 export 'package:repaint_api_client/src/model/spot.dart';
+export 'package:repaint_api_client/src/model/spot_model.dart';
 export 'package:repaint_api_client/src/model/traffic_status.dart';
 export 'package:repaint_api_client/src/model/update_event.dart';
 export 'package:repaint_api_client/src/model/update_notification_request.dart';

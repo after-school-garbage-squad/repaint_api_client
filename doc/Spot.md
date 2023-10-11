@@ -10,8 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **spotId** | **String** | スポットのパブリックId(ulid) | [optional] 
 **name** | **String** | スポット名 | 
-**hwId** | **String** | ビーコンのハードウェアId | 
-**serviceUuid** | **String** | ビーコンのサービスUUId | 
+**beacon** | [**Beacon**](Beacon.md) |  | 
 **isPick** | **bool** | pickableなスポットかどうか | 
 **bonus** | **bool** | スポットのステータスがボーナスかどうか | 
 
