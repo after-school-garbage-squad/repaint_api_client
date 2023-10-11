@@ -19,7 +19,6 @@ Method | HTTP request | Description
 [**deleteSpot**](AdminApi.md#deletespot) | **DELETE** /admin/event/{eventId}/spot/delete | delete spot
 [**disableBonus**](AdminApi.md#disablebonus) | **POST** /admin/event/{eventId}/traffic/disable-bonus | disable bonus
 [**enableBonus**](AdminApi.md#enablebonus) | **POST** /admin/event/{eventId}/traffic/enable-bonus | enable bonus
-[**finishEvent**](AdminApi.md#finishevent) | **POST** /admin/event/{eventId}/finish | finish event
 [**getDefaultImageURL**](AdminApi.md#getdefaultimageurl) | **GET** /admin/event/{eventId}/image/proxy | get image url by image id
 [**getEvents**](AdminApi.md#getevents) | **GET** /admin/event/list | get event list
 [**getSpots**](AdminApi.md#getspots) | **GET** /admin/event/{eventId}/spot/list | get spot list
@@ -467,48 +466,6 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **finishEvent**
-> finishEvent(eventId)
-
-finish event
-
-イベントを終了する
-
-### Example
-```dart
-import 'package:repaint_api_client/api.dart';
-
-final api = RepaintApiClient().getAdminApi();
-final String eventId = eventId_example; // String | イベントのパブリックId
-
-try {
-    api.finishEvent(eventId);
-} catch on DioException (e) {
-    print('Exception when calling AdminApi->finishEvent: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventId** | **String**| イベントのパブリックId | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

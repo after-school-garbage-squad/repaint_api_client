@@ -9,7 +9,6 @@ import 'dart:convert';
 import 'package:repaint_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:repaint_api_client/src/model/check_download200_response.dart';
 import 'package:repaint_api_client/src/model/check_update200_response.dart';
 import 'package:repaint_api_client/src/model/delete_visitor_request.dart';
 import 'package:repaint_api_client/src/model/get_current_image200_response.dart';
@@ -26,89 +25,6 @@ class VisitorApi {
   final Dio _dio;
 
   const VisitorApi(this._dio);
-
-  /// Check for downloads to an image
-  /// 画像をダウンロードできるか確認する
-  ///
-  /// Parameters:
-  /// * [visitorId] - 参加者のパブリックId
-  /// * [eventId] - イベントのパブリックId
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [CheckDownload200Response] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<CheckDownload200Response>> checkDownload({
-    required String visitorId,
-    required String eventId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/visitor/{visitorId}/image/check-download'
-        .replaceAll('{' r'visitorId' '}', visitorId.toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      r'eventId': eventId,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    CheckDownload200Response? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<CheckDownload200Response, CheckDownload200Response>(
-              rawData, 'CheckDownload200Response',
-              growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<CheckDownload200Response>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
 
   /// Check for updates to an image
   /// 画像に更新があるか確認する
@@ -786,9 +702,9 @@ class VisitorApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [CheckUpdate200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> scannedSpot({
+  Future<Response<CheckUpdate200Response>> scannedSpot({
     required String visitorId,
     required ScannedSpotRequest scannedSpotRequest,
     CancelToken? cancelToken,
@@ -838,7 +754,35 @@ class VisitorApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    CheckUpdate200Response? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CheckUpdate200Response, CheckUpdate200Response>(
+              rawData, 'CheckUpdate200Response',
+              growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CheckUpdate200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// set current image

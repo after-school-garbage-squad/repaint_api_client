@@ -14,7 +14,6 @@ export 'package:repaint_api_client/src/api/visitor_api.dart';
 
 export 'package:repaint_api_client/src/model/add_operation_request.dart';
 export 'package:repaint_api_client/src/model/beacon.dart';
-export 'package:repaint_api_client/src/model/check_download200_response.dart';
 export 'package:repaint_api_client/src/model/check_update200_response.dart';
 export 'package:repaint_api_client/src/model/check_visitor_image200_response.dart';
 export 'package:repaint_api_client/src/model/contact.dart';

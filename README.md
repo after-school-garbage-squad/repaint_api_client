@@ -74,7 +74,6 @@ Class | Method | HTTP request | Description
 [*AdminApi*](doc/AdminApi.md) | [**deleteSpot**](doc/AdminApi.md#deletespot) | **DELETE** /admin/event/{eventId}/spot/delete | delete spot
 [*AdminApi*](doc/AdminApi.md) | [**disableBonus**](doc/AdminApi.md#disablebonus) | **POST** /admin/event/{eventId}/traffic/disable-bonus | disable bonus
 [*AdminApi*](doc/AdminApi.md) | [**enableBonus**](doc/AdminApi.md#enablebonus) | **POST** /admin/event/{eventId}/traffic/enable-bonus | enable bonus
-[*AdminApi*](doc/AdminApi.md) | [**finishEvent**](doc/AdminApi.md#finishevent) | **POST** /admin/event/{eventId}/finish | finish event
 [*AdminApi*](doc/AdminApi.md) | [**getDefaultImageURL**](doc/AdminApi.md#getdefaultimageurl) | **GET** /admin/event/{eventId}/image/proxy | get image url by image id
 [*AdminApi*](doc/AdminApi.md) | [**getEvents**](doc/AdminApi.md#getevents) | **GET** /admin/event/list | get event list
 [*AdminApi*](doc/AdminApi.md) | [**getSpots**](doc/AdminApi.md#getspots) | **GET** /admin/event/{eventId}/spot/list | get spot list
@@ -87,7 +86,6 @@ Class | Method | HTTP request | Description
 [*AdminApi*](doc/AdminApi.md) | [**updateSpot**](doc/AdminApi.md#updatespot) | **PATCH** /admin/event/{eventId}/spot/update | update spot
 [*AdminApi*](doc/AdminApi.md) | [**uploadVisitorImage**](doc/AdminApi.md#uploadvisitorimage) | **POST** /admin/event/{eventId}/image/upload-visitor | upload visitor image
 [*AuthApi*](doc/AuthApi.md) | [**register**](doc/AuthApi.md#register) | **POST** /admin/register | register admin
-[*VisitorApi*](doc/VisitorApi.md) | [**checkDownload**](doc/VisitorApi.md#checkdownload) | **GET** /visitor/{visitorId}/image/check-download | Check for downloads to an image
 [*VisitorApi*](doc/VisitorApi.md) | [**checkUpdate**](doc/VisitorApi.md#checkupdate) | **GET** /visitor/{visitorId}/image/check-update | Check for updates to an image
 [*VisitorApi*](doc/VisitorApi.md) | [**deleteVisitor**](doc/VisitorApi.md#deletevisitor) | **DELETE** /visitor/{visitorId}/delete | delete visitor
 [*VisitorApi*](doc/VisitorApi.md) | [**getCurrentImage**](doc/VisitorApi.md#getcurrentimage) | **GET** /visitor/{visitorId}/image/get-current | get current image
@@ -104,7 +102,6 @@ Class | Method | HTTP request | Description
 
  - [AddOperationRequest](doc/AddOperationRequest.md)
  - [Beacon](doc/Beacon.md)
- - [CheckDownload200Response](doc/CheckDownload200Response.md)
  - [CheckUpdate200Response](doc/CheckUpdate200Response.md)
  - [CheckVisitorImage200Response](doc/CheckVisitorImage200Response.md)
  - [Contact](doc/Contact.md)

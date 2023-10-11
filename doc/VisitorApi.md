@@ -9,7 +9,6 @@ All URIs are relative to *https://api.asgs.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**checkDownload**](VisitorApi.md#checkdownload) | **GET** /visitor/{visitorId}/image/check-download | Check for downloads to an image
 [**checkUpdate**](VisitorApi.md#checkupdate) | **GET** /visitor/{visitorId}/image/check-update | Check for updates to an image
 [**deleteVisitor**](VisitorApi.md#deletevisitor) | **DELETE** /visitor/{visitorId}/delete | delete visitor
 [**getCurrentImage**](VisitorApi.md#getcurrentimage) | **GET** /visitor/{visitorId}/image/get-current | get current image
@@ -21,51 +20,6 @@ Method | HTTP request | Description
 [**scannedSpot**](VisitorApi.md#scannedspot) | **POST** /visitor/{visitorId}/spot/scanned | scanned spot
 [**setCurrentImage**](VisitorApi.md#setcurrentimage) | **POST** /visitor/{visitorId}/image/set-current | set current image
 
-
-# **checkDownload**
-> CheckDownload200Response checkDownload(visitorId, eventId)
-
-Check for downloads to an image
-
-画像をダウンロードできるか確認する
-
-### Example
-```dart
-import 'package:repaint_api_client/api.dart';
-
-final api = RepaintApiClient().getVisitorApi();
-final String visitorId = visitorId_example; // String | 参加者のパブリックId
-final String eventId = eventId_example; // String | イベントのパブリックId
-
-try {
-    final response = api.checkDownload(visitorId, eventId);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling VisitorApi->checkDownload: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **visitorId** | **String**| 参加者のパブリックId | 
- **eventId** | **String**| イベントのパブリックId | 
-
-### Return type
-
-[**CheckDownload200Response**](CheckDownload200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkUpdate**
 > CheckUpdate200Response checkUpdate(visitorId, eventId)
@@ -426,7 +380,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **scannedSpot**
-> scannedSpot(visitorId, scannedSpotRequest)
+> CheckUpdate200Response scannedSpot(visitorId, scannedSpotRequest)
 
 scanned spot
 
@@ -441,7 +395,8 @@ final String visitorId = visitorId_example; // String | 参加者のパブリッ
 final ScannedSpotRequest scannedSpotRequest = ; // ScannedSpotRequest | 
 
 try {
-    api.scannedSpot(visitorId, scannedSpotRequest);
+    final response = api.scannedSpot(visitorId, scannedSpotRequest);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling VisitorApi->scannedSpot: $e\n');
 }
@@ -456,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**CheckUpdate200Response**](CheckUpdate200Response.md)
 
 ### Authorization
 
@@ -465,7 +420,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
