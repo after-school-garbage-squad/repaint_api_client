@@ -12,13 +12,19 @@ Spot _$SpotFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['name', 'beacon', 'isPick', 'bonus'],
+          requiredKeys: const [
+            'name',
+            'hwId',
+            'serviceUuid',
+            'isPick',
+            'bonus'
+          ],
         );
         final val = Spot(
           spotId: $checkedConvert('spotId', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String),
-          beacon: $checkedConvert(
-              'beacon', (v) => Beacon.fromJson(v as Map<String, dynamic>)),
+          hwId: $checkedConvert('hwId', (v) => v as String),
+          serviceUuid: $checkedConvert('serviceUuid', (v) => v as String),
           isPick: $checkedConvert('isPick', (v) => v as bool),
           bonus: $checkedConvert('bonus', (v) => v as bool),
         );
@@ -37,7 +43,8 @@ Map<String, dynamic> _$SpotToJson(Spot instance) {
 
   writeNotNull('spotId', instance.spotId);
   val['name'] = instance.name;
-  val['beacon'] = instance.beacon.toJson();
+  val['hwId'] = instance.hwId;
+  val['serviceUuid'] = instance.serviceUuid;
   val['isPick'] = instance.isPick;
   val['bonus'] = instance.bonus;
   return val;

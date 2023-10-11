@@ -1,5 +1,4 @@
 import 'package:repaint_api_client/src/model/add_operation_request.dart';
-import 'package:repaint_api_client/src/model/beacon.dart';
 import 'package:repaint_api_client/src/model/check_download200_response.dart';
 import 'package:repaint_api_client/src/model/check_update200_response.dart';
 import 'package:repaint_api_client/src/model/check_visitor_image200_response.dart';
@@ -56,8 +55,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'AddOperationRequest':
       return AddOperationRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'Beacon':
-      return Beacon.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CheckDownload200Response':
       return CheckDownload200Response.fromJson(value as Map<String, dynamic>)
           as ReturnType;

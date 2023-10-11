@@ -5,7 +5,6 @@ build.yaml
 doc/AddOperationRequest.md
 doc/AdminApi.md
 doc/AuthApi.md
-doc/Beacon.md
 doc/CheckDownload200Response.md
 doc/CheckUpdate200Response.md
 doc/CheckVisitorImage200Response.md
@@ -52,7 +51,6 @@ lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/deserialize.dart
 lib/src/model/add_operation_request.dart
-lib/src/model/beacon.dart
 lib/src/model/check_download200_response.dart
 lib/src/model/check_update200_response.dart
 lib/src/model/check_visitor_image200_response.dart
@@ -87,4 +85,3 @@ lib/src/model/update_spot_request.dart
 lib/src/model/visitor.dart
 lib/src/model/visitor_identification.dart
 pubspec.yaml
-test/beacon_test.dart

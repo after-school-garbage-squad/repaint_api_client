@@ -103,7 +103,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AddOperationRequest](doc/AddOperationRequest.md)
- - [Beacon](doc/Beacon.md)
  - [CheckDownload200Response](doc/CheckDownload200Response.md)
  - [CheckUpdate200Response](doc/CheckUpdate200Response.md)
  - [CheckVisitorImage200Response](doc/CheckVisitorImage200Response.md)
