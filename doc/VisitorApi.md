@@ -380,7 +380,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **scannedSpot**
-> CheckUpdate200Response scannedSpot(visitorId, scannedSpotRequest)
+> ScannedSpot200Response scannedSpot(visitorId, scannedSpotRequest)
 
 scanned spot
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckUpdate200Response**](CheckUpdate200Response.md)
+[**ScannedSpot200Response**](ScannedSpot200Response.md)
 
 ### Authorization
 

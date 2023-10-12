@@ -18,6 +18,7 @@ import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
 import 'package:repaint_api_client/src/model/pick_palette_request.dart';
+import 'package:repaint_api_client/src/model/scanned_spot200_response.dart';
 import 'package:repaint_api_client/src/model/scanned_spot_request.dart';
 import 'package:repaint_api_client/src/model/set_current_image_request.dart';
 
@@ -702,9 +703,9 @@ class VisitorApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CheckUpdate200Response] as data
+  /// Returns a [Future] containing a [Response] with a [ScannedSpot200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CheckUpdate200Response>> scannedSpot({
+  Future<Response<ScannedSpot200Response>> scannedSpot({
     required String visitorId,
     required ScannedSpotRequest scannedSpotRequest,
     CancelToken? cancelToken,
@@ -754,14 +755,14 @@ class VisitorApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CheckUpdate200Response? _responseData;
+    ScannedSpot200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CheckUpdate200Response, CheckUpdate200Response>(
-              rawData, 'CheckUpdate200Response',
+          : deserialize<ScannedSpot200Response, ScannedSpot200Response>(
+              rawData, 'ScannedSpot200Response',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -773,7 +774,7 @@ class VisitorApi {
       );
     }
 
-    return Response<CheckUpdate200Response>(
+    return Response<ScannedSpot200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

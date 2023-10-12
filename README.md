@@ -124,6 +124,7 @@ Class | Method | HTTP request | Description
  - [RegisterRequest](doc/RegisterRequest.md)
  - [RegisterSpotRequest](doc/RegisterSpotRequest.md)
  - [RegisterVisitor](doc/RegisterVisitor.md)
+ - [ScannedSpot200Response](doc/ScannedSpot200Response.md)
  - [ScannedSpotRequest](doc/ScannedSpotRequest.md)
  - [SendEmailRequest](doc/SendEmailRequest.md)
  - [SetCurrentImageRequest](doc/SetCurrentImageRequest.md)

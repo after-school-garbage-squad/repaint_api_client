@@ -28,6 +28,7 @@ doc/PickPaletteRequest.md
 doc/RegisterRequest.md
 doc/RegisterSpotRequest.md
 doc/RegisterVisitor.md
+doc/ScannedSpot200Response.md
 doc/ScannedSpotRequest.md
 doc/SendEmailRequest.md
 doc/SetCurrentImageRequest.md
@@ -75,6 +76,7 @@ lib/src/model/pick_palette_request.dart
 lib/src/model/register_request.dart
 lib/src/model/register_spot_request.dart
 lib/src/model/register_visitor.dart
+lib/src/model/scanned_spot200_response.dart
 lib/src/model/scanned_spot_request.dart
 lib/src/model/send_email_request.dart
 lib/src/model/set_current_image_request.dart
@@ -87,3 +89,4 @@ lib/src/model/update_spot_request.dart
 lib/src/model/visitor.dart
 lib/src/model/visitor_identification.dart
 pubspec.yaml
+test/scanned_spot200_response_test.dart

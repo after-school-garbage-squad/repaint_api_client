@@ -36,6 +36,7 @@ export 'package:repaint_api_client/src/model/pick_palette_request.dart';
 export 'package:repaint_api_client/src/model/register_request.dart';
 export 'package:repaint_api_client/src/model/register_spot_request.dart';
 export 'package:repaint_api_client/src/model/register_visitor.dart';
+export 'package:repaint_api_client/src/model/scanned_spot200_response.dart';
 export 'package:repaint_api_client/src/model/scanned_spot_request.dart';
 export 'package:repaint_api_client/src/model/send_email_request.dart';
 export 'package:repaint_api_client/src/model/set_current_image_request.dart';

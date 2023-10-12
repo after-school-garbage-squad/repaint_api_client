@@ -22,6 +22,7 @@ import 'package:repaint_api_client/src/model/pick_palette_request.dart';
 import 'package:repaint_api_client/src/model/register_request.dart';
 import 'package:repaint_api_client/src/model/register_spot_request.dart';
 import 'package:repaint_api_client/src/model/register_visitor.dart';
+import 'package:repaint_api_client/src/model/scanned_spot200_response.dart';
 import 'package:repaint_api_client/src/model/scanned_spot_request.dart';
 import 'package:repaint_api_client/src/model/send_email_request.dart';
 import 'package:repaint_api_client/src/model/set_current_image_request.dart';
@@ -100,6 +101,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return RegisterSpotRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RegisterVisitor':
           return RegisterVisitor.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ScannedSpot200Response':
+          return ScannedSpot200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ScannedSpotRequest':
           return ScannedSpotRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SendEmailRequest':
