@@ -16,6 +16,7 @@ import 'package:repaint_api_client/src/model/get_traffic_status200_response.dart
 import 'package:repaint_api_client/src/model/get_visitor_images200_response.dart';
 import 'package:repaint_api_client/src/model/get_visitor_images200_response_images_inner.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
+import 'package:repaint_api_client/src/model/is_palette_completed200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
 import 'package:repaint_api_client/src/model/pick_palette_request.dart';
@@ -89,6 +90,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return GetVisitorImages200ResponseImagesInner.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'InitializeVisitor200Response':
           return InitializeVisitor200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'IsPaletteCompleted200Response':
+          return IsPaletteCompleted200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'JoinEvent200Response':
           return JoinEvent200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'JoinEventRequest':

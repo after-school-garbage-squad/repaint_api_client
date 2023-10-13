@@ -15,6 +15,7 @@ import 'package:repaint_api_client/src/model/get_current_image200_response.dart'
 import 'package:repaint_api_client/src/model/get_default_image_url200_response.dart';
 import 'package:repaint_api_client/src/model/get_visitor_images200_response.dart';
 import 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
+import 'package:repaint_api_client/src/model/is_palette_completed200_response.dart';
 import 'package:repaint_api_client/src/model/join_event200_response.dart';
 import 'package:repaint_api_client/src/model/join_event_request.dart';
 import 'package:repaint_api_client/src/model/pick_palette_request.dart';
@@ -518,6 +519,90 @@ class VisitorApi {
     }
 
     return Response<InitializeVisitor200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get is complete palette
+  /// パレットを取得し切ったかどうかを返す
+  ///
+  /// Parameters:
+  /// * [visitorId] - 参加者のパブリックId
+  /// * [eventId] - イベントのパブリックId
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [IsPaletteCompleted200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<IsPaletteCompleted200Response>> isPaletteCompleted({
+    required String visitorId,
+    required String eventId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/visitor/{visitorId}/palette/complete'
+        .replaceAll('{' r'visitorId' '}', visitorId.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      r'eventId': eventId,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    IsPaletteCompleted200Response? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<IsPaletteCompleted200Response,
+                  IsPaletteCompleted200Response>(
+              rawData, 'IsPaletteCompleted200Response',
+              growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<IsPaletteCompleted200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

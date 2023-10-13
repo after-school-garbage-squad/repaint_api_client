@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**getCurrentImageURL**](VisitorApi.md#getcurrentimageurl) | **GET** /visitor/{visitorId}/image/proxy | get image url by image id
 [**getVisitorImages**](VisitorApi.md#getvisitorimages) | **GET** /visitor/{visitorId}/image/list | get visitor image list
 [**initializeVisitor**](VisitorApi.md#initializevisitor) | **PATCH** /visitor/{visitorId}/initialize | initialize visitor(Second and subsequent startups)
+[**isPaletteCompleted**](VisitorApi.md#ispalettecompleted) | **GET** /visitor/{visitorId}/palette/complete | Get is complete palette
 [**joinEvent**](VisitorApi.md#joinevent) | **POST** /visitor/join | join event
 [**pickPalette**](VisitorApi.md#pickpalette) | **POST** /visitor/{visitorId}/palette/pick | pick palette
 [**scannedSpot**](VisitorApi.md#scannedspot) | **POST** /visitor/{visitorId}/spot/scanned | scanned spot
@@ -288,6 +289,51 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **isPaletteCompleted**
+> IsPaletteCompleted200Response isPaletteCompleted(visitorId, eventId)
+
+Get is complete palette
+
+パレットを取得し切ったかどうかを返す
+
+### Example
+```dart
+import 'package:repaint_api_client/api.dart';
+
+final api = RepaintApiClient().getVisitorApi();
+final String visitorId = visitorId_example; // String | 参加者のパブリックId
+final String eventId = eventId_example; // String | イベントのパブリックId
+
+try {
+    final response = api.isPaletteCompleted(visitorId, eventId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling VisitorApi->isPaletteCompleted: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **visitorId** | **String**| 参加者のパブリックId | 
+ **eventId** | **String**| イベントのパブリックId | 
+
+### Return type
+
+[**IsPaletteCompleted200Response**](IsPaletteCompleted200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

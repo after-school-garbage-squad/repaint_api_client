@@ -22,6 +22,7 @@ doc/GetTrafficStatus200Response.md
 doc/GetVisitorImages200Response.md
 doc/GetVisitorImages200ResponseImagesInner.md
 doc/InitializeVisitor200Response.md
+doc/IsPaletteCompleted200Response.md
 doc/JoinEvent200Response.md
 doc/JoinEventRequest.md
 doc/PickPaletteRequest.md
@@ -70,6 +71,7 @@ lib/src/model/get_traffic_status200_response.dart
 lib/src/model/get_visitor_images200_response.dart
 lib/src/model/get_visitor_images200_response_images_inner.dart
 lib/src/model/initialize_visitor200_response.dart
+lib/src/model/is_palette_completed200_response.dart
 lib/src/model/join_event200_response.dart
 lib/src/model/join_event_request.dart
 lib/src/model/pick_palette_request.dart
@@ -89,4 +91,4 @@ lib/src/model/update_spot_request.dart
 lib/src/model/visitor.dart
 lib/src/model/visitor_identification.dart
 pubspec.yaml
-test/scanned_spot200_response_test.dart
+test/is_palette_completed200_response_test.dart

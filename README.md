@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 [*VisitorApi*](doc/VisitorApi.md) | [**getCurrentImageURL**](doc/VisitorApi.md#getcurrentimageurl) | **GET** /visitor/{visitorId}/image/proxy | get image url by image id
 [*VisitorApi*](doc/VisitorApi.md) | [**getVisitorImages**](doc/VisitorApi.md#getvisitorimages) | **GET** /visitor/{visitorId}/image/list | get visitor image list
 [*VisitorApi*](doc/VisitorApi.md) | [**initializeVisitor**](doc/VisitorApi.md#initializevisitor) | **PATCH** /visitor/{visitorId}/initialize | initialize visitor(Second and subsequent startups)
+[*VisitorApi*](doc/VisitorApi.md) | [**isPaletteCompleted**](doc/VisitorApi.md#ispalettecompleted) | **GET** /visitor/{visitorId}/palette/complete | Get is complete palette
 [*VisitorApi*](doc/VisitorApi.md) | [**joinEvent**](doc/VisitorApi.md#joinevent) | **POST** /visitor/join | join event
 [*VisitorApi*](doc/VisitorApi.md) | [**pickPalette**](doc/VisitorApi.md#pickpalette) | **POST** /visitor/{visitorId}/palette/pick | pick palette
 [*VisitorApi*](doc/VisitorApi.md) | [**scannedSpot**](doc/VisitorApi.md#scannedspot) | **POST** /visitor/{visitorId}/spot/scanned | scanned spot
@@ -118,6 +119,7 @@ Class | Method | HTTP request | Description
  - [GetVisitorImages200Response](doc/GetVisitorImages200Response.md)
  - [GetVisitorImages200ResponseImagesInner](doc/GetVisitorImages200ResponseImagesInner.md)
  - [InitializeVisitor200Response](doc/InitializeVisitor200Response.md)
+ - [IsPaletteCompleted200Response](doc/IsPaletteCompleted200Response.md)
  - [JoinEvent200Response](doc/JoinEvent200Response.md)
  - [JoinEventRequest](doc/JoinEventRequest.md)
  - [PickPaletteRequest](doc/PickPaletteRequest.md)

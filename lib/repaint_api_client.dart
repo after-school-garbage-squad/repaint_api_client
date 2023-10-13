@@ -30,6 +30,7 @@ export 'package:repaint_api_client/src/model/get_traffic_status200_response.dart
 export 'package:repaint_api_client/src/model/get_visitor_images200_response.dart';
 export 'package:repaint_api_client/src/model/get_visitor_images200_response_images_inner.dart';
 export 'package:repaint_api_client/src/model/initialize_visitor200_response.dart';
+export 'package:repaint_api_client/src/model/is_palette_completed200_response.dart';
 export 'package:repaint_api_client/src/model/join_event200_response.dart';
 export 'package:repaint_api_client/src/model/join_event_request.dart';
 export 'package:repaint_api_client/src/model/pick_palette_request.dart';
